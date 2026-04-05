@@ -1,0 +1,32 @@
+# book-linear-algebra/_quarto.yml
+project:
+  type: book
+  #output-dir: ../_site # specify output directory for the book
+
+number-sections: true #this controls the numbering of sections in the book. Set to false if you don't want numbered sections.
+
+book:
+  title: "Linear Algebra for ML, CV, and Robotics"
+  author: "Your Name"
+  chapters:
+    - index.qmd
+    - ch01-vectors.qmd
+    - ch02-matrices.qmd
+    - references.qmd
+
+  navbar:
+    left:
+      - text: "← Home"
+        href: ../../index.html
+
+  sidebar:
+    tools:
+      - icon: house
+        href: ../../index.html
+        text: "Home"
+
+format:
+  html:
+    toc: true
+    toc-depth: 2 # control the depth of the table of contents
+    toc-title: "Section Contents"

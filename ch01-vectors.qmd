@@ -1,0 +1,5 @@
+# Vectors
+
+{{< include ch01-vectors/_01-intro.qmd >}}
+{{< include ch01-vectors/_02-dot-product.qmd >}}
+{{< include ch01-vectors/_03-projection.qmd >}}

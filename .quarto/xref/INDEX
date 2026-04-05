@@ -1,0 +1,29 @@
+{
+  "index.qmd": {
+    "index.html": "e25a14ae"
+  },
+  "ch01-vectors/01-intro.qmd": {
+    "01-intro.html": "5522ac4b"
+  },
+  "ch01-vectors/02-dot-product.qmd": {
+    "02-dot-product.html": "daa25925"
+  },
+  "ch01-vectors/03-projection.qmd": {
+    "03-projection.html": "bf278ae1"
+  },
+  "ch02-matrices/01-transforms.qmd": {
+    "01-transforms.html": "4ef68c5c"
+  },
+  "ch02-matrices/02-svd.qmd": {
+    "02-svd.html": "d1fcd663"
+  },
+  "references.qmd": {
+    "references.html": "690cb9c5"
+  },
+  "ch01-vectors.qmd": {
+    "ch01-vectors.html": "24f8ba72"
+  },
+  "ch02-matrices.qmd": {
+    "ch02-matrices.html": "2ab94932"
+  }
+}
