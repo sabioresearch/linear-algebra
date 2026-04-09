@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Linear Algebra for ML, CV, and Robotics",
     "section": "",
-    "text": "Chapters",
+    "text": "Chapters\n\nThis will appear in the left menu as “Chapters”. You can click on it to see the list of chapters. Each chapter will have its own page with its own sections. You can click on the chapter title to see the sections. Each section will have its own page with its own content. You can click on the section title to see the content.",
     "crumbs": [
       "Chapters"
     ]
@@ -12,51 +12,81 @@
   {
     "objectID": "ch01-vectors.html",
     "href": "ch01-vectors.html",
-    "title": "1  Vectors",
+    "title": "Chapter 1 Vectors 3",
     "section": "",
-    "text": "1.1 some content\nand some more content",
+    "text": "1.1 chapter1 section1 Heading 2\nand some more content",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Vectors</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1 Vectors 3</span>"
     ]
   },
   {
-    "objectID": "ch01-vectors.html#heading-2",
-    "href": "ch01-vectors.html#heading-2",
-    "title": "1  Vectors",
-    "section": "1.2 heading 2",
-    "text": "1.2 heading 2\n\n1.2.1 heading 3\nand some more content",
+    "objectID": "ch01-vectors.html#chapter1-section1-heading-2",
+    "href": "ch01-vectors.html#chapter1-section1-heading-2",
+    "title": "Chapter 1 Vectors 3",
+    "section": "",
+    "text": "1.1.1 chapter1 section1 Heading 3",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Vectors</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1 Vectors 3</span>"
     ]
   },
   {
-    "objectID": "ch01-vectors.html#some-content-1",
-    "href": "ch01-vectors.html#some-content-1",
-    "title": "1  Vectors",
-    "section": "1.3 some content",
-    "text": "1.3 some content\nand some more content",
+    "objectID": "ch01-vectors.html#chapter1-section2-heading-2",
+    "href": "ch01-vectors.html#chapter1-section2-heading-2",
+    "title": "Chapter 1 Vectors 3",
+    "section": "1.2 chapter1 section2 Heading 2",
+    "text": "1.2 chapter1 section2 Heading 2\n\n1.2.1 chapter1 section2 Heading 3\nand some more content",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Vectors</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1 Vectors 3</span>"
+    ]
+  },
+  {
+    "objectID": "ch01-vectors.html#chapter-1-section3-heading-2",
+    "href": "ch01-vectors.html#chapter-1-section3-heading-2",
+    "title": "Chapter 1 Vectors 3",
+    "section": "1.3 Chapter 1 section3 Heading 2",
+    "text": "1.3 Chapter 1 section3 Heading 2\nand some more content",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Chapter 1 Vectors 3</span>"
     ]
   },
   {
     "objectID": "ch02-matrices.html",
     "href": "ch02-matrices.html",
-    "title": "Chapter 2 Introduction to Matrices",
+    "title": "Introduction to Matrices",
     "section": "",
-    "text": "2.1 some content\nand some more content",
+    "text": "2.1",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapter 2 Introduction to Matrices</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Matrices</span>"
     ]
   },
   {
-    "objectID": "ch02-matrices.html#some-content-1",
-    "href": "ch02-matrices.html#some-content-1",
-    "title": "Chapter 2 Introduction to Matrices",
-    "section": "2.2 some content",
-    "text": "2.2 some content\nand some more content",
+    "objectID": "ch02-matrices.html#title-introduction-to-matrices",
+    "href": "ch02-matrices.html#title-introduction-to-matrices",
+    "title": "Introduction to Matrices",
+    "section": "2.2 title: “Introduction to Matrices”",
+    "text": "2.2 title: “Introduction to Matrices”",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Chapter 2 Introduction to Matrices</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "ch02-matrices.html#chapter2-section1-heading-2",
+    "href": "ch02-matrices.html#chapter2-section1-heading-2",
+    "title": "Introduction to Matrices",
+    "section": "2.3 chapter2 section1 Heading 2",
+    "text": "2.3 chapter2 section1 Heading 2\nand some more content",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "ch02-matrices.html#chapter2-section2-heading-2",
+    "href": "ch02-matrices.html#chapter2-section2-heading-2",
+    "title": "Introduction to Matrices",
+    "section": "2.4 chapter2 section2 Heading 2",
+    "text": "2.4 chapter2 section2 Heading 2\nand some more content and some more content",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Matrices</span>"
     ]
   }
 ]
