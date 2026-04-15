@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>12&nbsp; LU, Cholesky, Determinants, and Numerical Conditioning – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch13-eigenvalues.html" rel="next">
+<link href="./ch11-projective-geometry.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch12-factorizations.html">Part IV — Matrix Factorizations and Eigenstructure</a></li><li class="breadcrumb-item"><a href="./ch12-factorizations.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LU, Cholesky, Determinants, and Numerical Conditioning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -247,7 +248,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch12-factorizations.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch12-factorizations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LU, Cholesky, Determinants, and Numerical Conditioning</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,27 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#lu-factorization-with-partial-pivoting" id="toc-lu-factorization-with-partial-pivoting" class="nav-link active" data-scroll-target="#lu-factorization-with-partial-pivoting"><span class="header-section-number">12.1</span> §12.1 LU Factorization with Partial Pivoting</a></li>
+  <li><a href="#cholesky-factorization" id="toc-cholesky-factorization" class="nav-link" data-scroll-target="#cholesky-factorization"><span class="header-section-number">12.2</span> §12.2 Cholesky Factorization</a></li>
+  <li><a href="#the-determinant-applied-perspective" id="toc-the-determinant-applied-perspective" class="nav-link" data-scroll-target="#the-determinant-applied-perspective"><span class="header-section-number">12.3</span> §12.3 The Determinant: Applied Perspective</a></li>
+  <li><a href="#condition-number-and-numerical-stability" id="toc-condition-number-and-numerical-stability" class="nav-link" data-scroll-target="#condition-number-and-numerical-stability"><span class="header-section-number">12.4</span> §12.4 Condition Number and Numerical Stability</a></li>
+  <li><a href="#sparse-matrices-formats-and-solvers" id="toc-sparse-matrices-formats-and-solvers" class="nav-link" data-scroll-target="#sparse-matrices-formats-and-solvers"><span class="header-section-number">12.5</span> §12.5 Sparse Matrices: Formats and Solvers</a></li>
+  <li><a href="#application-sparse-cholesky-for-factor-graph-optimization" id="toc-application-sparse-cholesky-for-factor-graph-optimization" class="nav-link" data-scroll-target="#application-sparse-cholesky-for-factor-graph-optimization"><span class="header-section-number">12.6</span> Application: Sparse Cholesky for Factor Graph Optimization</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">12.7</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch12-factorizations.html">Part IV — Matrix Factorizations and Eigenstructure</a></li><li class="breadcrumb-item"><a href="./ch12-factorizations.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LU, Cholesky, Determinants, and Numerical Conditioning</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LU, Cholesky, Determinants, and Numerical Conditioning</span></h1>
 </div>
 
 
@@ -447,8 +460,90 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="lu-factorization-with-partial-pivoting" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="lu-factorization-with-partial-pivoting"><span class="header-section-number">12.1</span> §12.1 LU Factorization with Partial Pivoting</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="cholesky-factorization" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="cholesky-factorization"><span class="header-section-number">12.2</span> §12.2 Cholesky Factorization</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-determinant-applied-perspective" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="the-determinant-applied-perspective"><span class="header-section-number">12.3</span> §12.3 The Determinant: Applied Perspective</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="condition-number-and-numerical-stability" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="condition-number-and-numerical-stability"><span class="header-section-number">12.4</span> §12.4 Condition Number and Numerical Stability</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sparse-matrices-formats-and-solvers" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="sparse-matrices-formats-and-solvers"><span class="header-section-number">12.5</span> §12.5 Sparse Matrices: Formats and Solvers</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-sparse-cholesky-for-factor-graph-optimization" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="application-sparse-cholesky-for-factor-graph-optimization"><span class="header-section-number">12.6</span> Application: Sparse Cholesky for Factor Graph Optimization</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">12.7</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +948,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch11-projective-geometry.html" class="pagination-link" aria-label="Projective Geometry and Homography">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Projective Geometry and Homography</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch13-eigenvalues.html" class="pagination-link" aria-label="Eigenvalues and the Characteristic Equation">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Eigenvalues and the Characteristic Equation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

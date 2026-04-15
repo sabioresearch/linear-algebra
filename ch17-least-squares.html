@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>17&nbsp; Projections, Pseudoinverse, and Least Squares – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch18-svd.html" rel="next">
+<link href="./ch16-orthogonality.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch15-norms.html">Part V — Orthogonality, Projections, and Least Squares</a></li><li class="breadcrumb-item"><a href="./ch17-least-squares.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Projections, Pseudoinverse, and Least Squares</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -288,7 +289,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch17-least-squares.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch17-least-squares.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Projections, Pseudoinverse, and Least Squares</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,30 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#orthogonal-projection-onto-a-subspace" id="toc-orthogonal-projection-onto-a-subspace" class="nav-link active" data-scroll-target="#orthogonal-projection-onto-a-subspace"><span class="header-section-number">17.1</span> §17.1 Orthogonal Projection onto a Subspace</a></li>
+  <li><a href="#the-pseudoinverse-moorepenrose-conditions" id="toc-the-pseudoinverse-moorepenrose-conditions" class="nav-link" data-scroll-target="#the-pseudoinverse-moorepenrose-conditions"><span class="header-section-number">17.2</span> §17.2 The Pseudoinverse: Moore–Penrose Conditions</a></li>
+  <li><a href="#left-vs.-right-pseudoinverse" id="toc-left-vs.-right-pseudoinverse" class="nav-link" data-scroll-target="#left-vs.-right-pseudoinverse"><span class="header-section-number">17.3</span> §17.3 Left vs.&nbsp;Right Pseudoinverse</a></li>
+  <li><a href="#the-normal-equations" id="toc-the-normal-equations" class="nav-link" data-scroll-target="#the-normal-equations"><span class="header-section-number">17.4</span> §17.4 The Normal Equations</a></li>
+  <li><a href="#solver-comparison-qr-vs.-svd-vs.-normal-equations" id="toc-solver-comparison-qr-vs.-svd-vs.-normal-equations" class="nav-link" data-scroll-target="#solver-comparison-qr-vs.-svd-vs.-normal-equations"><span class="header-section-number">17.5</span> §17.5 Solver Comparison: QR vs.&nbsp;SVD vs.&nbsp;Normal Equations</a></li>
+  <li><a href="#weighted-and-constrained-least-squares" id="toc-weighted-and-constrained-least-squares" class="nav-link" data-scroll-target="#weighted-and-constrained-least-squares"><span class="header-section-number">17.6</span> §17.6 Weighted and Constrained Least Squares</a></li>
+  <li><a href="#regularized-least-squares" id="toc-regularized-least-squares" class="nav-link" data-scroll-target="#regularized-least-squares"><span class="header-section-number">17.7</span> §17.7 Regularized Least Squares</a></li>
+  <li><a href="#large-scale-least-squares-iterative-methods" id="toc-large-scale-least-squares-iterative-methods" class="nav-link" data-scroll-target="#large-scale-least-squares-iterative-methods"><span class="header-section-number">17.8</span> §17.8 Large-Scale Least Squares: Iterative Methods</a></li>
+  <li><a href="#application-calibrating-a-depth-sensor" id="toc-application-calibrating-a-depth-sensor" class="nav-link" data-scroll-target="#application-calibrating-a-depth-sensor"><span class="header-section-number">17.9</span> Application: Calibrating a Depth Sensor</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">17.10</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch15-norms.html">Part V — Orthogonality, Projections, and Least Squares</a></li><li class="breadcrumb-item"><a href="./ch17-least-squares.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Projections, Pseudoinverse, and Least Squares</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Projections, Pseudoinverse, and Least Squares</span></h1>
 </div>
 
 
@@ -447,8 +463,129 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="orthogonal-projection-onto-a-subspace" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="orthogonal-projection-onto-a-subspace"><span class="header-section-number">17.1</span> §17.1 Orthogonal Projection onto a Subspace</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-pseudoinverse-moorepenrose-conditions" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="the-pseudoinverse-moorepenrose-conditions"><span class="header-section-number">17.2</span> §17.2 The Pseudoinverse: Moore–Penrose Conditions</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="left-vs.-right-pseudoinverse" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="left-vs.-right-pseudoinverse"><span class="header-section-number">17.3</span> §17.3 Left vs.&nbsp;Right Pseudoinverse</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-normal-equations" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="the-normal-equations"><span class="header-section-number">17.4</span> §17.4 The Normal Equations</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="solver-comparison-qr-vs.-svd-vs.-normal-equations" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="solver-comparison-qr-vs.-svd-vs.-normal-equations"><span class="header-section-number">17.5</span> §17.5 Solver Comparison: QR vs.&nbsp;SVD vs.&nbsp;Normal Equations</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="weighted-and-constrained-least-squares" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="weighted-and-constrained-least-squares"><span class="header-section-number">17.6</span> §17.6 Weighted and Constrained Least Squares</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="regularized-least-squares" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="regularized-least-squares"><span class="header-section-number">17.7</span> §17.7 Regularized Least Squares</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="large-scale-least-squares-iterative-methods" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="large-scale-least-squares-iterative-methods"><span class="header-section-number">17.8</span> §17.8 Large-Scale Least Squares: Iterative Methods</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-calibrating-a-depth-sensor" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="application-calibrating-a-depth-sensor"><span class="header-section-number">17.9</span> Application: Calibrating a Depth Sensor</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">17.10</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +990,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch16-orthogonality.html" class="pagination-link" aria-label="Orthogonal Sets, Gram–Schmidt, and QR">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Orthogonal Sets, Gram–Schmidt, and QR</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch18-svd.html" class="pagination-link" aria-label="Singular Value Decomposition">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Singular Value Decomposition</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

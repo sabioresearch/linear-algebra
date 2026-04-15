@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>18&nbsp; Singular Value Decomposition – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch19-covariance.html" rel="next">
+<link href="./ch17-least-squares.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch18-svd.html">Part VI — Decompositions and Statistical Geometry</a></li><li class="breadcrumb-item"><a href="./ch18-svd.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Singular Value Decomposition</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -305,7 +306,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch18-svd.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch18-svd.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Singular Value Decomposition</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,28 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#geometry-of-the-svd-a-uσvᵀ" id="toc-geometry-of-the-svd-a-uσvᵀ" class="nav-link active" data-scroll-target="#geometry-of-the-svd-a-uσvᵀ"><span class="header-section-number">18.1</span> §18.1 Geometry of the SVD: A = UΣVᵀ</a></li>
+  <li><a href="#singular-values-and-their-meaning" id="toc-singular-values-and-their-meaning" class="nav-link" data-scroll-target="#singular-values-and-their-meaning"><span class="header-section-number">18.2</span> §18.2 Singular Values and Their Meaning</a></li>
+  <li><a href="#low-rank-approximation-eckartyoung-theorem" id="toc-low-rank-approximation-eckartyoung-theorem" class="nav-link" data-scroll-target="#low-rank-approximation-eckartyoung-theorem"><span class="header-section-number">18.3</span> §18.3 Low-Rank Approximation: Eckart–Young Theorem</a></li>
+  <li><a href="#kabsch-algorithm-optimal-rotation-between-point-sets" id="toc-kabsch-algorithm-optimal-rotation-between-point-sets" class="nav-link" data-scroll-target="#kabsch-algorithm-optimal-rotation-between-point-sets"><span class="header-section-number">18.4</span> §18.4 Kabsch Algorithm: Optimal Rotation Between Point Sets</a></li>
+  <li><a href="#hand-eye-calibration-ax-xb" id="toc-hand-eye-calibration-ax-xb" class="nav-link" data-scroll-target="#hand-eye-calibration-ax-xb"><span class="header-section-number">18.5</span> §18.5 Hand-Eye Calibration: AX = XB</a></li>
+  <li><a href="#computing-svd-in-practice" id="toc-computing-svd-in-practice" class="nav-link" data-scroll-target="#computing-svd-in-practice"><span class="header-section-number">18.6</span> §18.6 Computing SVD in Practice</a></li>
+  <li><a href="#application-icp-point-cloud-registration" id="toc-application-icp-point-cloud-registration" class="nav-link" data-scroll-target="#application-icp-point-cloud-registration"><span class="header-section-number">18.7</span> Application: ICP Point Cloud Registration</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">18.8</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch18-svd.html">Part VI — Decompositions and Statistical Geometry</a></li><li class="breadcrumb-item"><a href="./ch18-svd.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Singular Value Decomposition</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Singular Value Decomposition</span></h1>
 </div>
 
 
@@ -447,8 +461,103 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="geometry-of-the-svd-a-uσvᵀ" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="geometry-of-the-svd-a-uσvᵀ"><span class="header-section-number">18.1</span> §18.1 Geometry of the SVD: A = UΣVᵀ</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="singular-values-and-their-meaning" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="singular-values-and-their-meaning"><span class="header-section-number">18.2</span> §18.2 Singular Values and Their Meaning</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="low-rank-approximation-eckartyoung-theorem" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="low-rank-approximation-eckartyoung-theorem"><span class="header-section-number">18.3</span> §18.3 Low-Rank Approximation: Eckart–Young Theorem</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="kabsch-algorithm-optimal-rotation-between-point-sets" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="kabsch-algorithm-optimal-rotation-between-point-sets"><span class="header-section-number">18.4</span> §18.4 Kabsch Algorithm: Optimal Rotation Between Point Sets</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hand-eye-calibration-ax-xb" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="hand-eye-calibration-ax-xb"><span class="header-section-number">18.5</span> §18.5 Hand-Eye Calibration: AX = XB</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="computing-svd-in-practice" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="computing-svd-in-practice"><span class="header-section-number">18.6</span> §18.6 Computing SVD in Practice</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-icp-point-cloud-registration" class="level2" data-number="18.7">
+<h2 data-number="18.7" class="anchored" data-anchor-id="application-icp-point-cloud-registration"><span class="header-section-number">18.7</span> Application: ICP Point Cloud Registration</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="18.8">
+<h2 data-number="18.8" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">18.8</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +962,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch17-least-squares.html" class="pagination-link" aria-label="Projections, Pseudoinverse, and Least Squares">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Projections, Pseudoinverse, and Least Squares</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch19-covariance.html" class="pagination-link" aria-label="Covariance, Statistical Geometry, and the Matrix Square Root">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Covariance, Statistical Geometry, and the Matrix Square Root</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

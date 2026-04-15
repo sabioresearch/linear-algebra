@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>6&nbsp; Linear Transformations and Their Matrices – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch07-affine-transforms.html" rel="next">
+<link href="./ch05-matrix-equations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch05-matrix-equations.html">Part II — Linear Maps and Coordinate Changes</a></li><li class="breadcrumb-item"><a href="./ch06-linear-transforms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Linear Transformations and Their Matrices</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -189,7 +190,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch06-linear-transforms.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch06-linear-transforms.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Linear Transformations and Their Matrices</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,28 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#definition-and-consequences-of-linearity" id="toc-definition-and-consequences-of-linearity" class="nav-link active" data-scroll-target="#definition-and-consequences-of-linearity"><span class="header-section-number">6.1</span> §6.1 Definition and Consequences of Linearity</a></li>
+  <li><a href="#a-visual-zoo-of-2d-transformations" id="toc-a-visual-zoo-of-2d-transformations" class="nav-link" data-scroll-target="#a-visual-zoo-of-2d-transformations"><span class="header-section-number">6.2</span> §6.2 A Visual Zoo of 2D Transformations</a></li>
+  <li><a href="#reading-the-standard-matrix-from-column-images" id="toc-reading-the-standard-matrix-from-column-images" class="nav-link" data-scroll-target="#reading-the-standard-matrix-from-column-images"><span class="header-section-number">6.3</span> §6.3 Reading the Standard Matrix from Column Images</a></li>
+  <li><a href="#kernel-image-and-the-dimension-theorem" id="toc-kernel-image-and-the-dimension-theorem" class="nav-link" data-scroll-target="#kernel-image-and-the-dimension-theorem"><span class="header-section-number">6.4</span> §6.4 Kernel, Image, and the Dimension Theorem</a></li>
+  <li><a href="#composition-matrix-multiplication" id="toc-composition-matrix-multiplication" class="nav-link" data-scroll-target="#composition-matrix-multiplication"><span class="header-section-number">6.5</span> §6.5 Composition = Matrix Multiplication</a></li>
+  <li><a href="#change-of-basis" id="toc-change-of-basis" class="nav-link" data-scroll-target="#change-of-basis"><span class="header-section-number">6.6</span> §6.6 Change of Basis</a></li>
+  <li><a href="#application-image-warping" id="toc-application-image-warping" class="nav-link" data-scroll-target="#application-image-warping"><span class="header-section-number">6.7</span> Application: Image Warping</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">6.8</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch05-matrix-equations.html">Part II — Linear Maps and Coordinate Changes</a></li><li class="breadcrumb-item"><a href="./ch06-linear-transforms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Linear Transformations and Their Matrices</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Linear Transformations and Their Matrices</span></h1>
 </div>
 
 
@@ -447,8 +461,103 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="definition-and-consequences-of-linearity" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="definition-and-consequences-of-linearity"><span class="header-section-number">6.1</span> §6.1 Definition and Consequences of Linearity</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-visual-zoo-of-2d-transformations" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="a-visual-zoo-of-2d-transformations"><span class="header-section-number">6.2</span> §6.2 A Visual Zoo of 2D Transformations</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-the-standard-matrix-from-column-images" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="reading-the-standard-matrix-from-column-images"><span class="header-section-number">6.3</span> §6.3 Reading the Standard Matrix from Column Images</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="kernel-image-and-the-dimension-theorem" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="kernel-image-and-the-dimension-theorem"><span class="header-section-number">6.4</span> §6.4 Kernel, Image, and the Dimension Theorem</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="composition-matrix-multiplication" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="composition-matrix-multiplication"><span class="header-section-number">6.5</span> §6.5 Composition = Matrix Multiplication</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="change-of-basis" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="change-of-basis"><span class="header-section-number">6.6</span> §6.6 Change of Basis</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-image-warping" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="application-image-warping"><span class="header-section-number">6.7</span> Application: Image Warping</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">6.8</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +962,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch05-matrix-equations.html" class="pagination-link" aria-label="Matrix Equations, Column Space, and Linear Independence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Matrix Equations, Column Space, and Linear Independence</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch07-affine-transforms.html" class="pagination-link" aria-label="Affine Transformations and Homogeneous Coordinates">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Affine Transformations and Homogeneous Coordinates</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

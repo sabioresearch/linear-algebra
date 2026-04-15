@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>21&nbsp; Matrix Calculus – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch22-jacobians.html" rel="next">
+<link href="./ch20-pca.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch21-matrix-calculus.html">Part VII — Optimization, Estimation, and Applied 3D Geometry</a></li><li class="breadcrumb-item"><a href="./ch21-matrix-calculus.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matrix Calculus</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -334,7 +335,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch21-matrix-calculus.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch21-matrix-calculus.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matrix Calculus</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,28 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#layout-conventions" id="toc-layout-conventions" class="nav-link active" data-scroll-target="#layout-conventions"><span class="header-section-number">21.1</span> §21.1 Layout Conventions</a></li>
+  <li><a href="#scalar-by-vector-gradients" id="toc-scalar-by-vector-gradients" class="nav-link" data-scroll-target="#scalar-by-vector-gradients"><span class="header-section-number">21.2</span> §21.2 Scalar-by-Vector: Gradients</a></li>
+  <li><a href="#vector-by-vector-jacobians" id="toc-vector-by-vector-jacobians" class="nav-link" data-scroll-target="#vector-by-vector-jacobians"><span class="header-section-number">21.3</span> §21.3 Vector-by-Vector: Jacobians</a></li>
+  <li><a href="#scalar-by-matrix-weight-gradients" id="toc-scalar-by-matrix-weight-gradients" class="nav-link" data-scroll-target="#scalar-by-matrix-weight-gradients"><span class="header-section-number">21.4</span> §21.4 Scalar-by-Matrix: Weight Gradients</a></li>
+  <li><a href="#the-chain-rule-in-matrix-form" id="toc-the-chain-rule-in-matrix-form" class="nav-link" data-scroll-target="#the-chain-rule-in-matrix-form"><span class="header-section-number">21.5</span> §21.5 The Chain Rule in Matrix Form</a></li>
+  <li><a href="#the-hessian-matrix" id="toc-the-hessian-matrix" class="nav-link" data-scroll-target="#the-hessian-matrix"><span class="header-section-number">21.6</span> §21.6 The Hessian Matrix</a></li>
+  <li><a href="#key-identity-reference-table" id="toc-key-identity-reference-table" class="nav-link" data-scroll-target="#key-identity-reference-table"><span class="header-section-number">21.7</span> §21.7 Key Identity Reference Table</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">21.8</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch21-matrix-calculus.html">Part VII — Optimization, Estimation, and Applied 3D Geometry</a></li><li class="breadcrumb-item"><a href="./ch21-matrix-calculus.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matrix Calculus</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matrix Calculus</span></h1>
 </div>
 
 
@@ -447,8 +461,103 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="layout-conventions" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="layout-conventions"><span class="header-section-number">21.1</span> §21.1 Layout Conventions</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="scalar-by-vector-gradients" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="scalar-by-vector-gradients"><span class="header-section-number">21.2</span> §21.2 Scalar-by-Vector: Gradients</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="vector-by-vector-jacobians" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="vector-by-vector-jacobians"><span class="header-section-number">21.3</span> §21.3 Vector-by-Vector: Jacobians</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="scalar-by-matrix-weight-gradients" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="scalar-by-matrix-weight-gradients"><span class="header-section-number">21.4</span> §21.4 Scalar-by-Matrix: Weight Gradients</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-chain-rule-in-matrix-form" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="the-chain-rule-in-matrix-form"><span class="header-section-number">21.5</span> §21.5 The Chain Rule in Matrix Form</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-hessian-matrix" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="the-hessian-matrix"><span class="header-section-number">21.6</span> §21.6 The Hessian Matrix</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="key-identity-reference-table" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="key-identity-reference-table"><span class="header-section-number">21.7</span> §21.7 Key Identity Reference Table</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="21.8">
+<h2 data-number="21.8" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">21.8</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +962,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch20-pca.html" class="pagination-link" aria-label="Principal Component Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Principal Component Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch22-jacobians.html" class="pagination-link" aria-label="Jacobians, Inverse Kinematics, and Nonlinear Optimization">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Jacobians, Inverse Kinematics, and Nonlinear Optimization</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

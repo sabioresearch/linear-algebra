@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>9&nbsp; Rigid Body Transformations and SE(3) – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch10-camera-models.html" rel="next">
+<link href="./ch08-rotations.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch08-rotations.html">Part III — 3D Geometry for Robotics and Vision</a></li><li class="breadcrumb-item"><a href="./ch09-rigid-body.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rigid Body Transformations and SE(3)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -218,7 +219,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch09-rigid-body.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch09-rigid-body.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rigid Body Transformations and SE(3)</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,28 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#the-special-euclidean-group-se3" id="toc-the-special-euclidean-group-se3" class="nav-link active" data-scroll-target="#the-special-euclidean-group-se3"><span class="header-section-number">9.1</span> §9.1 The Special Euclidean Group SE(3)</a></li>
+  <li><a href="#the-44-transformation-matrix" id="toc-the-44-transformation-matrix" class="nav-link" data-scroll-target="#the-44-transformation-matrix"><span class="header-section-number">9.2</span> §9.2 The 4×4 Transformation Matrix</a></li>
+  <li><a href="#inverse-and-composition" id="toc-inverse-and-composition" class="nav-link" data-scroll-target="#inverse-and-composition"><span class="header-section-number">9.3</span> §9.3 Inverse and Composition</a></li>
+  <li><a href="#points-vectors-and-normals-transform-differently" id="toc-points-vectors-and-normals-transform-differently" class="nav-link" data-scroll-target="#points-vectors-and-normals-transform-differently"><span class="header-section-number">9.4</span> §9.4 Points, Vectors, and Normals Transform Differently</a></li>
+  <li><a href="#forward-kinematics-as-a-product-of-se3-matrices" id="toc-forward-kinematics-as-a-product-of-se3-matrices" class="nav-link" data-scroll-target="#forward-kinematics-as-a-product-of-se3-matrices"><span class="header-section-number">9.5</span> §9.5 Forward Kinematics as a Product of SE(3) Matrices</a></li>
+  <li><a href="#dual-quaternions-optional" id="toc-dual-quaternions-optional" class="nav-link" data-scroll-target="#dual-quaternions-optional"><span class="header-section-number">9.6</span> §9.6 Dual Quaternions (Optional)</a></li>
+  <li><a href="#application-transforming-a-point-cloud-to-world-frame" id="toc-application-transforming-a-point-cloud-to-world-frame" class="nav-link" data-scroll-target="#application-transforming-a-point-cloud-to-world-frame"><span class="header-section-number">9.7</span> Application: Transforming a Point Cloud to World Frame</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">9.8</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch08-rotations.html">Part III — 3D Geometry for Robotics and Vision</a></li><li class="breadcrumb-item"><a href="./ch09-rigid-body.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rigid Body Transformations and SE(3)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rigid Body Transformations and SE(3)</span></h1>
 </div>
 
 
@@ -447,8 +461,103 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="the-special-euclidean-group-se3" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-special-euclidean-group-se3"><span class="header-section-number">9.1</span> §9.1 The Special Euclidean Group SE(3)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-44-transformation-matrix" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="the-44-transformation-matrix"><span class="header-section-number">9.2</span> §9.2 The 4×4 Transformation Matrix</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="inverse-and-composition" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="inverse-and-composition"><span class="header-section-number">9.3</span> §9.3 Inverse and Composition</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="points-vectors-and-normals-transform-differently" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="points-vectors-and-normals-transform-differently"><span class="header-section-number">9.4</span> §9.4 Points, Vectors, and Normals Transform Differently</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="forward-kinematics-as-a-product-of-se3-matrices" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="forward-kinematics-as-a-product-of-se3-matrices"><span class="header-section-number">9.5</span> §9.5 Forward Kinematics as a Product of SE(3) Matrices</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dual-quaternions-optional" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="dual-quaternions-optional"><span class="header-section-number">9.6</span> §9.6 Dual Quaternions (Optional)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-transforming-a-point-cloud-to-world-frame" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="application-transforming-a-point-cloud-to-world-frame"><span class="header-section-number">9.7</span> Application: Transforming a Point Cloud to World Frame</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">9.8</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +962,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch08-rotations.html" class="pagination-link" aria-label="3D Rotations and SO(3)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3D Rotations and SO(3)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch10-camera-models.html" class="pagination-link" aria-label="Camera Models and Projection Matrices">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Camera Models and Projection Matrices</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Linear Algebra for ML, CV, and Robotics</title>
+<title>8&nbsp; 3D Rotations and SO(3) – Linear Algebra for ML, CV, and Robotics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-f-tensors.html" rel="prev">
+<link href="./ch09-rigid-body.html" rel="next">
+<link href="./ch07-affine-transforms.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +117,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch08-rotations.html">Part III — 3D Geometry for Robotics and Vision</a></li><li class="breadcrumb-item"><a href="./ch08-rotations.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3D Rotations and SO(3)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -212,7 +213,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch08-rotations.html" class="sidebar-item-text sidebar-link">
+  <a href="./ch08-rotations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3D Rotations and SO(3)</span></span></a>
   </div>
 </li>
@@ -413,7 +414,7 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -422,15 +423,28 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#rotation-matrices-so3" id="toc-rotation-matrices-so3" class="nav-link active" data-scroll-target="#rotation-matrices-so3"><span class="header-section-number">8.1</span> §8.1 Rotation Matrices: SO(3)</a></li>
+  <li><a href="#euler-angles-and-gimbal-lock" id="toc-euler-angles-and-gimbal-lock" class="nav-link" data-scroll-target="#euler-angles-and-gimbal-lock"><span class="header-section-number">8.2</span> §8.2 Euler Angles and Gimbal Lock</a></li>
+  <li><a href="#axis-angle-rodrigues-formula" id="toc-axis-angle-rodrigues-formula" class="nav-link" data-scroll-target="#axis-angle-rodrigues-formula"><span class="header-section-number">8.3</span> §8.3 Axis-Angle: Rodrigues’ Formula</a></li>
+  <li><a href="#quaternions-algebra-and-rotation" id="toc-quaternions-algebra-and-rotation" class="nav-link" data-scroll-target="#quaternions-algebra-and-rotation"><span class="header-section-number">8.4</span> §8.4 Quaternions: Algebra and Rotation</a></li>
+  <li><a href="#slerp-interpolating-rotations" id="toc-slerp-interpolating-rotations" class="nav-link" data-scroll-target="#slerp-interpolating-rotations"><span class="header-section-number">8.5</span> §8.5 SLERP: Interpolating Rotations</a></li>
+  <li><a href="#conversion-table-all-four-representations" id="toc-conversion-table-all-four-representations" class="nav-link" data-scroll-target="#conversion-table-all-four-representations"><span class="header-section-number">8.6</span> §8.6 Conversion Table: All Four Representations</a></li>
+  <li><a href="#application-visualizing-camera-orientation" id="toc-application-visualizing-camera-orientation" class="nav-link" data-scroll-target="#application-visualizing-camera-orientation"><span class="header-section-number">8.7</span> Application: Visualizing Camera Orientation</a></li>
+  <li><a href="#exercises-and-solutions" id="toc-exercises-and-solutions" class="nav-link" data-scroll-target="#exercises-and-solutions"><span class="header-section-number">8.8</span> Exercises and Solutions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch08-rotations.html">Part III — 3D Geometry for Robotics and Vision</a></li><li class="breadcrumb-item"><a href="./ch08-rotations.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3D Rotations and SO(3)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">3D Rotations and SO(3)</span></h1>
 </div>
 
 
@@ -447,8 +461,103 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
+<section id="rotation-matrices-so3" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="rotation-matrices-so3"><span class="header-section-number">8.1</span> §8.1 Rotation Matrices: SO(3)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="euler-angles-and-gimbal-lock" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="euler-angles-and-gimbal-lock"><span class="header-section-number">8.2</span> §8.2 Euler Angles and Gimbal Lock</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="axis-angle-rodrigues-formula" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="axis-angle-rodrigues-formula"><span class="header-section-number">8.3</span> §8.3 Axis-Angle: Rodrigues’ Formula</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="quaternions-algebra-and-rotation" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="quaternions-algebra-and-rotation"><span class="header-section-number">8.4</span> §8.4 Quaternions: Algebra and Rotation</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="slerp-interpolating-rotations" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="slerp-interpolating-rotations"><span class="header-section-number">8.5</span> §8.5 SLERP: Interpolating Rotations</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="conversion-table-all-four-representations" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="conversion-table-all-four-representations"><span class="header-section-number">8.6</span> §8.6 Conversion Table: All Four Representations</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="application-visualizing-camera-orientation" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="application-visualizing-camera-orientation"><span class="header-section-number">8.7</span> Application: Visualizing Camera Orientation</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Coming soon.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises-and-solutions" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="exercises-and-solutions"><span class="header-section-number">8.8</span> Exercises and Solutions</h2>
+<p>::: {{.callout-note appearance=“minimal”}} <em>Exercises and solutions are coming soon.</em> :::</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -853,11 +962,14 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./app-f-tensors.html" class="pagination-link" aria-label="Appendix F: Tensor Notation for Deep Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix F: Tensor Notation for Deep Learning</span></span>
+      <a href="./ch07-affine-transforms.html" class="pagination-link" aria-label="Affine Transformations and Homogeneous Coordinates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Affine Transformations and Homogeneous Coordinates</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ch09-rigid-body.html" class="pagination-link" aria-label="Rigid Body Transformations and SE(3)">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rigid Body Transformations and SE(3)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
