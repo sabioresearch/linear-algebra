@@ -492,14 +492,14 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#sec-se3-group" id="toc-sec-se3-group" class="nav-link active" data-scroll-target="#sec-se3-group"><span class="header-section-number">9.1</span> §9.1 The Special Euclidean Group SE(3)</a>
+  <li><a href="#sec-se3-group" id="toc-sec-se3-group" class="nav-link active" data-scroll-target="#sec-se3-group"><span class="header-section-number">9.1</span> The Special Euclidean Group SE(3)</a>
   <ul class="collapse">
   <li><a href="#why-a-group" id="toc-why-a-group" class="nav-link" data-scroll-target="#why-a-group"><span class="header-section-number">9.1.1</span> Why a Group?</a></li>
   <li><a href="#non-commutativity" id="toc-non-commutativity" class="nav-link" data-scroll-target="#non-commutativity"><span class="header-section-number">9.1.2</span> Non-Commutativity</a></li>
   <li><a href="#the-group-identity-and-inverse" id="toc-the-group-identity-and-inverse" class="nav-link" data-scroll-target="#the-group-identity-and-inverse"><span class="header-section-number">9.1.3</span> The Group Identity and Inverse</a></li>
   <li><a href="#se3-vs-naive-r-t-pairs" id="toc-se3-vs-naive-r-t-pairs" class="nav-link" data-scroll-target="#se3-vs-naive-r-t-pairs"><span class="header-section-number">9.1.4</span> SE(3) vs Naive (R, t) Pairs</a></li>
   </ul></li>
-  <li><a href="#sec-se3-4x4" id="toc-sec-se3-4x4" class="nav-link" data-scroll-target="#sec-se3-4x4"><span class="header-section-number">9.2</span> §9.2 The 4×4 Transformation Matrix</a>
+  <li><a href="#sec-se3-4x4" id="toc-sec-se3-4x4" class="nav-link" data-scroll-target="#sec-se3-4x4"><span class="header-section-number">9.2</span> The 4×4 Transformation Matrix</a>
   <ul class="collapse">
   <li><a href="#building-a-44-matrix" id="toc-building-a-44-matrix" class="nav-link" data-scroll-target="#building-a-44-matrix"><span class="header-section-number">9.2.1</span> Building a 4×4 Matrix</a></li>
   <li><a href="#applying-t-to-a-point" id="toc-applying-t-to-a-point" class="nav-link" data-scroll-target="#applying-t-to-a-point"><span class="header-section-number">9.2.2</span> Applying T to a Point</a></li>
@@ -507,28 +507,28 @@ window.Quarto = {
   <li><a href="#se3-vs-gl4-not-every-44-matrix-is-a-rigid-transform" id="toc-se3-vs-gl4-not-every-44-matrix-is-a-rigid-transform" class="nav-link" data-scroll-target="#se3-vs-gl4-not-every-44-matrix-is-a-rigid-transform"><span class="header-section-number">9.2.4</span> SE(3) vs GL(4): Not Every 4×4 Matrix Is a Rigid Transform</a></li>
   <li><a href="#the-6-dof-pose-what-each-number-means" id="toc-the-6-dof-pose-what-each-number-means" class="nav-link" data-scroll-target="#the-6-dof-pose-what-each-number-means"><span class="header-section-number">9.2.5</span> The 6-DoF Pose: What Each Number Means</a></li>
   </ul></li>
-  <li><a href="#sec-se3-inverse-composition" id="toc-sec-se3-inverse-composition" class="nav-link" data-scroll-target="#sec-se3-inverse-composition"><span class="header-section-number">9.3</span> §9.3 Inverse and Composition</a>
+  <li><a href="#sec-se3-inverse-composition" id="toc-sec-se3-inverse-composition" class="nav-link" data-scroll-target="#sec-se3-inverse-composition"><span class="header-section-number">9.3</span> Inverse and Composition</a>
   <ul class="collapse">
   <li><a href="#closed-form-inverse" id="toc-closed-form-inverse" class="nav-link" data-scroll-target="#closed-form-inverse"><span class="header-section-number">9.3.1</span> Closed-Form Inverse</a></li>
   <li><a href="#chaining-frames-world-robot-sensor-object" id="toc-chaining-frames-world-robot-sensor-object" class="nav-link" data-scroll-target="#chaining-frames-world-robot-sensor-object"><span class="header-section-number">9.3.2</span> Chaining Frames: World → Robot → Sensor → Object</a></li>
   <li><a href="#inverting-the-chain-going-backwards" id="toc-inverting-the-chain-going-backwards" class="nav-link" data-scroll-target="#inverting-the-chain-going-backwards"><span class="header-section-number">9.3.3</span> Inverting the Chain: Going Backwards</a></li>
   <li><a href="#frame-subscript-bookkeeping" id="toc-frame-subscript-bookkeeping" class="nav-link" data-scroll-target="#frame-subscript-bookkeeping"><span class="header-section-number">9.3.4</span> Frame Subscript Bookkeeping</a></li>
   </ul></li>
-  <li><a href="#sec-se3-normals" id="toc-sec-se3-normals" class="nav-link" data-scroll-target="#sec-se3-normals"><span class="header-section-number">9.4</span> §9.4 Points, Vectors, and Normals Transform Differently</a>
+  <li><a href="#sec-se3-normals" id="toc-sec-se3-normals" class="nav-link" data-scroll-target="#sec-se3-normals"><span class="header-section-number">9.4</span> Points, Vectors, and Normals Transform Differently</a>
   <ul class="collapse">
   <li><a href="#points-vs-direction-vectors" id="toc-points-vs-direction-vectors" class="nav-link" data-scroll-target="#points-vs-direction-vectors"><span class="header-section-number">9.4.1</span> Points vs Direction Vectors</a></li>
   <li><a href="#why-normals-are-special" id="toc-why-normals-are-special" class="nav-link" data-scroll-target="#why-normals-are-special"><span class="header-section-number">9.4.2</span> Why Normals Are Special</a></li>
   <li><a href="#pure-rotation-all-three-behave-consistently" id="toc-pure-rotation-all-three-behave-consistently" class="nav-link" data-scroll-target="#pure-rotation-all-three-behave-consistently"><span class="header-section-number">9.4.3</span> Pure Rotation: All Three Behave Consistently</a></li>
   <li><a href="#the-bug-in-practice" id="toc-the-bug-in-practice" class="nav-link" data-scroll-target="#the-bug-in-practice"><span class="header-section-number">9.4.4</span> The Bug in Practice</a></li>
   </ul></li>
-  <li><a href="#sec-se3-forward-kinematics" id="toc-sec-se3-forward-kinematics" class="nav-link" data-scroll-target="#sec-se3-forward-kinematics"><span class="header-section-number">9.5</span> §9.5 Forward Kinematics as a Product of SE(3) Matrices</a>
+  <li><a href="#sec-se3-forward-kinematics" id="toc-sec-se3-forward-kinematics" class="nav-link" data-scroll-target="#sec-se3-forward-kinematics"><span class="header-section-number">9.5</span> Forward Kinematics as a Product of SE(3) Matrices</a>
   <ul class="collapse">
   <li><a href="#a-2-link-planar-arm" id="toc-a-2-link-planar-arm" class="nav-link" data-scroll-target="#a-2-link-planar-arm"><span class="header-section-number">9.5.1</span> A 2-Link Planar Arm</a></li>
   <li><a href="#visualising-the-arm" id="toc-visualising-the-arm" class="nav-link" data-scroll-target="#visualising-the-arm"><span class="header-section-number">9.5.2</span> Visualising the Arm</a></li>
   <li><a href="#sweeping-the-workspace" id="toc-sweeping-the-workspace" class="nav-link" data-scroll-target="#sweeping-the-workspace"><span class="header-section-number">9.5.3</span> Sweeping the Workspace</a></li>
   <li><a href="#denavithartenberg-convention" id="toc-denavithartenberg-convention" class="nav-link" data-scroll-target="#denavithartenberg-convention"><span class="header-section-number">9.5.4</span> Denavit–Hartenberg Convention</a></li>
   </ul></li>
-  <li><a href="#sec-se3-dual-quaternions" id="toc-sec-se3-dual-quaternions" class="nav-link" data-scroll-target="#sec-se3-dual-quaternions"><span class="header-section-number">9.6</span> §9.6 Dual Quaternions <em>(Optional)</em></a>
+  <li><a href="#sec-se3-dual-quaternions" id="toc-sec-se3-dual-quaternions" class="nav-link" data-scroll-target="#sec-se3-dual-quaternions"><span class="header-section-number">9.6</span> Dual Quaternions <em>(Optional)</em></a>
   <ul class="collapse">
   <li><a href="#building-a-dual-quaternion" id="toc-building-a-dual-quaternion" class="nav-link" data-scroll-target="#building-a-dual-quaternion"><span class="header-section-number">9.6.1</span> Building a Dual Quaternion</a></li>
   <li><a href="#dual-quaternion-multiplication" id="toc-dual-quaternion-multiplication" class="nav-link" data-scroll-target="#dual-quaternion-multiplication"><span class="header-section-number">9.6.2</span> Dual Quaternion Multiplication</a></li>
@@ -580,7 +580,7 @@ window.Quarto = {
 
 
 <section id="sec-se3-group" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sec-se3-group"><span class="header-section-number">9.1</span> §9.1 The Special Euclidean Group SE(3)</h2>
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-se3-group"><span class="header-section-number">9.1</span> The Special Euclidean Group SE(3)</h2>
 <p>A <strong>rigid body transformation</strong> moves an object without deforming it: every distance and angle is preserved. It combines a rotation <span class="math inline">\(R \in \text{SO}(3)\)</span> with a translation <span class="math inline">\(\mathbf{t} \in \mathbb{R}^3\)</span> into a single algebraic object. The set of all such transformations forms the <strong>Special Euclidean Group</strong> SE(3).</p>
 <p><span class="math display">\[\text{SE}(3) = \left\{ (R, \mathbf{t}) \mid R \in \text{SO}(3),\;
 \mathbf{t} \in \mathbb{R}^3 \right\}\]</span></p>
@@ -595,7 +595,7 @@ window.Quarto = {
 = (R_2 R_1,\; R_2 \mathbf{t}_1 + \mathbf{t}_2)
 \]</span></p>
 <p>Notice that the translation part is <strong>not</strong> just <span class="math inline">\(\mathbf{t}_1 + \mathbf{t}_2\)</span>: the first translation gets rotated by <span class="math inline">\(R_2\)</span> before adding. This is exactly why you cannot treat rotation and translation independently when chaining frames.</p>
-<div id="afbc824f" class="cell" data-execution_count="1">
+<div id="bf7f23d6" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compose(R1, t1, R2, t2):</span>
@@ -639,7 +639,7 @@ t_composed = [0.7071 1.7071 0.    ]
 <section id="non-commutativity" class="level3" data-number="9.1.2">
 <h3 data-number="9.1.2" class="anchored" data-anchor-id="non-commutativity"><span class="header-section-number">9.1.2</span> Non-Commutativity</h3>
 <p>Like SO(3), SE(3) is <strong>non-commutative</strong>: the order of transforms matters.</p>
-<div id="6eb76bdb" class="cell" data-execution_count="2">
+<div id="3199328c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Ry(b):</span>
@@ -699,7 +699,7 @@ Same result? False</code></pre>
 (R, \mathbf{t})^{-1} = (R^T,\; -R^T \mathbf{t})
 \]</span></p>
 <p>This is cheap to compute — no matrix inversion needed.</p>
-<div id="e3435051" class="cell" data-execution_count="3">
+<div id="936c64ce" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -740,7 +740,7 @@ t_id = [0. 0. 0.]</code></pre>
 </section>
 </section>
 <section id="sec-se3-4x4" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="sec-se3-4x4"><span class="header-section-number">9.2</span> §9.2 The 4×4 Transformation Matrix</h2>
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-se3-4x4"><span class="header-section-number">9.2</span> The 4×4 Transformation Matrix</h2>
 <p>The composition law <span class="math inline">\((R_2 R_1,\; R_2\mathbf{t}_1 + \mathbf{t}_2)\)</span> is cumbersome to write out each time. The <strong>4×4 homogeneous matrix</strong> packages it so that ordinary matrix multiplication handles everything automatically.</p>
 <p><span class="math display">\[T = \begin{pmatrix} R &amp; \mathbf{t} \\ \mathbf{0}^T &amp; 1 \end{pmatrix}
 \in \mathbb{R}^{4 \times 4}
@@ -749,7 +749,7 @@ t_id = [0. 0. 0.]</code></pre>
 <hr>
 <section id="building-a-44-matrix" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="building-a-44-matrix"><span class="header-section-number">9.2.1</span> Building a 4×4 Matrix</h3>
-<div id="776fc0d4" class="cell" data-execution_count="4">
+<div id="9d9818fb" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -788,7 +788,7 @@ Bottom row: [0. 0. 0. 1.]</code></pre>
 <p>A 3D point <span class="math inline">\(\mathbf{p}\)</span> is lifted to a <strong>homogeneous</strong> 4-vector <span class="math inline">\(\tilde{p} = [p_x, p_y, p_z, 1]^T\)</span>. Then:</p>
 <p><span class="math display">\[T\tilde{p} = \begin{pmatrix}R\mathbf{p} + \mathbf{t}\\1\end{pmatrix}\]</span></p>
 <p>The <span class="math inline">\(w = 1\)</span> component tells you it is a <strong>point</strong> (not a direction vector).</p>
-<div id="19c08878" class="cell" data-execution_count="5">
+<div id="34ca28ac" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -826,7 +826,7 @@ Transformed      p' = [2. 1. 0.]
 <p><span class="math display">\[T_2 T_1 = \begin{pmatrix}R_2 R_1 &amp; R_2\mathbf{t}_1 + \mathbf{t}_2 \\
 \mathbf{0}^T &amp; 1\end{pmatrix}\]</span></p>
 <p>No special composition formula needed — standard <code>@</code> gives the right answer.</p>
-<div id="94bab5cf" class="cell" data-execution_count="6">
+<div id="00e4be93" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -869,7 +869,7 @@ Equal? True</code></pre>
 <section id="se3-vs-gl4-not-every-44-matrix-is-a-rigid-transform" class="level3" data-number="9.2.4">
 <h3 data-number="9.2.4" class="anchored" data-anchor-id="se3-vs-gl4-not-every-44-matrix-is-a-rigid-transform"><span class="header-section-number">9.2.4</span> SE(3) vs GL(4): Not Every 4×4 Matrix Is a Rigid Transform</h3>
 <p>A general invertible 4×4 matrix can shear, scale, or project. SE(3) matrices have a strict structure: the top-left <span class="math inline">\(3\times 3\)</span> block must be in SO(3).</p>
-<div id="51cf7959" class="cell" data-execution_count="7">
+<div id="04a13d47" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -939,7 +939,7 @@ All SE(3) conditions satisfied: True</code></pre>
 </section>
 </section>
 <section id="sec-se3-inverse-composition" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="sec-se3-inverse-composition"><span class="header-section-number">9.3</span> §9.3 Inverse and Composition</h2>
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-se3-inverse-composition"><span class="header-section-number">9.3</span> Inverse and Composition</h2>
 <p>Two operations dominate almost every robotics and vision pipeline: <strong>inverting</strong> a transform (going from frame B to frame A given A-to-B) and <strong>chaining</strong> transforms (going through intermediate frames). Both reduce to closed-form linear algebra — no numerical inversion needed.</p>
 <hr>
 <section id="closed-form-inverse" class="level3" data-number="9.3.1">
@@ -947,7 +947,7 @@ All SE(3) conditions satisfied: True</code></pre>
 <p>For <span class="math inline">\(T = \begin{pmatrix}R &amp; \mathbf{t}\\\mathbf{0}^T &amp; 1\end{pmatrix}\)</span>:</p>
 <p><span class="math display">\[T^{-1} = \begin{pmatrix}R^T &amp; -R^T\mathbf{t}\\\mathbf{0}^T &amp; 1\end{pmatrix}\]</span></p>
 <p><strong>Why this works:</strong> <span class="math inline">\(R \in \text{SO}(3)\)</span> so <span class="math inline">\(R^{-1} = R^T\)</span> (free). The translation inverts as <span class="math inline">\(-R^T\mathbf{t}\)</span> — you must rotate the translation <em>back</em> before negating it. Computing <span class="math inline">\(T^{-1}\)</span> this way costs 9 multiplications for <span class="math inline">\(R^T\mathbf{t}\)</span> plus 3 negations, versus <span class="math inline">\(O(n^3)\)</span> for generic matrix inversion.</p>
-<div id="27dd1bb8" class="cell" data-execution_count="8">
+<div id="ede32a32" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1000,7 +1000,7 @@ T @ T_inv = I?  True</code></pre>
 = T_{\text{world}\leftarrow\text{robot}}
 \; T_{\text{robot}\leftarrow\text{sensor}}
 \; T_{\text{sensor}\leftarrow\text{object}}\]</span></p>
-<div id="c692c32a" class="cell" data-execution_count="9">
+<div id="bd6cb201" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1046,7 +1046,7 @@ Object origin in world frame: [2.  1.3 0.5]</code></pre>
 <h3 data-number="9.3.3" class="anchored" data-anchor-id="inverting-the-chain-going-backwards"><span class="header-section-number">9.3.3</span> Inverting the Chain: Going Backwards</h3>
 <p>To transform from world back to sensor, invert the chain. The inverse of a product reverses order and inverts each factor:</p>
 <p><span class="math display">\[(T_1 T_2)^{-1} = T_2^{-1} T_1^{-1}\]</span></p>
-<div id="8d60fda4" class="cell" data-execution_count="10">
+<div id="9e45fbd1" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1095,7 +1095,7 @@ Max absolute error: 4.44e-16</code></pre>
 <li><span class="math inline">\(T_{AB}\, T_{BC} = T_{AC}\)</span> — inner indices cancel like fractions</li>
 <li><span class="math inline">\((T_{AB})^{-1} = T_{BA}\)</span> — subscripts flip</li>
 </ul>
-<div id="41a93022" class="cell" data-execution_count="11">
+<div id="d9d65204" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1136,7 +1136,7 @@ Round-trip p_C == p_C_back?  True</code></pre>
 </section>
 </section>
 <section id="sec-se3-normals" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="sec-se3-normals"><span class="header-section-number">9.4</span> §9.4 Points, Vectors, and Normals Transform Differently</h2>
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-se3-normals"><span class="header-section-number">9.4</span> Points, Vectors, and Normals Transform Differently</h2>
 <p>The <span class="math inline">\(w\)</span> component in a homogeneous coordinate is not cosmetic — it encodes <em>what kind of geometric object</em> you have. Getting it wrong is one of the most common bugs in computer vision and ray-tracing pipelines.</p>
 <table class="caption-top table">
 <colgroup>
@@ -1173,7 +1173,7 @@ Round-trip p_C == p_C_back?  True</code></pre>
 <section id="points-vs-direction-vectors" class="level3" data-number="9.4.1">
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="points-vs-direction-vectors"><span class="header-section-number">9.4.1</span> Points vs Direction Vectors</h3>
 <p>A direction vector represents a <em>displacement</em>, not a location. Translating a displacement makes no sense. Setting <span class="math inline">\(w = 0\)</span> in the homogeneous vector zeroes out the translation column automatically.</p>
-<div id="b7a4bd31" class="cell" data-execution_count="12">
+<div id="a1936cb1" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1219,7 +1219,7 @@ Translation affects the point but NOT the direction vector.
 <p>A surface normal <span class="math inline">\(\mathbf{n}\)</span> is <em>not</em> a direction vector in the usual sense. When the transformation includes scaling or shear (a general matrix <span class="math inline">\(M\)</span> rather than pure <span class="math inline">\(R\)</span>), normals must transform by the <strong>inverse-transpose</strong>:</p>
 <p><span class="math display">\[\mathbf{n}' = (M^{-1})^T \mathbf{n} = (M^{-T})\mathbf{n}\]</span></p>
 <p>For pure rotations <span class="math inline">\(M = R\)</span>, <span class="math inline">\((R^{-1})^T = (R^T)^T = R\)</span>, so the distinction disappears. But as soon as you add non-uniform scale — common in 3D graphics — using <span class="math inline">\(M\)</span> directly produces normals that no longer point away from the surface.</p>
-<div id="1761d2b4" class="cell" data-execution_count="13">
+<div id="3c8c9648" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Scale matrix: stretch 3x along x, identity along y,z</span></span>
@@ -1264,7 +1264,7 @@ Transformed tangent: [3. 0. 0.]
 <section id="pure-rotation-all-three-behave-consistently" class="level3" data-number="9.4.3">
 <h3 data-number="9.4.3" class="anchored" data-anchor-id="pure-rotation-all-three-behave-consistently"><span class="header-section-number">9.4.3</span> Pure Rotation: All Three Behave Consistently</h3>
 <p>When <span class="math inline">\(M = R \in \text{SO}(3)\)</span>, the three transform rules collapse to the same thing: multiply by <span class="math inline">\(R\)</span>. The distinction only matters when <span class="math inline">\(M\)</span> is not a pure rotation.</p>
-<div id="bd0fbad5" class="cell" data-execution_count="14">
+<div id="4add455b" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -1298,7 +1298,7 @@ Transformed tangent: [3. 0. 0.]
 <section id="the-bug-in-practice" class="level3" data-number="9.4.4">
 <h3 data-number="9.4.4" class="anchored" data-anchor-id="the-bug-in-practice"><span class="header-section-number">9.4.4</span> The Bug in Practice</h3>
 <p>A common mistake in shader code and ray-tracers: the model matrix <span class="math inline">\(M\)</span> is passed to both vertices (correct) and normals (incorrect when <span class="math inline">\(M\)</span> contains scale). The visual result is normals that point “into” the surface near stretched geometry, causing wrong lighting.</p>
-<div id="055ebfe1" class="cell" data-execution_count="15">
+<div id="31f3070f" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1345,7 +1345,7 @@ Transformed tangent: [3. 0. 0.]
 </section>
 </section>
 <section id="sec-se3-forward-kinematics" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="sec-se3-forward-kinematics"><span class="header-section-number">9.5</span> §9.5 Forward Kinematics as a Product of SE(3) Matrices</h2>
+<h2 data-number="9.5" class="anchored" data-anchor-id="sec-se3-forward-kinematics"><span class="header-section-number">9.5</span> Forward Kinematics as a Product of SE(3) Matrices</h2>
 <p><strong>Forward kinematics</strong> answers: given joint angles <span class="math inline">\(\mathbf{q} = (q_1, \ldots, q_n)\)</span>, where is the robot’s end-effector in world space? Each joint contributes one 4×4 matrix; the end-effector pose is their product.</p>
 <p><span class="math display">\[T_{\text{end}} = T_0 \; T_1(q_1) \; T_2(q_2) \; \cdots \; T_n(q_n)\]</span></p>
 <p>This is nothing more than chaining SE(3) transformations — the same operation we built in §9.3.</p>
@@ -1357,7 +1357,7 @@ Transformed tangent: [3. 0. 0.]
 <li><strong>Joint 1</strong> rotates the first link by <span class="math inline">\(q_1\)</span> about <span class="math inline">\(z\)</span> at the base.</li>
 <li><strong>Joint 2</strong> rotates the second link by <span class="math inline">\(q_2\)</span> about <span class="math inline">\(z\)</span> at the elbow.</li>
 </ul>
-<div id="d61a5b04" class="cell" data-execution_count="16">
+<div id="6f100d03" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1398,7 +1398,7 @@ End   position: [1.4798 0.9142 0.    ]</code></pre>
 </section>
 <section id="visualising-the-arm" class="level3" data-number="9.5.2">
 <h3 data-number="9.5.2" class="anchored" data-anchor-id="visualising-the-arm"><span class="header-section-number">9.5.2</span> Visualising the Arm</h3>
-<div id="c46a1c86" class="cell" data-execution_count="17">
+<div id="b4b71c24" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1457,7 +1457,7 @@ End   position: [1.4798 0.9142 0.    ]</code></pre>
 <section id="sweeping-the-workspace" class="level3" data-number="9.5.3">
 <h3 data-number="9.5.3" class="anchored" data-anchor-id="sweeping-the-workspace"><span class="header-section-number">9.5.3</span> Sweeping the Workspace</h3>
 <p>The <strong>workspace</strong> is the set of all reachable end-effector positions. A dense sweep over joint angles reveals it.</p>
-<div id="fb452fb2" class="cell" data-execution_count="18">
+<div id="f17bd18b" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1531,7 +1531,7 @@ End   position: [1.4798 0.9142 0.    ]</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="77346c65" class="cell" data-execution_count="19">
+<div id="9f5e9580" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1577,7 +1577,7 @@ End position: [1.4798 0.9142]</code></pre>
 </section>
 </section>
 <section id="sec-se3-dual-quaternions" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="sec-se3-dual-quaternions"><span class="header-section-number">9.6</span> §9.6 Dual Quaternions <em>(Optional)</em></h2>
+<h2 data-number="9.6" class="anchored" data-anchor-id="sec-se3-dual-quaternions"><span class="header-section-number">9.6</span> Dual Quaternions <em>(Optional)</em></h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1603,7 +1603,7 @@ Note
 <hr>
 <section id="building-a-dual-quaternion" class="level3" data-number="9.6.1">
 <h3 data-number="9.6.1" class="anchored" data-anchor-id="building-a-dual-quaternion"><span class="header-section-number">9.6.1</span> Building a Dual Quaternion</h3>
-<div id="a484c62c" class="cell" data-execution_count="20">
+<div id="34324ebe" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -1651,7 +1651,7 @@ qr · qd = 0.000000  (must be 0 — orthogonality constraint)</code></pre>
 <h3 data-number="9.6.2" class="anchored" data-anchor-id="dual-quaternion-multiplication"><span class="header-section-number">9.6.2</span> Dual Quaternion Multiplication</h3>
 <p>Composition of two SE(3) transforms via dual quaternion multiplication:</p>
 <p><span class="math display">\[\hat{p} \otimes \hat{q} = p_r q_r + \epsilon\,(p_r q_d + p_d q_r)\]</span></p>
-<div id="3825366f" class="cell" data-execution_count="21">
+<div id="8daf431c" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -1723,7 +1723,7 @@ Match: True</code></pre>
 <section id="sclerp-screw-linear-interpolation" class="level3" data-number="9.6.3">
 <h3 data-number="9.6.3" class="anchored" data-anchor-id="sclerp-screw-linear-interpolation"><span class="header-section-number">9.6.3</span> ScLERP: Screw-Linear Interpolation</h3>
 <p>The dual quaternion analogue of SLERP is <strong>ScLERP</strong> (Screw-Linear Interpolation). It interpolates along a <strong>screw axis</strong> — simultaneously rotating and translating — producing smoother motion than separate SLERP on rotation and lerp on translation.</p>
-<div id="8ec283b2" class="cell" data-execution_count="22">
+<div id="7713d6cd" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -1840,7 +1840,7 @@ Match: True</code></pre>
 <p>Given intrinsics <span class="math inline">\((f_x, f_y, c_x, c_y)\)</span> and a depth value <span class="math inline">\(d\)</span> (in metres):</p>
 <p><span class="math display">\[\mathbf{p}_C = \begin{pmatrix}(u - c_x)\,d / f_x \\
 (v - c_y)\,d / f_y \\ d\end{pmatrix}\]</span></p>
-<div id="7c4f5f0f" class="cell" data-execution_count="23">
+<div id="f09212f7" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pixel_to_camera(u, v, d, fx, fy, cx, cy):</span>
@@ -1876,7 +1876,7 @@ Match: True</code></pre>
 <section id="step-2-camera-world-frame" class="level3" data-number="9.7.2">
 <h3 data-number="9.7.2" class="anchored" data-anchor-id="step-2-camera-world-frame"><span class="header-section-number">9.7.2</span> Step 2: Camera → World Frame</h3>
 <p>Given the extrinsic matrix <span class="math inline">\(T_{\text{WC}}\)</span> (world ← camera):</p>
-<div id="eda138ae" class="cell" data-execution_count="24">
+<div id="5f060788" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -1928,7 +1928,7 @@ World-frame points after T_WC:
 </section>
 <section id="synthetic-point-cloud-from-a-depth-image" class="level3" data-number="9.7.3">
 <h3 data-number="9.7.3" class="anchored" data-anchor-id="synthetic-point-cloud-from-a-depth-image"><span class="header-section-number">9.7.3</span> Synthetic Point Cloud from a Depth Image</h3>
-<div id="db3c0821" class="cell" data-execution_count="25">
+<div id="5aca086e" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2001,7 +2001,7 @@ World-frame points after T_WC:
 <section id="multi-frame-aggregation" class="level3" data-number="9.7.4">
 <h3 data-number="9.7.4" class="anchored" data-anchor-id="multi-frame-aggregation"><span class="header-section-number">9.7.4</span> Multi-Frame Aggregation</h3>
 <p>In a moving robot, each depth frame has a different <span class="math inline">\(T_{\text{WC}}(t)\)</span>. To build a consistent 3D map, you transform every frame’s point cloud into the world frame before aggregating.</p>
-<div id="32e390bb" class="cell" data-execution_count="26">
+<div id="b2fd8067" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2069,7 +2069,7 @@ World-frame points after T_WC:
 <section id="kaggle-exploration" class="level3" data-number="9.7.5">
 <h3 data-number="9.7.5" class="anchored" data-anchor-id="kaggle-exploration"><span class="header-section-number">9.7.5</span> Kaggle Exploration</h3>
 <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/shashanksharma/realsense-depth-dataset">Intel RealSense D435i — Point Cloud &amp; IMU</a> (or search Kaggle for “RealSense depth point cloud”)</p>
-<div id="57856dfb" class="cell" data-execution_count="27">
+<div id="0767d7f7" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumes the Kaggle dataset is downloaded and contains</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># depth PNG files and a poses CSV with columns:</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   frame_id, tx, ty, tz, qw, qx, qy, qz</span></span>
@@ -2128,7 +2128,7 @@ World-frame points after T_WC:
 <p><strong>(a)</strong> Show that SE(3) is <strong>closed</strong> under composition: if <span class="math inline">\((R_1, \mathbf{t}_1)\)</span> and <span class="math inline">\((R_2, \mathbf{t}_2)\)</span> are in SE(3), prove their composition is also in SE(3).</p>
 <p><strong>(b)</strong> Verify numerically that SE(3) composition is <strong>not commutative</strong> by constructing two transforms whose order of application produces different end-effector positions.</p>
 <p><strong>(c)</strong> What is the <strong>identity</strong> element of SE(3)? Verify <span class="math inline">\(T \circ I = T\)</span>.</p>
-<div id="cf81b788" class="cell" data-execution_count="28">
+<div id="d049e4b3" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -2185,7 +2185,7 @@ World-frame points after T_WC:
 <p><strong>(a)</strong> Derive <span class="math inline">\(T^{-1}\)</span> algebraically from the block structure of <span class="math inline">\(T\)</span>.</p>
 <p><strong>(b)</strong> Implement <code>T_inv</code> using only transposes and matrix-vector products (no <code>np.linalg.inv</code>). Verify against <code>np.linalg.inv</code> on a random transform.</p>
 <p><strong>(c)</strong> Benchmark: time the closed-form inverse vs <code>np.linalg.inv</code> on 10 000 transforms.</p>
-<div id="a1de2c0c" class="cell" data-execution_count="29">
+<div id="a8cbcec5" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2237,9 +2237,9 @@ World-frame points after T_WC:
     T @ T_inv = I?  True
 
 (c) 10 000 inversions:
-  Closed-form: 31.1 ms
-  np.linalg.inv: 33.4 ms
-  Speedup: 1.1×</code></pre>
+  Closed-form: 29.0 ms
+  np.linalg.inv: 29.7 ms
+  Speedup: 1.0×</code></pre>
 </div>
 </div>
 <hr>
@@ -2253,7 +2253,7 @@ World-frame points after T_WC:
 <li><span class="math inline">\(T_{WrG}\)</span>: gripper is 0.2 m below wrist, rotated 45° about <span class="math inline">\(z\)</span>.</li>
 </ul>
 <p>Find the gripper position in world frame and the world-to-gripper transform.</p>
-<div id="66f89512" class="cell" data-execution_count="30">
+<div id="c47c4180" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -2302,7 +2302,7 @@ T_WG @ T_GW = I?  True</code></pre>
 <p>A buggy implementation applies the full 4×4 transform <span class="math inline">\(T\)</span> to a <strong>direction vector</strong> with <span class="math inline">\(w = 1\)</span> instead of <span class="math inline">\(w = 0\)</span>.</p>
 <p><strong>(a)</strong> Show that the translation contaminates the direction.</p>
 <p><strong>(b)</strong> Fix the bug by using <span class="math inline">\(w = 0\)</span> and verify the direction is only rotated.</p>
-<div id="68feb0ed" class="cell" data-execution_count="31">
+<div id="bb967ca9" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -2348,7 +2348,7 @@ T_WG @ T_GW = I?  True</code></pre>
 <p>A mesh vertex has normal <span class="math inline">\(\mathbf{n} = [0, 1, 0]\)</span>. A non-uniform scale matrix <span class="math inline">\(M = \text{diag}(2, 0.5, 1)\)</span> is applied to the mesh.</p>
 <p><strong>(a)</strong> Show that applying <span class="math inline">\(M\)</span> directly to <span class="math inline">\(\mathbf{n}\)</span> gives the wrong result.</p>
 <p><strong>(b)</strong> Apply <span class="math inline">\((M^{-T})\)</span> and verify the corrected normal is perpendicular to the transformed surface tangent.</p>
-<div id="453f4b90" class="cell" data-execution_count="32">
+<div id="43d0c8cb" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> np.diag([<span class="fl">2.</span>, <span class="fl">0.5</span>, <span class="fl">1.</span>])   <span class="co"># shape (3, 3) — non-uniform scale</span></span>
@@ -2391,7 +2391,7 @@ T_WG @ T_GW = I?  True</code></pre>
 <p><strong>(b)</strong> Verify against the direct geometric formula:</p>
 <p><span class="math display">\[x = l_1 c_1 + l_2 c_{12} + l_3 c_{123}, \quad
 y = l_1 s_1 + l_2 s_{12} + l_3 s_{123}\]</span></p>
-<div id="ae0f6f4d" class="cell" data-execution_count="33">
+<div id="3f8ecc88" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -2467,7 +2467,7 @@ Match: True</code></pre>
 </tbody>
 </table>
 <p>Compute the end-effector pose for <span class="math inline">\(q_1 = 45°\)</span>, <span class="math inline">\(q_2 = -30°\)</span>, <span class="math inline">\(q_3 = 0.2\)</span> m.</p>
-<div id="6cefbf30" class="cell" data-execution_count="34">
+<div id="f618ab50" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_T(R, t):</span>
@@ -2514,7 +2514,7 @@ Position: [0.7399 0.4571 0.2   ]</code></pre>
 <p><strong>(a)</strong> Encode an SE(3) pose as a dual quaternion.</p>
 <p><strong>(b)</strong> Recover the rotation matrix and translation from the dual quaternion.</p>
 <p><strong>(c)</strong> Verify the round-trip matches the original 4×4 matrix.</p>
-<div id="f3b50d2d" class="cell" data-execution_count="35">
+<div id="a6b480c0" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>

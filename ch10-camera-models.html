@@ -492,14 +492,14 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#sec-camera-pinhole" id="toc-sec-camera-pinhole" class="nav-link active" data-scroll-target="#sec-camera-pinhole"><span class="header-section-number">10.1</span> §10.1 Pinhole Camera Geometry</a>
+  <li><a href="#sec-camera-pinhole" id="toc-sec-camera-pinhole" class="nav-link active" data-scroll-target="#sec-camera-pinhole"><span class="header-section-number">10.1</span> Pinhole Camera Geometry</a>
   <ul class="collapse">
   <li><a href="#the-physical-idea" id="toc-the-physical-idea" class="nav-link" data-scroll-target="#the-physical-idea"><span class="header-section-number">10.1.1</span> The Physical Idea</a></li>
   <li><a href="#deriving-the-projection-equations" id="toc-deriving-the-projection-equations" class="nav-link" data-scroll-target="#deriving-the-projection-equations"><span class="header-section-number">10.1.2</span> Deriving the Projection Equations</a></li>
   <li><a href="#homogeneous-form" id="toc-homogeneous-form" class="nav-link" data-scroll-target="#homogeneous-form"><span class="header-section-number">10.1.3</span> Homogeneous Form</a></li>
   <li><a href="#why-depth-information-is-lost" id="toc-why-depth-information-is-lost" class="nav-link" data-scroll-target="#why-depth-information-is-lost"><span class="header-section-number">10.1.4</span> Why Depth Information Is Lost</a></li>
   </ul></li>
-  <li><a href="#sec-camera-intrinsic" id="toc-sec-camera-intrinsic" class="nav-link" data-scroll-target="#sec-camera-intrinsic"><span class="header-section-number">10.2</span> §10.2 Intrinsic Matrix <span class="math inline">\(K\)</span></a>
+  <li><a href="#sec-camera-intrinsic" id="toc-sec-camera-intrinsic" class="nav-link" data-scroll-target="#sec-camera-intrinsic"><span class="header-section-number">10.2</span> Intrinsic Matrix <span class="math inline">\(K\)</span></a>
   <ul class="collapse">
   <li><a href="#what-each-entry-means" id="toc-what-each-entry-means" class="nav-link" data-scroll-target="#what-each-entry-means"><span class="header-section-number">10.2.1</span> What Each Entry Means</a></li>
   <li><a href="#applying-k-metric-image-pixel" id="toc-applying-k-metric-image-pixel" class="nav-link" data-scroll-target="#applying-k-metric-image-pixel"><span class="header-section-number">10.2.2</span> Applying K: Metric Image → Pixel</a></li>
@@ -507,21 +507,21 @@ window.Quarto = {
   <li><a href="#visualising-the-principal-point" id="toc-visualising-the-principal-point" class="nav-link" data-scroll-target="#visualising-the-principal-point"><span class="header-section-number">10.2.4</span> Visualising the Principal Point</a></li>
   <li><a href="#skew" id="toc-skew" class="nav-link" data-scroll-target="#skew"><span class="header-section-number">10.2.5</span> Skew</a></li>
   </ul></li>
-  <li><a href="#sec-camera-extrinsic" id="toc-sec-camera-extrinsic" class="nav-link" data-scroll-target="#sec-camera-extrinsic"><span class="header-section-number">10.3</span> §10.3 Extrinsic Matrix and Full Projection <span class="math inline">\(P = K[R \mid \mathbf{t}]\)</span></a>
+  <li><a href="#sec-camera-extrinsic" id="toc-sec-camera-extrinsic" class="nav-link" data-scroll-target="#sec-camera-extrinsic"><span class="header-section-number">10.3</span> Extrinsic Matrix and Full Projection <span class="math inline">\(P = K[R \mid \mathbf{t}]\)</span></a>
   <ul class="collapse">
   <li><a href="#what-r-mid-mathbft-means" id="toc-what-r-mid-mathbft-means" class="nav-link" data-scroll-target="#what-r-mid-mathbft-means"><span class="header-section-number">10.3.1</span> What <span class="math inline">\([R \mid \mathbf{t}]\)</span> Means</a></li>
   <li><a href="#full-projection-matrix" id="toc-full-projection-matrix" class="nav-link" data-scroll-target="#full-projection-matrix"><span class="header-section-number">10.3.2</span> Full Projection Matrix</a></li>
   <li><a href="#back-projection-pixel-world-ray" id="toc-back-projection-pixel-world-ray" class="nav-link" data-scroll-target="#back-projection-pixel-world-ray"><span class="header-section-number">10.3.3</span> Back-Projection: Pixel → World Ray</a></li>
   <li><a href="#projecting-multiple-world-points" id="toc-projecting-multiple-world-points" class="nav-link" data-scroll-target="#projecting-multiple-world-points"><span class="header-section-number">10.3.4</span> Projecting Multiple World Points</a></li>
   </ul></li>
-  <li><a href="#sec-camera-calibration" id="toc-sec-camera-calibration" class="nav-link" data-scroll-target="#sec-camera-calibration"><span class="header-section-number">10.4</span> §10.4 Camera Calibration: Zhang’s Method</a>
+  <li><a href="#sec-camera-calibration" id="toc-sec-camera-calibration" class="nav-link" data-scroll-target="#sec-camera-calibration"><span class="header-section-number">10.4</span> Camera Calibration: Zhang’s Method</a>
   <ul class="collapse">
   <li><a href="#the-key-idea" id="toc-the-key-idea" class="nav-link" data-scroll-target="#the-key-idea"><span class="header-section-number">10.4.1</span> The Key Idea</a></li>
   <li><a href="#homography-from-one-view" id="toc-homography-from-one-view" class="nav-link" data-scroll-target="#homography-from-one-view"><span class="header-section-number">10.4.2</span> Homography from One View</a></li>
   <li><a href="#extracting-k-from-multiple-homographies-the-b-matrix" id="toc-extracting-k-from-multiple-homographies-the-b-matrix" class="nav-link" data-scroll-target="#extracting-k-from-multiple-homographies-the-b-matrix"><span class="header-section-number">10.4.3</span> Extracting K from Multiple Homographies: The B Matrix</a></li>
   <li><a href="#what-cv2.calibratecamera-does" id="toc-what-cv2.calibratecamera-does" class="nav-link" data-scroll-target="#what-cv2.calibratecamera-does"><span class="header-section-number">10.4.4</span> What <code>cv2.calibrateCamera</code> Does</a></li>
   </ul></li>
-  <li><a href="#sec-camera-distortion" id="toc-sec-camera-distortion" class="nav-link" data-scroll-target="#sec-camera-distortion"><span class="header-section-number">10.5</span> §10.5 Lens Distortion</a>
+  <li><a href="#sec-camera-distortion" id="toc-sec-camera-distortion" class="nav-link" data-scroll-target="#sec-camera-distortion"><span class="header-section-number">10.5</span> Lens Distortion</a>
   <ul class="collapse">
   <li><a href="#radial-distortion" id="toc-radial-distortion" class="nav-link" data-scroll-target="#radial-distortion"><span class="header-section-number">10.5.1</span> Radial Distortion</a></li>
   <li><a href="#tangential-distortion" id="toc-tangential-distortion" class="nav-link" data-scroll-target="#tangential-distortion"><span class="header-section-number">10.5.2</span> Tangential Distortion</a></li>
@@ -571,7 +571,7 @@ window.Quarto = {
 
 
 <section id="sec-camera-pinhole" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="sec-camera-pinhole"><span class="header-section-number">10.1</span> §10.1 Pinhole Camera Geometry</h2>
+<h2 data-number="10.1" class="anchored" data-anchor-id="sec-camera-pinhole"><span class="header-section-number">10.1</span> Pinhole Camera Geometry</h2>
 <p>Every photograph collapses a 3D scene onto a 2D sensor. Understanding <em>how</em> that collapse works — mathematically — is the foundation for 3D reconstruction, AR overlays, robot navigation, and autonomous vehicles. The simplest model that captures all the essential geometry is the <strong>pinhole camera</strong>.</p>
 <hr>
 <section id="the-physical-idea" class="level3" data-number="10.1.1">
@@ -585,7 +585,7 @@ window.Quarto = {
 <p>Place the optical centre at the origin. A scene point at camera coordinates <span class="math inline">\((X, Y, Z)\)</span> projects to image coordinates <span class="math inline">\((x, y)\)</span> by similar triangles:</p>
 <p><span class="math display">\[\frac{x}{f} = \frac{X}{Z} \implies x = f \frac{X}{Z}\]</span> <span class="math display">\[\frac{y}{f} = \frac{Y}{Z} \implies y = f \frac{Y}{Z}\]</span></p>
 <p>This is <strong>perspective projection</strong> (also called central projection). The depth <span class="math inline">\(Z\)</span> appears in the denominator — objects farther away look smaller.</p>
-<div id="75145d31" class="cell" data-execution_count="1">
+<div id="a6f54e98" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -641,7 +641,7 @@ window.Quarto = {
 = \begin{pmatrix}f &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; f &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0\end{pmatrix}
 \begin{pmatrix}X\\Y\\Z\\1\end{pmatrix}\]</span></p>
 <p>where <span class="math inline">\(\lambda = Z\)</span> is the depth (the scale factor that gets divided out).</p>
-<div id="fd1b3ad8" class="cell" data-execution_count="2">
+<div id="299a09bf" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="fl">2.0</span></span>
@@ -679,7 +679,7 @@ Direct f*Y/Z = -0.2500  ✓</code></pre>
 <section id="why-depth-information-is-lost" class="level3" data-number="10.1.4">
 <h3 data-number="10.1.4" class="anchored" data-anchor-id="why-depth-information-is-lost"><span class="header-section-number">10.1.4</span> Why Depth Information Is Lost</h3>
 <p>Projection is a many-to-one map: every point along a ray through <span class="math inline">\(\mathbf{O}\)</span> maps to the same image point. This is why a single image cannot recover depth — you need either stereo, structure from motion, or a depth sensor.</p>
-<div id="41b2e6c1" class="cell" data-execution_count="3">
+<div id="9ee0ee46" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -723,7 +723,7 @@ Direct f*Y/Z = -0.2500  ✓</code></pre>
 </section>
 </section>
 <section id="sec-camera-intrinsic" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="sec-camera-intrinsic"><span class="header-section-number">10.2</span> §10.2 Intrinsic Matrix <span class="math inline">\(K\)</span></h2>
+<h2 data-number="10.2" class="anchored" data-anchor-id="sec-camera-intrinsic"><span class="header-section-number">10.2</span> Intrinsic Matrix <span class="math inline">\(K\)</span></h2>
 <p>The simple pinhole model from §10.1 assumed the image origin is at the optical axis and that pixels are square. Real sensors have a principal point offset, possibly non-square pixels, and occasionally a skew term. All of this is packed into the <strong>intrinsic matrix</strong> <span class="math inline">\(K\)</span> — a 3×3 upper-triangular matrix that maps metric camera-frame rays to pixel coordinates.</p>
 <p><span class="math display">\[K = \begin{pmatrix} f_x &amp; s &amp; c_x \\ 0 &amp; f_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{pmatrix}\]</span></p>
 <hr>
@@ -779,7 +779,7 @@ Direct f*Y/Z = -0.2500  ✓</code></pre>
 <p><span class="math display">\[\begin{pmatrix}u\\v\\1\end{pmatrix}
 \sim K \begin{pmatrix}X/Z\\Y/Z\\1\end{pmatrix}
 = \begin{pmatrix}f_x X/Z + s Y/Z + c_x \\ f_y Y/Z + c_y \\ 1\end{pmatrix}\]</span></p>
-<div id="419ea2ef" class="cell" data-execution_count="4">
+<div id="bc0c5a9e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> np.array([</span>
@@ -811,7 +811,7 @@ Pixel coordinates:  u=443.00, v=158.00</code></pre>
 <h3 data-number="10.2.3" class="anchored" data-anchor-id="inverting-k-pixel-camera-frame-ray"><span class="header-section-number">10.2.3</span> Inverting K: Pixel → Camera-Frame Ray</h3>
 <p>Given a pixel <span class="math inline">\((u, v)\)</span>, <span class="math inline">\(K^{-1}\)</span> recovers the normalised camera-frame direction — the <strong>back-projection ray</strong>. This is exactly what the RealSense SDK does when it lifts depth pixels to 3D (§9.7).</p>
 <p>For upper-triangular <span class="math inline">\(K\)</span>, the inverse is cheap and exact:</p>
-<div id="e0507f0d" class="cell" data-execution_count="5">
+<div id="e8c05206" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> np.array([</span>
@@ -844,7 +844,7 @@ Normalised:             [ 0.130081 -0.065041  1.      ]</code></pre>
 <section id="visualising-the-principal-point" class="level3" data-number="10.2.4">
 <h3 data-number="10.2.4" class="anchored" data-anchor-id="visualising-the-principal-point"><span class="header-section-number">10.2.4</span> Visualising the Principal Point</h3>
 <p>The <strong>principal point</strong> <span class="math inline">\((c_x, c_y)\)</span> is where the optical axis pierces the image sensor. It’s not necessarily at the pixel-coordinate origin — it’s typically near but not exactly at the image centre.</p>
-<div id="24a59962" class="cell" data-execution_count="6">
+<div id="631fdb29" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -893,7 +893,7 @@ Normalised:             [ 0.130081 -0.065041  1.      ]</code></pre>
 <section id="skew" class="level3" data-number="10.2.5">
 <h3 data-number="10.2.5" class="anchored" data-anchor-id="skew"><span class="header-section-number">10.2.5</span> Skew</h3>
 <p>The skew term <span class="math inline">\(s\)</span> is nonzero when the pixel axes are not perpendicular. This almost never happens with modern CMOS sensors (<span class="math inline">\(s \approx 0\)</span>), but it can arise in scanned film or older CCD arrays.</p>
-<div id="fa727f01" class="cell" data-execution_count="7">
+<div id="e1761a79" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -937,7 +937,7 @@ Normalised:             [ 0.130081 -0.065041  1.      ]</code></pre>
 </section>
 </section>
 <section id="sec-camera-extrinsic" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="sec-camera-extrinsic"><span class="header-section-number">10.3</span> §10.3 Extrinsic Matrix and Full Projection <span class="math inline">\(P = K[R \mid \mathbf{t}]\)</span></h2>
+<h2 data-number="10.3" class="anchored" data-anchor-id="sec-camera-extrinsic"><span class="header-section-number">10.3</span> Extrinsic Matrix and Full Projection <span class="math inline">\(P = K[R \mid \mathbf{t}]\)</span></h2>
 <p>The intrinsic matrix <span class="math inline">\(K\)</span> (§10.2) works in <strong>camera coordinates</strong>. The <strong>extrinsic matrix</strong> <span class="math inline">\([R \mid \mathbf{t}]\)</span> maps a 3D world point to camera coordinates first. Together they form the full <strong>projection matrix</strong>:</p>
 <p><span class="math display">\[P = K [R \mid \mathbf{t}] \in \mathbb{R}^{3 \times 4}\]</span></p>
 <p><span class="math display">\[\lambda \begin{pmatrix}u\\v\\1\end{pmatrix}
@@ -953,7 +953,7 @@ Normalised:             [ 0.130081 -0.065041  1.      ]</code></pre>
 <li><span class="math inline">\(\mathbf{t}\)</span> — the world origin expressed in camera coordinates (not the camera position in the world!)</li>
 </ul>
 <p><strong>Common confusion:</strong> The camera <em>position</em> in world coordinates is <span class="math inline">\(\mathbf{C} = -R^T \mathbf{t}\)</span>.</p>
-<div id="1eb4002a" class="cell" data-execution_count="8">
+<div id="118c401d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -992,7 +992,7 @@ Matches cam_pos_world?     True</code></pre>
 </section>
 <section id="full-projection-matrix" class="level3" data-number="10.3.2">
 <h3 data-number="10.3.2" class="anchored" data-anchor-id="full-projection-matrix"><span class="header-section-number">10.3.2</span> Full Projection Matrix</h3>
-<div id="1ed8d267" class="cell" data-execution_count="9">
+<div id="f7650d3a" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1047,7 +1047,7 @@ World origin projects to pixel: (320.0, 1162.5)</code></pre>
 <p>Given pixel <span class="math inline">\((u, v)\)</span> and projection matrix <span class="math inline">\(P\)</span>, the <strong>back-projection ray</strong> passes through the camera centre <span class="math inline">\(\mathbf{C}\)</span> and the point:</p>
 <p><span class="math display">\[\mathbf{d} = P^+[u, v, 1]^T\]</span></p>
 <p>where <span class="math inline">\(P^+ = P^T(PP^T)^{-1}\)</span> is the pseudo-inverse of <span class="math inline">\(P\)</span>.</p>
-<div id="4f80f8b9" class="cell" data-execution_count="10">
+<div id="7d67bfd6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1096,7 +1096,7 @@ Verify: P @ point on ray ∝ pixel?
 </section>
 <section id="projecting-multiple-world-points" class="level3" data-number="10.3.4">
 <h3 data-number="10.3.4" class="anchored" data-anchor-id="projecting-multiple-world-points"><span class="header-section-number">10.3.4</span> Projecting Multiple World Points</h3>
-<div id="ce0046cd" class="cell" data-execution_count="11">
+<div id="bc5f356f" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1150,14 +1150,14 @@ Verify: P @ point on ray ∝ pixel?
 </section>
 </section>
 <section id="sec-camera-calibration" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="sec-camera-calibration"><span class="header-section-number">10.4</span> §10.4 Camera Calibration: Zhang’s Method</h2>
+<h2 data-number="10.4" class="anchored" data-anchor-id="sec-camera-calibration"><span class="header-section-number">10.4</span> Camera Calibration: Zhang’s Method</h2>
 <p>Before you can use a camera for 3D geometry — measuring distances, aligning point clouds, or projecting bounding boxes — you need to know <span class="math inline">\(K\)</span>. The standard approach is <strong>Zhang’s planar calibration method</strong> (1999): photograph a flat checkerboard from multiple viewpoints. Each viewpoint provides linear constraints on <span class="math inline">\(K\)</span>.</p>
 <hr>
 <section id="the-key-idea" class="level3" data-number="10.4.1">
 <h3 data-number="10.4.1" class="anchored" data-anchor-id="the-key-idea"><span class="header-section-number">10.4.1</span> The Key Idea</h3>
 <p>A flat checkerboard is a <strong>planar object</strong> (all <span class="math inline">\(Z_w = 0\)</span>). When <span class="math inline">\(Z = 0\)</span>, the full projection equation collapses: the third column of <span class="math inline">\([R \mid \mathbf{t}]\)</span> drops out, leaving a <strong>homography</strong> <span class="math inline">\(H = K[r_1\; r_2\; \mathbf{t}]\)</span> relating world <span class="math inline">\((X_w, Y_w)\)</span> to image <span class="math inline">\((u, v)\)</span>.</p>
 <p>From two or more views you get enough constraints to solve for <span class="math inline">\(K\)</span>. With at least 3 views, Zhang’s method becomes a well-conditioned linear system.</p>
-<div id="b8852760" class="cell" data-execution_count="12">
+<div id="4a3ca124" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1204,7 +1204,7 @@ Verify: P @ point on ray ∝ pixel?
 <section id="homography-from-one-view" class="level3" data-number="10.4.2">
 <h3 data-number="10.4.2" class="anchored" data-anchor-id="homography-from-one-view"><span class="header-section-number">10.4.2</span> Homography from One View</h3>
 <p>For a single planar view, the homography <span class="math inline">\(H\)</span> can be estimated from ≥4 correspondences using DLT (detailed in §11.3). Here we use the known projection to recover <span class="math inline">\(H\)</span> directly.</p>
-<div id="83e17495" class="cell" data-execution_count="13">
+<div id="66253095" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1259,7 +1259,7 @@ Match: True</code></pre>
 <h3 data-number="10.4.3" class="anchored" data-anchor-id="extracting-k-from-multiple-homographies-the-b-matrix"><span class="header-section-number">10.4.3</span> Extracting K from Multiple Homographies: The B Matrix</h3>
 <p>Each homography <span class="math inline">\(H_i\)</span> from view <span class="math inline">\(i\)</span> gives two linear constraints on the matrix <span class="math inline">\(B = K^{-T}K^{-1}\)</span> (a symmetric positive definite matrix). With <span class="math inline">\(n \geq 3\)</span> views you get <span class="math inline">\(2n \geq 6\)</span> constraints for the 6 independent entries of <span class="math inline">\(B\)</span>, from which <span class="math inline">\(K\)</span> is recovered by Cholesky decomposition.</p>
 <p>Below we simulate the full pipeline:</p>
-<div id="8af7ed38" class="cell" data-execution_count="14">
+<div id="15912676" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1359,7 +1359,7 @@ Match: True</code></pre>
 <section id="what-cv2.calibratecamera-does" class="level3" data-number="10.4.4">
 <h3 data-number="10.4.4" class="anchored" data-anchor-id="what-cv2.calibratecamera-does"><span class="header-section-number">10.4.4</span> What <code>cv2.calibrateCamera</code> Does</h3>
 <p>OpenCV’s calibration function implements an extended version of Zhang’s method with nonlinear refinement (Levenberg–Marquardt) to minimise <strong>reprojection error</strong> — the RMS pixel distance between detected and re-projected corners.</p>
-<div id="ea9edde1" class="cell" data-execution_count="15">
+<div id="e9012549" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
@@ -1394,7 +1394,7 @@ Match: True</code></pre>
 </section>
 </section>
 <section id="sec-camera-distortion" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="sec-camera-distortion"><span class="header-section-number">10.5</span> §10.5 Lens Distortion</h2>
+<h2 data-number="10.5" class="anchored" data-anchor-id="sec-camera-distortion"><span class="header-section-number">10.5</span> Lens Distortion</h2>
 <p>The pinhole model is ideal — real lenses bend light. The most significant deviations are <strong>radial distortion</strong> (barrel or pincushion) and <strong>tangential distortion</strong> (lens tilt relative to sensor). Both must be corrected before using the linear camera model.</p>
 <hr>
 <section id="radial-distortion" class="level3" data-number="10.5.1">
@@ -1405,7 +1405,7 @@ Match: True</code></pre>
 <li><span class="math inline">\(k_1 &lt; 0\)</span>: <strong>barrel</strong> distortion (wide-angle lenses) — edges bow outward</li>
 <li><span class="math inline">\(k_1 &gt; 0\)</span>: <strong>pincushion</strong> distortion (telephoto) — edges bow inward</li>
 </ul>
-<div id="97bfc25f" class="cell" data-execution_count="16">
+<div id="d733e385" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1454,7 +1454,7 @@ Match: True</code></pre>
 <h3 data-number="10.5.2" class="anchored" data-anchor-id="tangential-distortion"><span class="header-section-number">10.5.2</span> Tangential Distortion</h3>
 <p>Tangential distortion arises when the lens is not perfectly parallel to the sensor plane. The correction uses two additional parameters <span class="math inline">\(p_1, p_2\)</span>:</p>
 <p><span class="math display">\[x_d = x_n + 2p_1 x_n y_n + p_2(r^2 + 2x_n^2)\]</span> <span class="math display">\[y_d = y_n + p_1(r^2 + 2y_n^2) + 2p_2 x_n y_n\]</span></p>
-<div id="172d7b33" class="cell" data-execution_count="17">
+<div id="38b7f1e1" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1500,7 +1500,7 @@ Match: True</code></pre>
 <section id="undistortion-mapping-pixels-back-to-normalised-coordinates" class="level3" data-number="10.5.3">
 <h3 data-number="10.5.3" class="anchored" data-anchor-id="undistortion-mapping-pixels-back-to-normalised-coordinates"><span class="header-section-number">10.5.3</span> Undistortion: Mapping Pixels Back to Normalised Coordinates</h3>
 <p>The distortion model maps <strong>normalised → distorted</strong>. To go the other way (pixel → undistorted normalised coordinate), you solve a nonlinear equation numerically. In practice, OpenCV builds a precomputed <strong>undistortion map</strong>.</p>
-<div id="740aa02f" class="cell" data-execution_count="18">
+<div id="bc909d46" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1631,7 +1631,7 @@ Match: True</code></pre>
 </section>
 <section id="step-13-projecting-the-3d-box" class="level3" data-number="10.6.2">
 <h3 data-number="10.6.2" class="anchored" data-anchor-id="step-13-projecting-the-3d-box"><span class="header-section-number">10.6.2</span> Step 1–3: Projecting the 3D Box</h3>
-<div id="a0af6735" class="cell" data-execution_count="19">
+<div id="f2f8449e" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
@@ -1714,7 +1714,7 @@ Match: True</code></pre>
 <section id="sensitivity-to-k-errors" class="level3" data-number="10.6.3">
 <h3 data-number="10.6.3" class="anchored" data-anchor-id="sensitivity-to-k-errors"><span class="header-section-number">10.6.3</span> Sensitivity to K Errors</h3>
 <p>Even small errors in <span class="math inline">\(K\)</span> shift the projected box. Here we compare the projection with the true <span class="math inline">\(K\)</span> vs a <span class="math inline">\(K\)</span> with +5% error in <span class="math inline">\(f_x\)</span>.</p>
-<div id="94596686" class="cell" data-execution_count="20">
+<div id="a85954ba" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1772,7 +1772,7 @@ Match: True</code></pre>
 <section id="kaggle-exploration" class="level3" data-number="10.6.4">
 <h3 data-number="10.6.4" class="anchored" data-anchor-id="kaggle-exploration"><span class="header-section-number">10.6.4</span> Kaggle Exploration</h3>
 <p><strong>Dataset:</strong> <a href="https://storage.googleapis.com/openimages/web/index.html">Open Images V7</a> — contains images with 3D bounding box annotations and camera intrinsics for some categories, or use <a href="https://www.kaggle.com/datasets/garymk/kitti-3d-object-detection-dataset">KITTI 3D Object Detection Benchmark</a> which provides calibrated camera matrices and 3D bounding box annotations.</p>
-<div id="00df5ad7" class="cell" data-execution_count="21">
+<div id="abc75abb" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># KITTI 3D Object Detection — projecting ground-truth 3D boxes</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset layout: image_2/, calib/, label_2/</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1844,7 +1844,7 @@ Match: True</code></pre>
 <h3 data-number="10.7.1" class="anchored" data-anchor-id="exercise-10.1-similar-triangles-derivation"><span class="header-section-number">10.7.1</span> Exercise 10.1 — Similar Triangles Derivation</h3>
 <p><strong>(a)</strong> Draw a side-view diagram of a pinhole camera with focal length <span class="math inline">\(f\)</span>. A scene point is at distance <span class="math inline">\(Z\)</span> from the optical centre at height <span class="math inline">\(Y\)</span>. Using similar triangles, derive that <span class="math inline">\(y = fY/Z\)</span>.</p>
 <p><strong>(b)</strong> Verify numerically: project points <span class="math inline">\((1, 2, 4)\)</span>, <span class="math inline">\((2, 4, 8)\)</span>, and <span class="math inline">\((0.5, 1, 2)\)</span> with <span class="math inline">\(f = 3\)</span>. What do you notice?</p>
-<div id="2bb9e4a3" class="cell" data-execution_count="22">
+<div id="fb89e893" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="fl">3.0</span></span>
@@ -1880,7 +1880,7 @@ Observation: all three points lie on the same ray through the origin
 <p><strong>(a)</strong> Write down <span class="math inline">\(K\)</span> for a camera with <span class="math inline">\(f_x = 800\)</span>, <span class="math inline">\(f_y = 800\)</span>, <span class="math inline">\(c_x = 320\)</span>, <span class="math inline">\(c_y = 240\)</span>, <span class="math inline">\(s = 0\)</span>.</p>
 <p><strong>(b)</strong> Compute <span class="math inline">\(K^{-1}\)</span> analytically (no <code>np.linalg.inv</code>) and verify.</p>
 <p><strong>(c)</strong> Back-project pixel <span class="math inline">\((400, 300)\)</span> to a normalised camera-frame ray.</p>
-<div id="b536d495" class="cell" data-execution_count="23">
+<div id="4eddcdac" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>fx, fy, cx, cy <span class="op">=</span> <span class="fl">800.</span>, <span class="fl">800.</span>, <span class="fl">320.</span>, <span class="fl">240.</span></span>
@@ -1923,7 +1923,7 @@ Observation: all three points lie on the same ray through the origin
 <p><strong>(a)</strong> Show algebraically that the camera centre in world coordinates is <span class="math inline">\(\mathbf{C} = -R^T \mathbf{t}\)</span>.</p>
 <p><strong>(b)</strong> A camera at world position <span class="math inline">\((5, 2, 0)\)</span>, rotated 45° about <span class="math inline">\(z\)</span>. Construct the extrinsic <span class="math inline">\([R \mid \mathbf{t}]\)</span>.</p>
 <p><strong>(c)</strong> Project the world point <span class="math inline">\((0, 0, 0)\)</span> through the full <span class="math inline">\(P = K[R \mid \mathbf{t}]\)</span>.</p>
-<div id="a3ca67b9" class="cell" data-execution_count="24">
+<div id="cd0ea1f2" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1960,7 +1960,7 @@ Observation: all three points lie on the same ray through the origin
 (c) World origin projects to pixel: (-inf, -inf)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_62724\4024264968.py:25: RuntimeWarning: divide by zero encountered in scalar divide
+<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_25660\4024264968.py:25: RuntimeWarning: divide by zero encountered in scalar divide
   u, v = p_h[0]/p_h[2], p_h[1]/p_h[2]</code></pre>
 </div>
 </div>
@@ -1969,7 +1969,7 @@ Observation: all three points lie on the same ray through the origin
 <section id="exercise-10.4-reprojection-error" class="level3" data-number="10.7.4">
 <h3 data-number="10.7.4" class="anchored" data-anchor-id="exercise-10.4-reprojection-error"><span class="header-section-number">10.7.4</span> Exercise 10.4 — Reprojection Error</h3>
 <p>Given 5 world points and their noisy pixel measurements, compute the <strong>reprojection error</strong> (RMS distance between projected and observed pixels).</p>
-<div id="df54c15f" class="cell" data-execution_count="25">
+<div id="59ad7402" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Ry(b):</span>
@@ -2017,7 +2017,7 @@ RMS reprojection error: 1.8709 px</code></pre>
 <section id="exercise-10.5-distortion-magnitude" class="level3" data-number="10.7.5">
 <h3 data-number="10.7.5" class="anchored" data-anchor-id="exercise-10.5-distortion-magnitude"><span class="header-section-number">10.7.5</span> Exercise 10.5 — Distortion Magnitude</h3>
 <p>For a RealSense D435i with <span class="math inline">\(k_1 = -0.055\)</span>, <span class="math inline">\(k_2 = 0.065\)</span>, estimate the maximum pixel displacement due to radial distortion at the image corners (640×480 image).</p>
-<div id="120266f7" class="cell" data-execution_count="26">
+<div id="bd7fc434" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> np.array([[<span class="fl">615.</span>,<span class="fl">0.</span>,<span class="fl">320.</span>],[<span class="fl">0.</span>,<span class="fl">615.</span>,<span class="fl">240.</span>],[<span class="fl">0.</span>,<span class="fl">0.</span>,<span class="fl">1.</span>]])</span>
@@ -2059,7 +2059,7 @@ RMS reprojection error: 1.8709 px</code></pre>
 <h3 data-number="10.7.6" class="anchored" data-anchor-id="exercise-10.6-full-pipeline-world-to-pixel"><span class="header-section-number">10.7.6</span> Exercise 10.6 — Full Pipeline: World to Pixel</h3>
 <p><strong>(a)</strong> A RealSense camera is mounted 1.2 m above a table, tilted 30° downward, facing +x. A box corner is at world position <span class="math inline">\((0.5, 0.2, 0)\)</span> m. What pixel does it project to?</p>
 <p><strong>(b)</strong> Can you distinguish between a box corner at <span class="math inline">\((0.5, 0.2, 0)\)</span> m and <span class="math inline">\((1.0, 0.4, 0)\)</span> m using a single image? Why or why not?</p>
-<div id="07e719a6" class="cell" data-execution_count="27">
+<div id="abb86176" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -2105,7 +2105,7 @@ RMS reprojection error: 1.8709 px</code></pre>
 <section id="exercise-10.7-condition-number-of-the-calibration-matrix" class="level3" data-number="10.7.7">
 <h3 data-number="10.7.7" class="anchored" data-anchor-id="exercise-10.7-condition-number-of-the-calibration-matrix"><span class="header-section-number">10.7.7</span> Exercise 10.7 — Condition Number of the Calibration Matrix</h3>
 <p>In Zhang’s method, ill-conditioned view geometry (e.g., all views nearly parallel) produces a poorly conditioned system. Check the condition number of the <span class="math inline">\(V\)</span> matrix from §10.4 for views with low vs high angular diversity.</p>
-<div id="ab4211a4" class="cell" data-execution_count="28">
+<div id="e8cd1502" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">5</span>)</span>

@@ -492,28 +492,28 @@ window.Quarto = {
     <h2 id="toc-title">In This Chapter</h2>
    
   <ul>
-  <li><a href="#sec-proj-vanishing" id="toc-sec-proj-vanishing" class="nav-link active" data-scroll-target="#sec-proj-vanishing"><span class="header-section-number">11.1</span> §11.1 Perspective Projection and Vanishing Points</a>
+  <li><a href="#sec-proj-vanishing" id="toc-sec-proj-vanishing" class="nav-link active" data-scroll-target="#sec-proj-vanishing"><span class="header-section-number">11.1</span> Perspective Projection and Vanishing Points</a>
   <ul class="collapse">
   <li><a href="#why-parallel-lines-converge" id="toc-why-parallel-lines-converge" class="nav-link" data-scroll-target="#why-parallel-lines-converge"><span class="header-section-number">11.1.1</span> Why Parallel Lines Converge</a></li>
   <li><a href="#the-projective-plane-mathbbp2" id="toc-the-projective-plane-mathbbp2" class="nav-link" data-scroll-target="#the-projective-plane-mathbbp2"><span class="header-section-number">11.1.2</span> The Projective Plane <span class="math inline">\(\mathbb{P}^2\)</span></a></li>
   <li><a href="#vanishing-points-from-parallel-line-pairs" id="toc-vanishing-points-from-parallel-line-pairs" class="nav-link" data-scroll-target="#vanishing-points-from-parallel-line-pairs"><span class="header-section-number">11.1.3</span> Vanishing Points from Parallel Line Pairs</a></li>
   <li><a href="#the-horizon-line" id="toc-the-horizon-line" class="nav-link" data-scroll-target="#the-horizon-line"><span class="header-section-number">11.1.4</span> The Horizon Line</a></li>
   </ul></li>
-  <li><a href="#sec-proj-homography" id="toc-sec-proj-homography" class="nav-link" data-scroll-target="#sec-proj-homography"><span class="header-section-number">11.2</span> §11.2 The Homography Matrix <span class="math inline">\(H\)</span></a>
+  <li><a href="#sec-proj-homography" id="toc-sec-proj-homography" class="nav-link" data-scroll-target="#sec-proj-homography"><span class="header-section-number">11.2</span> The Homography Matrix <span class="math inline">\(H\)</span></a>
   <ul class="collapse">
   <li><a href="#why-homographies-arise" id="toc-why-homographies-arise" class="nav-link" data-scroll-target="#why-homographies-arise"><span class="header-section-number">11.2.1</span> Why Homographies Arise</a></li>
   <li><a href="#degrees-of-freedom" id="toc-degrees-of-freedom" class="nav-link" data-scroll-target="#degrees-of-freedom"><span class="header-section-number">11.2.2</span> Degrees of Freedom</a></li>
   <li><a href="#applying-a-homography-forward-mapping" id="toc-applying-a-homography-forward-mapping" class="nav-link" data-scroll-target="#applying-a-homography-forward-mapping"><span class="header-section-number">11.2.3</span> Applying a Homography: Forward Mapping</a></li>
   <li><a href="#image-to-image-homography" id="toc-image-to-image-homography" class="nav-link" data-scroll-target="#image-to-image-homography"><span class="header-section-number">11.2.4</span> Image-to-Image Homography</a></li>
   </ul></li>
-  <li><a href="#sec-proj-dlt" id="toc-sec-proj-dlt" class="nav-link" data-scroll-target="#sec-proj-dlt"><span class="header-section-number">11.3</span> §11.3 Direct Linear Transform (DLT)</a>
+  <li><a href="#sec-proj-dlt" id="toc-sec-proj-dlt" class="nav-link" data-scroll-target="#sec-proj-dlt"><span class="header-section-number">11.3</span> Direct Linear Transform (DLT)</a>
   <ul class="collapse">
   <li><a href="#deriving-the-dlt-system" id="toc-deriving-the-dlt-system" class="nav-link" data-scroll-target="#deriving-the-dlt-system"><span class="header-section-number">11.3.1</span> Deriving the DLT System</a></li>
   <li><a href="#why-svd" id="toc-why-svd" class="nav-link" data-scroll-target="#why-svd"><span class="header-section-number">11.3.2</span> Why SVD?</a></li>
   <li><a href="#normalisation-why-raw-dlt-fails" id="toc-normalisation-why-raw-dlt-fails" class="nav-link" data-scroll-target="#normalisation-why-raw-dlt-fails"><span class="header-section-number">11.3.3</span> Normalisation: Why Raw DLT Fails</a></li>
   <li><a href="#dlt-is-the-same-machinery-as-zhangs-calibration" id="toc-dlt-is-the-same-machinery-as-zhangs-calibration" class="nav-link" data-scroll-target="#dlt-is-the-same-machinery-as-zhangs-calibration"><span class="header-section-number">11.3.4</span> DLT is the Same Machinery as Zhang’s Calibration</a></li>
   </ul></li>
-  <li><a href="#sec-proj-ransac" id="toc-sec-proj-ransac" class="nav-link" data-scroll-target="#sec-proj-ransac"><span class="header-section-number">11.4</span> §11.4 RANSAC for Robust Estimation</a>
+  <li><a href="#sec-proj-ransac" id="toc-sec-proj-ransac" class="nav-link" data-scroll-target="#sec-proj-ransac"><span class="header-section-number">11.4</span> RANSAC for Robust Estimation</a>
   <ul class="collapse">
   <li><a href="#the-ransac-loop" id="toc-the-ransac-loop" class="nav-link" data-scroll-target="#the-ransac-loop"><span class="header-section-number">11.4.1</span> The RANSAC Loop</a></li>
   <li><a href="#full-ransac-implementation" id="toc-full-ransac-implementation" class="nav-link" data-scroll-target="#full-ransac-implementation"><span class="header-section-number">11.4.2</span> Full RANSAC Implementation</a></li>
@@ -563,7 +563,7 @@ window.Quarto = {
 
 
 <section id="sec-proj-vanishing" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="sec-proj-vanishing"><span class="header-section-number">11.1</span> §11.1 Perspective Projection and Vanishing Points</h2>
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-proj-vanishing"><span class="header-section-number">11.1</span> Perspective Projection and Vanishing Points</h2>
 <p>The pinhole camera (§10.1) does something geometrically remarkable: it maps <strong>parallel lines to intersecting lines</strong> in the image. Those intersection points — called <strong>vanishing points</strong> — encode the direction of a set of parallel lines as a single image point. Understanding them requires extending ordinary Euclidean geometry with <strong>points at infinity</strong>.</p>
 <hr>
 <section id="why-parallel-lines-converge" class="level3" data-number="11.1.1">
@@ -571,7 +571,7 @@ window.Quarto = {
 <p>Consider two world-frame lines that run parallel to the <span class="math inline">\(X\)</span>-axis:</p>
 <p><span class="math display">\[\ell_1(s) = (s,\; 0,\; d_1),\quad \ell_2(s) = (s,\; 1,\; d_2)\]</span></p>
 <p>Project each through a camera with <span class="math inline">\(f=1\)</span>, principal point at origin. The <span class="math inline">\(x\)</span>-coordinate of the image point at parameter <span class="math inline">\(s\)</span> is <span class="math inline">\(x = s/Z\)</span>. As <span class="math inline">\(s \to \infty\)</span>, both lines project to <span class="math inline">\(x \to \infty\)</span> — but more precisely, the direction <span class="math inline">\((1, 0, 0)^T\)</span> in world space maps to a fixed pixel called the <strong>vanishing point</strong> of that direction.</p>
-<div id="48a3f9a9" class="cell" data-execution_count="1">
+<div id="e6bf9dae" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -618,9 +618,9 @@ window.Quarto = {
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_17272\1044232096.py:12: RuntimeWarning: divide by zero encountered in divide
+<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_37476\1044232096.py:12: RuntimeWarning: divide by zero encountered in divide
   return p_h[:, :2] / p_h[:, 2:3]   # shape (N, 2)
-C:\Users\james.choi\AppData\Local\Temp\ipykernel_17272\1044232096.py:12: RuntimeWarning: invalid value encountered in divide
+C:\Users\james.choi\AppData\Local\Temp\ipykernel_37476\1044232096.py:12: RuntimeWarning: invalid value encountered in divide
   return p_h[:, :2] / p_h[:, 2:3]   # shape (N, 2)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -659,7 +659,7 @@ C:\Users\james.choi\AppData\Local\Temp\ipykernel_17272\1044232096.py:12: Runtime
 </tr>
 </tbody>
 </table>
-<div id="a5be5b80" class="cell" data-execution_count="2">
+<div id="f378ccf5" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordinary points</span></span>
@@ -711,7 +711,7 @@ Intersection of l1 and l2:
 <section id="vanishing-points-from-parallel-line-pairs" class="level3" data-number="11.1.3">
 <h3 data-number="11.1.3" class="anchored" data-anchor-id="vanishing-points-from-parallel-line-pairs"><span class="header-section-number">11.1.3</span> Vanishing Points from Parallel Line Pairs</h3>
 <p>Given two parallel line pairs in an image (e.g., edges of a road), we can compute their vanishing point as the intersection of two image lines. In homogeneous coordinates, intersection = cross product.</p>
-<div id="bc8e3d14" class="cell" data-execution_count="3">
+<div id="fe53a41c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -779,7 +779,7 @@ Vanishing point 2 (right pair): (311.4, 164.3)</code></pre>
 <section id="the-horizon-line" class="level3" data-number="11.1.4">
 <h3 data-number="11.1.4" class="anchored" data-anchor-id="the-horizon-line"><span class="header-section-number">11.1.4</span> The Horizon Line</h3>
 <p>Two independent vanishing points define the <strong>horizon line</strong> (the line at infinity <span class="math inline">\(\ell_\infty\)</span>). For a camera looking at a flat ground plane, the horizon is the locus of all vanishing points of horizontal directions — it lies at the height of the camera in the image.</p>
-<div id="e144cc19" class="cell" data-execution_count="4">
+<div id="7a2a95f7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vanishing points (in homogeneous pixel coords)</span></span>
@@ -817,7 +817,7 @@ Horizon line crosses image at:
 </section>
 </section>
 <section id="sec-proj-homography" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="sec-proj-homography"><span class="header-section-number">11.2</span> §11.2 The Homography Matrix <span class="math inline">\(H\)</span></h2>
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-proj-homography"><span class="header-section-number">11.2</span> The Homography Matrix <span class="math inline">\(H\)</span></h2>
 <p>A <strong>homography</strong> is the projective transformation that relates two images of the <strong>same planar surface</strong>. It is a 3×3 matrix defined only up to scale (8 degrees of freedom), and it captures rotation, translation, and perspective distortion in a single matrix multiply.</p>
 <hr>
 <section id="why-homographies-arise" class="level3" data-number="11.2.1">
@@ -828,7 +828,7 @@ Horizon line crosses image at:
 \begin{pmatrix}X_w\\Y_w\\1\end{pmatrix}
 = H \begin{pmatrix}X_w\\Y_w\\1\end{pmatrix}\]</span></p>
 <p>The same relationship holds between <strong>any two views of a plane</strong>: the second image is a projective transformation of the first.</p>
-<div id="55a46c04" class="cell" data-execution_count="5">
+<div id="fe1f4f93" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -923,7 +923,7 @@ Horizon line crosses image at:
 <section id="applying-a-homography-forward-mapping" class="level3" data-number="11.2.3">
 <h3 data-number="11.2.3" class="anchored" data-anchor-id="applying-a-homography-forward-mapping"><span class="header-section-number">11.2.3</span> Applying a Homography: Forward Mapping</h3>
 <p>To project a set of planar world points into a new camera view, apply <span class="math inline">\(H\)</span> and divide by the third coordinate.</p>
-<div id="aecfddfe" class="cell" data-execution_count="6">
+<div id="4d214cab" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -987,7 +987,7 @@ Horizon line crosses image at:
 <p><span class="math display">\[\lambda \begin{pmatrix}u'\\v'\\1\end{pmatrix}
 = H \begin{pmatrix}u\\v\\1\end{pmatrix}\]</span></p>
 <p>This is the form used in panoramic stitching, image rectification, and document de-warping. We will compute <span class="math inline">\(H\)</span> from correspondences in §11.3.</p>
-<div id="3336b518" class="cell" data-execution_count="7">
+<div id="af579953" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Given 4 point correspondences (source → destination)</span></span>
@@ -1034,7 +1034,7 @@ Horizon line crosses image at:
 </section>
 </section>
 <section id="sec-proj-dlt" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="sec-proj-dlt"><span class="header-section-number">11.3</span> §11.3 Direct Linear Transform (DLT)</h2>
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-proj-dlt"><span class="header-section-number">11.3</span> Direct Linear Transform (DLT)</h2>
 <p>The <strong>Direct Linear Transform</strong> (DLT) is the standard algorithm for computing a homography from point correspondences. Each correspondence contributes two linear equations in the 9 unknown entries of <span class="math inline">\(H\)</span>. With <span class="math inline">\(n \geq 4\)</span> correspondences we get a <span class="math inline">\(2n \times 9\)</span> system <span class="math inline">\(A\mathbf{h} = \mathbf{0}\)</span>, solved by SVD.</p>
 <hr>
 <section id="deriving-the-dlt-system" class="level3" data-number="11.3.1">
@@ -1048,7 +1048,7 @@ Horizon line crosses image at:
 0   &amp;  0   &amp;  0 &amp; -x_i &amp; -y_i &amp; -1 &amp; v_i x_i &amp; v_i y_i &amp; v_i
 \end{bmatrix} \mathbf{h} = \mathbf{0}\]</span></p>
 <p>where <span class="math inline">\(\mathbf{h} = \mathrm{vec}(H)\)</span> is the 9-vector of entries of <span class="math inline">\(H\)</span> read row by row.</p>
-<div id="f5419a74" class="cell" data-execution_count="8">
+<div id="8319262c" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dlt_homography(src, dst):</span>
@@ -1112,7 +1112,7 @@ Horizon line crosses image at:
 <p><span class="math display">\[\min_{\mathbf{h}} \|A\mathbf{h}\|^2 \quad \text{subject to} \quad
 \|\mathbf{h}\| = 1\]</span></p>
 <p>The solution is the <strong>right singular vector</strong> of <span class="math inline">\(A\)</span> corresponding to its <strong>smallest singular value</strong> (the last row of <span class="math inline">\(V^T\)</span> in <code>np.linalg.svd</code>).</p>
-<div id="fbf3092b" class="cell" data-execution_count="9">
+<div id="33488e1d" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the singular values of A for a well-conditioned case</span></span>
@@ -1146,7 +1146,7 @@ Condition number: 645015.2</code></pre>
 <p>Raw DLT is numerically sensitive when pixel coordinates are large (e.g., 640×480). The matrix <span class="math inline">\(A\)</span> has entries ranging from <span class="math inline">\(\sim 1\)</span> to <span class="math inline">\(\sim 10^5\)</span>, making the SVD ill-conditioned.</p>
 <p><strong>Hartley normalisation</strong> (1997): before running DLT, transform both point sets so that their centroid is at the origin and their average distance from the origin is <span class="math inline">\(\sqrt{2}\)</span>. After computing <span class="math inline">\(H\)</span>, undo the normalisation:</p>
 <p><span class="math display">\[H = T_{\text{dst}}^{-1} \; \hat{H} \; T_{\text{src}}\]</span></p>
-<div id="bf9a8329" class="cell" data-execution_count="10">
+<div id="7d7ed64f" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalise_points(pts):</span>
@@ -1259,7 +1259,7 @@ Condition number: 645015.2</code></pre>
 </section>
 </section>
 <section id="sec-proj-ransac" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="sec-proj-ransac"><span class="header-section-number">11.4</span> §11.4 RANSAC for Robust Estimation</h2>
+<h2 data-number="11.4" class="anchored" data-anchor-id="sec-proj-ransac"><span class="header-section-number">11.4</span> RANSAC for Robust Estimation</h2>
 <p>Real feature matches contain <strong>outliers</strong> — mismatched point pairs caused by repetitive textures, occlusion, or descriptor ambiguity. A single outlier corrupts the entire DLT solution. <strong>RANSAC</strong> (Random Sample Consensus, Fischler &amp; Bolles 1981) is the standard fix: repeatedly fit <span class="math inline">\(H\)</span> to a minimal random sample (4 pairs), count how many remaining matches agree with it (“inliers”), and keep the best fit.</p>
 <hr>
 <section id="the-ransac-loop" class="level3" data-number="11.4.1">
@@ -1274,7 +1274,7 @@ return best H_candidate, refined with all its inliers</code></pre>
 <p>The number of iterations <span class="math inline">\(N\)</span> needed to guarantee (with probability <span class="math inline">\(p\)</span>) that at least one sample is all-inlier:</p>
 <p><span class="math display">\[N = \frac{\log(1-p)}{\log\!\left(1-(1-\varepsilon)^s\right)}\]</span></p>
 <p>where <span class="math inline">\(\varepsilon\)</span> is the outlier fraction and <span class="math inline">\(s=4\)</span> is the minimum sample size.</p>
-<div id="e2cf392a" class="cell" data-execution_count="11">
+<div id="59f09c4e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ransac_iterations(outlier_frac, min_sample<span class="op">=</span><span class="dv">4</span>, confidence<span class="op">=</span><span class="fl">0.99</span>):</span>
@@ -1311,7 +1311,7 @@ return best H_candidate, refined with all its inliers</code></pre>
 </section>
 <section id="full-ransac-implementation" class="level3" data-number="11.4.2">
 <h3 data-number="11.4.2" class="anchored" data-anchor-id="full-ransac-implementation"><span class="header-section-number">11.4.2</span> Full RANSAC Implementation</h3>
-<div id="171851b2" class="cell" data-execution_count="12">
+<div id="84283b0d" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dlt_homography(src, dst):</span>
@@ -1422,7 +1422,7 @@ RANSAC     — inliers found: 29/50
 </section>
 <section id="visualising-ransac-inliers-vs-outliers" class="level3" data-number="11.4.3">
 <h3 data-number="11.4.3" class="anchored" data-anchor-id="visualising-ransac-inliers-vs-outliers"><span class="header-section-number">11.4.3</span> Visualising RANSAC Inliers vs Outliers</h3>
-<div id="39714cb6" class="cell" data-execution_count="13">
+<div id="50ebfad6" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1517,7 +1517,7 @@ RANSAC     — inliers found: 29/50
 </table>
 <p>Too tight: real inliers rejected, RANSAC needs many iterations. Too loose: outliers accepted, model is pulled toward garbage.</p>
 <p>A principled choice: set <span class="math inline">\(\tau\)</span> to the 95th percentile of the expected noise distribution (<span class="math inline">\(\tau = 1.96\sigma\)</span> for Gaussian noise).</p>
-<div id="d77e2106" class="cell" data-execution_count="14">
+<div id="6078d8d5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># How inlier count and RMS error change with threshold</span></span>
@@ -1586,7 +1586,7 @@ RANSAC     — inliers found: 29/50
 </section>
 <section id="step-13-synthesise-a-warped-label-and-compute-h" class="level3" data-number="11.5.2">
 <h3 data-number="11.5.2" class="anchored" data-anchor-id="step-13-synthesise-a-warped-label-and-compute-h"><span class="header-section-number">11.5.2</span> Step 1–3: Synthesise a Warped Label and Compute H</h3>
-<div id="273269d9" class="cell" data-execution_count="15">
+<div id="cff5789e" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
@@ -1719,7 +1719,7 @@ RANSAC     — inliers found: 29/50
 <section id="sensitivity-what-happens-with-corner-detection-errors" class="level3" data-number="11.5.3">
 <h3 data-number="11.5.3" class="anchored" data-anchor-id="sensitivity-what-happens-with-corner-detection-errors"><span class="header-section-number">11.5.3</span> Sensitivity: What Happens with Corner Detection Errors?</h3>
 <p>Even small errors in the detected corners degrade the rectification.</p>
-<div id="26f31be8" class="cell" data-execution_count="16">
+<div id="a3d9f063" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1792,7 +1792,7 @@ RANSAC     — inliers found: 29/50
 <section id="kaggle-exploration" class="level3" data-number="11.5.4">
 <h3 data-number="11.5.4" class="anchored" data-anchor-id="kaggle-exploration"><span class="header-section-number">11.5.4</span> Kaggle Exploration</h3>
 <p><strong>Dataset:</strong> <a href="https://www.kaggle.com/datasets/saurabhbagchi/document-dewarping-dataset">Document Dewarping Dataset</a> or the <strong>WarpDoc</strong> benchmark (curved and perspective-distorted document images with ground-truth flat annotations).</p>
-<div id="3d8a2ad1" class="cell" data-execution_count="17">
+<div id="9891a7f3" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Document de-warping with OpenCV</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumes 4-corner annotations (u1,v1,...,u4,v4) in annotations.csv</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
@@ -1838,7 +1838,7 @@ RANSAC     — inliers found: 29/50
 <p><strong>(a)</strong> Compute the vanishing point of Pair A and Pair B separately.</p>
 <p><strong>(b)</strong> Do both pairs share the same vanishing point? What does that mean geometrically?</p>
 <p><strong>(c)</strong> Compute the horizon line through the two vanishing points.</p>
-<div id="1bb28a8c" class="cell" data-execution_count="18">
+<div id="b5d96d2d" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> line_from_pts(p, q):</span>
@@ -1897,7 +1897,7 @@ RANSAC     — inliers found: 29/50
 <p><strong>(a)</strong> A 3×3 matrix has 9 entries. Explain why a homography has only <strong>8</strong> DoF.</p>
 <p><strong>(b)</strong> How many point correspondences are needed as a minimum? Why not fewer?</p>
 <p><strong>(c)</strong> If you have 10 correspondences, how do you use the extra information?</p>
-<div id="b27c241d" class="cell" data-execution_count="19">
+<div id="9c1065df" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (c) Overdetermined DLT: more correspondences → smaller residual (least squares)</span></span>
@@ -1955,7 +1955,7 @@ RANSAC     — inliers found: 29/50
 <section id="exercise-11.3-dlt-system-derivation" class="level3" data-number="11.6.3">
 <h3 data-number="11.6.3" class="anchored" data-anchor-id="exercise-11.3-dlt-system-derivation"><span class="header-section-number">11.6.3</span> Exercise 11.3 — DLT System Derivation</h3>
 <p>Starting from <span class="math inline">\(\lambda\mathbf{u} = H\mathbf{x}\)</span> (where <span class="math inline">\(\mathbf{u}=(u,v,1)^T\)</span>, <span class="math inline">\(\mathbf{x}=(x,y,1)^T\)</span>), derive the two rows of the DLT matrix for a single correspondence. Show that cross-multiplying eliminates <span class="math inline">\(\lambda\)</span>.</p>
-<div id="3e3822f9" class="cell" data-execution_count="20">
+<div id="c449d71b" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Symbolic verification via numerical perturbation:</span></span>
@@ -2003,7 +2003,7 @@ Derivation sketch:
 <p><strong>(a)</strong> You have 100 feature matches with an estimated 35% outlier rate. How many RANSAC iterations are needed to achieve 99% confidence that at least one 4-sample is all-inlier?</p>
 <p><strong>(b)</strong> How does that change if your outlier rate is actually 50%?</p>
 <p><strong>(c)</strong> You want to halve the number of iterations at 35% outlier rate without changing confidence. What is the only way to achieve this?</p>
-<div id="890d2e64" class="cell" data-execution_count="21">
+<div id="e9956c0b" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ransac_n(eps, s<span class="op">=</span><span class="dv">4</span>, p<span class="op">=</span><span class="fl">0.99</span>):</span>
@@ -2043,7 +2043,7 @@ Derivation sketch:
 <section id="exercise-11.5-normalisation-matters" class="level3" data-number="11.6.5">
 <h3 data-number="11.6.5" class="anchored" data-anchor-id="exercise-11.5-normalisation-matters"><span class="header-section-number">11.6.5</span> Exercise 11.5 — Normalisation Matters</h3>
 <p>Compute <span class="math inline">\(H\)</span> via DLT with and without Hartley normalisation for a set of 8 correspondences in a 1920×1080 image. Compare the reprojection errors.</p>
-<div id="dd8f12e9" class="cell" data-execution_count="22">
+<div id="a0340a04" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalise_points(pts):</span>
@@ -2098,7 +2098,7 @@ Normalisation improvement factor: 1.0×</code></pre>
 <section id="exercise-11.6-homography-inversion-and-back-projection" class="level3" data-number="11.6.6">
 <h3 data-number="11.6.6" class="anchored" data-anchor-id="exercise-11.6-homography-inversion-and-back-projection"><span class="header-section-number">11.6.6</span> Exercise 11.6 — Homography Inversion and Back-projection</h3>
 <p>Given a homography <span class="math inline">\(H\)</span> mapping source→destination, what does <span class="math inline">\(H^{-1}\)</span> do? Verify that applying <span class="math inline">\(H\)</span> then <span class="math inline">\(H^{-1}\)</span> returns the original points.</p>
-<div id="bac06420" class="cell" data-execution_count="23">
+<div id="255583d7" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> np.array([[ <span class="fl">1.2</span>, <span class="fl">0.3</span>, <span class="fl">50.</span>],</span>
@@ -2146,7 +2146,7 @@ In image warping: use H_inv for backward mapping to avoid holes.</code></pre>
 <h3 data-number="11.6.7" class="anchored" data-anchor-id="exercise-11.7-condition-number-and-view-quality"><span class="header-section-number">11.6.7</span> Exercise 11.7 — Condition Number and View Quality</h3>
 <p><strong>(a)</strong> Construct a degenerate configuration of 4 source-destination pairs where DLT fails (collinear points). Explain why.</p>
 <p><strong>(b)</strong> What is the condition number of the DLT matrix <span class="math inline">\(A\)</span> for your degenerate and a well-conditioned configuration?</p>
-<div id="c07087ff" class="cell" data-execution_count="24">
+<div id="23fa19a4" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_A(src, dst):</span>
