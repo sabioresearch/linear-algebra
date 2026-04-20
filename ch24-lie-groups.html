@@ -2327,8 +2327,8 @@ Orth error: 9.041513343232213e-16</code></pre>
 <span id="cb29-51"><a href="#cb29-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Speedup: </span><span class="sc">{</span>t_scipy <span class="op">/</span> t_closed<span class="sc">:.1f}</span><span class="ss">x"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>scipy.linalg.expm:  39.0 ms for 1000 calls
-Closed-form se3_exp: 12.1 ms for 1000 calls
-Speedup: 3.2x</code></pre>
+Closed-form se3_exp: 11.3 ms for 1000 calls
+Speedup: 3.4x</code></pre>
 </div>
 </div>
 <p>The closed-form implementation is typically 5-20x faster because <code>scipy.linalg.expm</code> uses a general Pade approximation while the closed form exploits the nilpotency of the <span class="math inline">\(\mathfrak{so}(3)\)</span> block.</p>

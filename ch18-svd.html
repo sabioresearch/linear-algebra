@@ -677,7 +677,7 @@ window.Quarto = {
 </section>
 <section id="geometric-visualization" class="level3" data-number="18.1.5">
 <h3 data-number="18.1.5" class="anchored" data-anchor-id="geometric-visualization"><span class="header-section-number">18.1.5</span> Geometric Visualization</h3>
-<div id="1fcea44f" class="cell" data-execution_count="1">
+<div id="50f3a2c6" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -863,7 +863,7 @@ numpy check:   sigma = [3.0000, 1.0000]</code></pre>
 </section>
 <section id="numerical-example" class="level3" data-number="18.1.8">
 <h3 data-number="18.1.8" class="anchored" data-anchor-id="numerical-example"><span class="header-section-number">18.1.8</span> Numerical Example</h3>
-<div id="7df1d534" class="cell" data-execution_count="2">
+<div id="8f2e27e0" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.0</span>, <span class="fl">2.0</span>],   <span class="co"># shape (3, 2)</span></span>
@@ -994,7 +994,7 @@ sigma^2 vs lambda(A^T A):
 <li><strong>Fast decay</strong>: the matrix is well-approximated by a low-rank matrix. Example: covariance matrices of smooth processes, document-term matrices with topic structure.</li>
 <li><strong>Step drop</strong> (<span class="math inline">\(\sigma_k \gg \sigma_{k+1} \approx \cdots \approx 0\)</span>): matrix is numerically rank-<span class="math inline">\(k\)</span>.</li>
 </ul>
-<div id="41e3bcbd" class="cell" data-execution_count="3">
+<div id="d13c9334" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1165,7 +1165,7 @@ exp-decay:
 <section id="image-compression-via-truncated-svd" class="level3" data-number="18.3.3">
 <h3 data-number="18.3.3" class="anchored" data-anchor-id="image-compression-via-truncated-svd"><span class="header-section-number">18.3.3</span> Image Compression via Truncated SVD</h3>
 <p>A grayscale image is a matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>. The truncated SVD at rank <span class="math inline">\(k\)</span> requires storing <span class="math inline">\(k(m + n + 1)\)</span> numbers instead of <span class="math inline">\(mn\)</span>, a compression ratio of <span class="math inline">\(k(m + n + 1) / (mn)\)</span>.</p>
-<div id="d39d7bbf" class="cell" data-execution_count="4">
+<div id="2e418f31" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1219,7 +1219,7 @@ exp-decay:
 </section>
 <section id="explained-variance-and-choosing-rank" class="level3" data-number="18.3.4">
 <h3 data-number="18.3.4" class="anchored" data-anchor-id="explained-variance-and-choosing-rank"><span class="header-section-number">18.3.4</span> Explained Variance and Choosing Rank</h3>
-<div id="588b4f29" class="cell" data-execution_count="5">
+<div id="30e45346" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1288,7 +1288,7 @@ exp-decay:
 </section>
 <section id="low-rank-approximation-error" class="level3" data-number="18.3.5">
 <h3 data-number="18.3.5" class="anchored" data-anchor-id="low-rank-approximation-error"><span class="header-section-number">18.3.5</span> Low-Rank Approximation Error</h3>
-<div id="a09af4de" class="cell" data-execution_count="6">
+<div id="b25dbbc0" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">1832</span>)</span>
@@ -1388,7 +1388,7 @@ exp-decay:
 </section>
 <section id="implementation-and-demonstration" class="level3" data-number="18.4.4">
 <h3 data-number="18.4.4" class="anchored" data-anchor-id="implementation-and-demonstration"><span class="header-section-number">18.4.4</span> Implementation and Demonstration</h3>
-<div id="2b201461" class="cell" data-execution_count="7">
+<div id="a87b46ac" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1468,7 +1468,7 @@ R_est orthogonal: max|R^TR - I| = 4.44e-16</code></pre>
 </section>
 <section id="visualisation-2-d-version" class="level3" data-number="18.4.5">
 <h3 data-number="18.4.5" class="anchored" data-anchor-id="visualisation-2-d-version"><span class="header-section-number">18.4.5</span> Visualisation (2-D Version)</h3>
-<div id="c891e927" class="cell" data-execution_count="8">
+<div id="75ae0720" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1594,7 +1594,7 @@ R_X = U' \text{diag}(1, 1, \det(U' V'^T))\, V'^T.\]</span></p>
 </section>
 <section id="implementation-and-simulation" class="level3" data-number="18.5.4">
 <h3 data-number="18.5.4" class="anchored" data-anchor-id="implementation-and-simulation"><span class="header-section-number">18.5.4</span> Implementation and Simulation</h3>
-<div id="c05001c8" class="cell" data-execution_count="9">
+<div id="740082ae" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">185</span>)</span>
@@ -1754,7 +1754,7 @@ Ratio sigma_8/sigma_9 = 1.2  (large gap -&gt; unique null vector)</code></pre>
 </section>
 <section id="practical-api-reference" class="level3" data-number="18.6.3">
 <h3 data-number="18.6.3" class="anchored" data-anchor-id="practical-api-reference"><span class="header-section-number">18.6.3</span> Practical API Reference</h3>
-<div id="e8a41316" class="cell" data-execution_count="10">
+<div id="129810fc" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.sparse.linalg</span>
@@ -1807,9 +1807,9 @@ Ratio sigma_8/sigma_9 = 1.2  (large gap -&gt; unique null vector)</code></pre>
 <span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  numpy truncated ||A - Ak||_F: </span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>norm(A <span class="op">-</span> Ak_np, <span class="st">'fro'</span>)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
 <span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  svds            ||A - Ak||_F: </span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>norm(A <span class="op">-</span> Ak_svds, <span class="st">'fro'</span>)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>np.linalg.svd (full thin):   0.064s
-scipy gesdd (full thin):     0.047s
-scipy.sparse.linalg.svds k=25: 0.028s
+<pre><code>np.linalg.svd (full thin):   0.059s
+scipy gesdd (full thin):     0.064s
+scipy.sparse.linalg.svds k=25: 0.027s
 
 Singma_1 agreement:
   numpy: 540.348718,  scipy: 540.348718,  svds: 540.348718
@@ -1824,7 +1824,7 @@ Top-25 reconstruction error:
 <section id="numerical-rank-and-rcond" class="level3" data-number="18.6.4">
 <h3 data-number="18.6.4" class="anchored" data-anchor-id="numerical-rank-and-rcond"><span class="header-section-number">18.6.4</span> Numerical Rank and rcond</h3>
 <p>The <code>rcond</code> parameter in <code>np.linalg.lstsq</code> and <code>np.linalg.matrix_rank</code> controls the singular-value threshold for determining rank:</p>
-<div id="370592ae" class="cell" data-execution_count="11">
+<div id="c398ef24" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">1861</span>)</span>
@@ -1877,7 +1877,7 @@ lstsq rank (rcond=1e-10):   5</code></pre>
 </section>
 <section id="randomized-svd-implementation" class="level3" data-number="18.6.5">
 <h3 data-number="18.6.5" class="anchored" data-anchor-id="randomized-svd-implementation"><span class="header-section-number">18.6.5</span> Randomized SVD Implementation</h3>
-<div id="7cf8a5c1" class="cell" data-execution_count="12">
+<div id="ba024315" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">1862</span>)</span>
@@ -2023,7 +2023,7 @@ lstsq rank (rcond=1e-10):   5</code></pre>
 </section>
 <section id="synthesising-a-3-d-point-cloud" class="level3" data-number="18.7.3">
 <h3 data-number="18.7.3" class="anchored" data-anchor-id="synthesising-a-3-d-point-cloud"><span class="header-section-number">18.7.3</span> Synthesising a 3-D Point Cloud</h3>
-<div id="ab6d2a26" class="cell" data-execution_count="13">
+<div id="270bebd6" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2072,7 +2072,7 @@ Ground-truth translation: [ 0.3 -0.2  0.1]</code></pre>
 </section>
 <section id="icp-implementation" class="level3" data-number="18.7.4">
 <h3 data-number="18.7.4" class="anchored" data-anchor-id="icp-implementation"><span class="header-section-number">18.7.4</span> ICP Implementation</h3>
-<div id="896e733c" class="cell" data-execution_count="14">
+<div id="b7fe72b1" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kabsch_3d(P, Q):</span>
@@ -2155,7 +2155,7 @@ Final RMSD: 0.1250  (noise level: 0.0300)</code></pre>
 </section>
 <section id="visualisation" class="level3" data-number="18.7.5">
 <h3 data-number="18.7.5" class="anchored" data-anchor-id="visualisation"><span class="header-section-number">18.7.5</span> Visualisation</h3>
-<div id="ee8e9399" class="cell" data-execution_count="15">
+<div id="0f6de0dc" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>

@@ -588,7 +588,7 @@ window.Quarto = {
 <p>Suppose you want a transformation that moves every point two units to the right: <span class="math inline">\(T([x, y]^T) = [x+2,\; y]^T\)</span>.</p>
 <p>Where does the origin go? <span class="math inline">\(T([0,0]^T) = [2, 0]^T \neq [0,0]^T\)</span>.</p>
 <p>This immediately disqualifies <span class="math inline">\(T\)</span> from being linear.</p>
-<div id="58a6901f" class="cell" data-execution_count="1">
+<div id="31703774" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For any 2x2 matrix A, A @ [0,0] = [0,0] always.</span></span>
@@ -620,7 +620,7 @@ Conclusion: translation CANNOT be represented by a 2x2 matrix.</code></pre>
 <p>Suppose we insist on a <span class="math inline">\(2 \times 2\)</span> matrix <span class="math inline">\(A\)</span> satisfying <span class="math inline">\(A\mathbf{x} = \mathbf{x} + \mathbf{t}\)</span> for all <span class="math inline">\(\mathbf{x}\)</span>.</p>
 <p>Evaluate at <span class="math inline">\(\mathbf{x} = \mathbf{0}\)</span>: <span class="math inline">\(A\mathbf{0} = \mathbf{0} + \mathbf{t} = \mathbf{t}\)</span>.</p>
 <p>But <span class="math inline">\(A\mathbf{0} = \mathbf{0}\)</span> for any matrix. So <span class="math inline">\(\mathbf{t} = \mathbf{0}\)</span> — the only “translation” a linear map can perform is no translation at all.</p>
-<div id="40c3602c" class="cell" data-execution_count="2">
+<div id="e6400ec7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.array([<span class="fl">2.</span>, <span class="fl">1.</span>])   <span class="co"># shape (2,) — desired translation</span></span>
@@ -703,7 +703,7 @@ Homogeneity: T(cu) =[ 6. 13.],  c*T(u)   =[12. 16.],  equal=False</code></pre>
 <p>The key property: if <span class="math inline">\(\mathbf{p}\)</span>, <span class="math inline">\(\mathbf{q}\)</span>, <span class="math inline">\(\mathbf{r}\)</span> are collinear with <span class="math inline">\(\mathbf{q} = (1-\lambda)\mathbf{p} + \lambda\mathbf{r}\)</span>, then their images satisfy the same ratio:</p>
 <p><span class="math display">\[f(\mathbf{q}) = (1-\lambda)\,f(\mathbf{p}) + \lambda\,f(\mathbf{r})\]</span></p>
 <p>This is why affine maps are used in image warping, mesh deformation, and shape interpolation — they keep parallel lines parallel and preserve ratios along line segments.</p>
-<div id="6776a54c" class="cell" data-execution_count="3">
+<div id="da52cfa2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -805,7 +805,7 @@ Homogeneity: T(cu) =[ 6. 13.],  c*T(u)   =[12. 16.],  equal=False</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="57f3c4a8" class="cell" data-execution_count="4">
+<div id="82a384f8" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -864,7 +864,7 @@ Homogeneity: T(cu) =[ 6. 13.],  c*T(u)   =[12. 16.],  equal=False</code></pre>
 <p>If <span class="math inline">\(A\)</span> is invertible, the affine map <span class="math inline">\(\mathbf{y} = A\mathbf{x} + \mathbf{t}\)</span> has a well-defined inverse:</p>
 <p><span class="math display">\[\mathbf{x} = A^{-1}(\mathbf{y} - \mathbf{t}) = A^{-1}\mathbf{y} - A^{-1}\mathbf{t}\]</span></p>
 <p>The inverse is also an affine map, with linear part <span class="math inline">\(A^{-1}\)</span> and translation <span class="math inline">\(-A^{-1}\mathbf{t}\)</span>.</p>
-<div id="b6c3acb5" class="cell" data-execution_count="5">
+<div id="5bb35290" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.5</span>, <span class="fl">0.5</span>],</span>
@@ -912,7 +912,7 @@ Recovered correctly: True</code></pre>
 <p><strong>Points</strong> have a location. Translating them changes where they are.</p>
 <p><strong>Vectors</strong> (direction, velocity, force) have no location. Translating a velocity vector makes no physical sense — a force of <span class="math inline">\([3, 0]^T\)</span> N points in the same direction regardless of where it acts.</p>
 <p>The <span class="math inline">\(w\)</span>-component encodes this: the <span class="math inline">\(3\times 3\)</span> translation matrix will add <span class="math inline">\(t_x\)</span> and <span class="math inline">\(t_y\)</span> to the top entries <em>only when <span class="math inline">\(w = 1\)</span></em>. When <span class="math inline">\(w = 0\)</span>, translation has no effect.</p>
-<div id="483e3e83" class="cell" data-execution_count="6">
+<div id="28f94462" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3x3 homogeneous translation matrix for 2D</span></span>
@@ -950,7 +950,7 @@ M @ vec   = [1. 0. 0.]   →  unchanged (direction vectors don't translate)</cod
 <p>If <span class="math inline">\(w \neq 0\)</span>, a homogeneous vector <span class="math inline">\([x, y, w]^T\)</span> represents the 2D point:</p>
 <p><span class="math display">\[\mathbf{p} = \left[\frac{x}{w},\; \frac{y}{w}\right]^T\]</span></p>
 <p>This division by <span class="math inline">\(w\)</span> is called <strong>perspective division</strong> and becomes crucial in camera projection (Chapter 10). For now, since we always maintain <span class="math inline">\(w = 1\)</span>, it is just: strip the last entry.</p>
-<div id="bcd199c0" class="cell" data-execution_count="7">
+<div id="0770982d" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> to_homogeneous(pts):</span>
@@ -995,7 +995,7 @@ Exact recovery: True</code></pre>
 \sim \begin{bmatrix}1\\2\\0.5\end{bmatrix}\]</span></p>
 <p>They all represent the 2D point <span class="math inline">\((2, 4)\)</span> after dividing by <span class="math inline">\(w\)</span>.</p>
 <p>When <span class="math inline">\(w \to 0\)</span>, the point moves to <strong>infinity</strong> — it becomes a direction. Points at infinity represent the <em>vanishing points</em> of parallel lines (Chapter 11). The homogeneous coordinate <span class="math inline">\(w\)</span> is what connects the algebra of matrices to the geometry of perspective.</p>
-<div id="8c4a4f50" class="cell" data-execution_count="8">
+<div id="768557e1" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1053,7 +1053,7 @@ Exact recovery: True</code></pre>
 <section id="the-building-blocks" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="the-building-blocks"><span class="header-section-number">7.4.1</span> The Building Blocks</h3>
 <p>All standard 2D transforms have compact <span class="math inline">\(3\times 3\)</span> forms:</p>
-<div id="e1fddeb2" class="cell" data-execution_count="9">
+<div id="729d4627" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T2d(tx, ty):</span>
@@ -1115,7 +1115,7 @@ Shear (k=1):
 <section id="applying-the-matrix-to-points" class="level3" data-number="7.4.2">
 <h3 data-number="7.4.2" class="anchored" data-anchor-id="applying-the-matrix-to-points"><span class="header-section-number">7.4.2</span> Applying the Matrix to Points</h3>
 <p>To transform a batch of 2D points, convert to homogeneous, multiply, convert back:</p>
-<div id="994ce318" class="cell" data-execution_count="10">
+<div id="fd01f63d" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1177,7 +1177,7 @@ Shear (k=1):
 <section id="composition-by-multiplication" class="level3" data-number="7.4.3">
 <h3 data-number="7.4.3" class="anchored" data-anchor-id="composition-by-multiplication"><span class="header-section-number">7.4.3</span> Composition by Multiplication</h3>
 <p>Chaining affine transforms is just matrix multiplication in homogeneous space:</p>
-<div id="6b90cd9d" class="cell" data-execution_count="11">
+<div id="f682b6e3" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T2d(tx, ty):</span>
@@ -1219,7 +1219,7 @@ Bottom row (should be [0,0,1]): [0. 0. 1.]</code></pre>
 </section>
 <section id="visualising-the-grid-under-all-building-blocks" class="level3" data-number="7.4.4">
 <h3 data-number="7.4.4" class="anchored" data-anchor-id="visualising-the-grid-under-all-building-blocks"><span class="header-section-number">7.4.4</span> Visualising the Grid Under All Building Blocks</h3>
-<div id="e25ac25f" class="cell" data-execution_count="12">
+<div id="ba8aefd3" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1282,7 +1282,7 @@ r_{31}&amp;r_{32}&amp;r_{33}&amp;t_3\\
 <hr>
 <section id="building-3d-homogeneous-matrices" class="level3" data-number="7.5.1">
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="building-3d-homogeneous-matrices"><span class="header-section-number">7.5.1</span> Building 3D Homogeneous Matrices</h3>
-<div id="31e27812" class="cell" data-execution_count="13">
+<div id="4694fd15" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T3d(tx, ty, tz):</span>
@@ -1345,7 +1345,7 @@ Bottom row: [0. 0. 0. 1.]</code></pre>
 <li>The <strong>top-right column</strong> <span class="math inline">\(\mathbf{t}\)</span> is the translation (position of the child frame’s origin in the parent frame).</li>
 <li>The <strong>bottom row</strong> is always <span class="math inline">\([0, 0, 0, 1]\)</span>.</li>
 </ul>
-<div id="d908b93f" class="cell" data-execution_count="14">
+<div id="c5ae5ca5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz3d(gamma):</span>
@@ -1385,7 +1385,7 @@ t = [1. 2. 3.]</code></pre>
 </section>
 <section id="applying-a-pose-to-points-and-vectors" class="level3" data-number="7.5.3">
 <h3 data-number="7.5.3" class="anchored" data-anchor-id="applying-a-pose-to-points-and-vectors"><span class="header-section-number">7.5.3</span> Applying a Pose to Points and Vectors</h3>
-<div id="541c7b83" class="cell" data-execution_count="15">
+<div id="1e13697f" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz3d(gamma):</span>
@@ -1426,7 +1426,7 @@ Output vector(w=0): [0.7071 0.7071 0.    ]  — only rotated, NOT translated</co
 </section>
 <section id="visualising-3d-affine-motion" class="level3" data-number="7.5.4">
 <h3 data-number="7.5.4" class="anchored" data-anchor-id="visualising-3d-affine-motion"><span class="header-section-number">7.5.4</span> Visualising 3D Affine Motion</h3>
-<div id="0fd00ef7" class="cell" data-execution_count="16">
+<div id="eb2170f7" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1495,7 +1495,7 @@ Output vector(w=0): [0.7071 0.7071 0.    ]  — only rotated, NOT translated</co
 <hr>
 <section id="order-matters-a-concrete-failure" class="level3" data-number="7.6.1">
 <h3 data-number="7.6.1" class="anchored" data-anchor-id="order-matters-a-concrete-failure"><span class="header-section-number">7.6.1</span> Order Matters: A Concrete Failure</h3>
-<div id="f6e04f6d" class="cell" data-execution_count="17">
+<div id="e5484115" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T2d(tx, ty):</span>
@@ -1530,7 +1530,7 @@ Translate BEFORE Rotate (R @ T):
 Are they equal? False</code></pre>
 </div>
 </div>
-<div id="35239461" class="cell" data-execution_count="18">
+<div id="2d47faeb" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1592,7 +1592,7 @@ Are they equal? False</code></pre>
 <li>Translates the camera to the final sensor position: <span class="math inline">\(T_2\)</span></li>
 </ol>
 <p>Compute the total transform and apply it to a point cloud.</p>
-<div id="037d16d4" class="cell" data-execution_count="19">
+<div id="bf66265a" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T3d(tx, ty, tz):</span>
@@ -1650,7 +1650,7 @@ Match: True</code></pre>
 <p>For pose matrices (<span class="math inline">\(R\)</span> orthogonal), the inverse is:</p>
 <p><span class="math display">\[T^{-1} = \begin{bmatrix}R^T &amp; -R^T\mathbf{t} \\ \mathbf{0}^T &amp; 1\end{bmatrix}\]</span></p>
 <p>This is cheap — no matrix inversion required, just transpose and multiply.</p>
-<div id="a2659a8f" class="cell" data-execution_count="20">
+<div id="5c7d314b" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz3d(gamma):</span>
@@ -1706,7 +1706,7 @@ M @ M_inv = I? True</code></pre>
 <p>In a robot arm with <span class="math inline">\(n\)</span> joints, each joint <span class="math inline">\(i\)</span> contributes one <span class="math inline">\(4\times4\)</span> matrix <span class="math inline">\(T_i(\theta_i)\)</span> parameterised by the joint angle. The end-effector pose in world frame is:</p>
 <p><span class="math display">\[T_\text{ee} = T_1(\theta_1)\; T_2(\theta_2)\; \cdots\; T_n(\theta_n)\]</span></p>
 <p>This is the <strong>forward kinematics</strong> equation. Each <span class="math inline">\(T_i\)</span> is an affine transform in homogeneous coordinates — exactly what this chapter is building toward (Chapter 9).</p>
-<div id="4e14b726" class="cell" data-execution_count="21">
+<div id="4f18c9b9" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T3d(tx, ty, tz):</span>
@@ -1776,7 +1776,7 @@ M @ M_inv = I? True</code></pre>
 <section id="step-1-synthetic-scene-no-real-image-required" class="level3" data-number="7.7.2">
 <h3 data-number="7.7.2" class="anchored" data-anchor-id="step-1-synthetic-scene-no-real-image-required"><span class="header-section-number">7.7.2</span> Step 1 — Synthetic Scene (No Real Image Required)</h3>
 <p>To keep the pipeline runnable without external data, we generate a synthetic “field” image: a gradient background with a grid of crop rows.</p>
-<div id="1a798904" class="cell" data-execution_count="22">
+<div id="c0b9180f" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
@@ -1827,7 +1827,7 @@ M @ M_inv = I? True</code></pre>
 <section id="step-2-simulating-a-second-camera-view" class="level3" data-number="7.7.3">
 <h3 data-number="7.7.3" class="anchored" data-anchor-id="step-2-simulating-a-second-camera-view"><span class="header-section-number">7.7.3</span> Step 2 — Simulating a Second Camera View</h3>
 <p>The second camera is shifted right by 40 px, shifted down by 20 px, and rotated 8° relative to the first. We apply a known affine transform to the reference image to generate image B, then pretend we don’t know the matrix.</p>
-<div id="a264d534" class="cell" data-execution_count="23">
+<div id="bbb0c7f5" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.ndimage <span class="im">import</span> affine_transform</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1896,7 +1896,7 @@ M @ M_inv = I? True</code></pre>
 <section id="step-3-corresponding-keypoints" class="level3" data-number="7.7.4">
 <h3 data-number="7.7.4" class="anchored" data-anchor-id="step-3-corresponding-keypoints"><span class="header-section-number">7.7.4</span> Step 3 — Corresponding Keypoints</h3>
 <p>In a real pipeline, feature detectors (SIFT, ORB) find matching points automatically. Here we compute the correspondences analytically from the known transform so the algebra is transparent.</p>
-<div id="110b0ce9" class="cell" data-execution_count="24">
+<div id="6d1aa54c" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Keypoints in image A (column x, row y)</span></span>
@@ -1952,7 +1952,7 @@ x_n &amp; y_n &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; x_n &amp; y_n &amp; 1\end{bmatrix}}_{C \;(2n \times 6)}
 \begin{bmatrix}a_{11}\\a_{12}\\t_x\\a_{21}\\a_{22}\\t_y\end{bmatrix}
 = \underbrace{\begin{bmatrix}x'_1\\y'_1\\\vdots\\x'_n\\y'_n\end{bmatrix}}_{\mathbf{b} \;(2n,)}\]</span></p>
-<div id="fc93fcf2" class="cell" data-execution_count="25">
+<div id="68cd6523" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>pts_A <span class="op">=</span> np.array([[<span class="fl">40.</span>, <span class="fl">50.</span>], [<span class="fl">80.</span>, <span class="fl">40.</span>], [<span class="fl">150.</span>, <span class="fl">60.</span>],</span>
@@ -2018,7 +2018,7 @@ Max error: 2.84e-14</code></pre>
 <section id="step-5-warping-and-stitching" class="level3" data-number="7.7.6">
 <h3 data-number="7.7.6" class="anchored" data-anchor-id="step-5-warping-and-stitching"><span class="header-section-number">7.7.6</span> Step 5 — Warping and Stitching</h3>
 <p>To stitch: warp image B <em>back</em> into image A’s coordinate frame using <span class="math inline">\(M^{-1}\)</span>, then blend the overlap region.</p>
-<div id="54ab665b" class="cell" data-execution_count="26">
+<div id="237337b1" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.ndimage <span class="im">import</span> affine_transform</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -2098,7 +2098,7 @@ Max error: 2.84e-14</code></pre>
 <section id="step-6-how-accurate-is-the-warp" class="level3" data-number="7.7.7">
 <h3 data-number="7.7.7" class="anchored" data-anchor-id="step-6-how-accurate-is-the-warp"><span class="header-section-number">7.7.7</span> Step 6 — How Accurate Is the Warp?</h3>
 <p>The residual between stitched and reference images quantifies alignment quality.</p>
-<div id="b5793948" class="cell" data-execution_count="27">
+<div id="4d643e26" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2212,7 +2212,7 @@ Max error: 2.84e-14</code></pre>
 <section id="kaggle-exploration" class="level3" data-number="7.7.9">
 <h3 data-number="7.7.9" class="anchored" data-anchor-id="kaggle-exploration"><span class="header-section-number">7.7.9</span> Kaggle Exploration</h3>
 <p><strong>Dataset</strong>: <a href="https://www.kaggle.com/datasets/humansintheloop/aerial-image-dataset">Aerial Image Dataset</a> — orthophoto tiles from drone surveys.</p>
-<div id="cc64e5dc" class="cell" data-execution_count="28">
+<div id="9096aead" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumes: two overlapping tiles already loaded as img_A, img_B (H x W x 3 arrays)</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> skimage.feature <span class="im">import</span> ORB, match_descriptors</span>
@@ -2290,7 +2290,7 @@ Max error: 2.84e-14</code></pre>
 <section id="solutions" class="level3" data-number="7.8.2">
 <h3 data-number="7.8.2" class="anchored" data-anchor-id="solutions"><span class="header-section-number">7.8.2</span> Solutions</h3>
 <p><strong>Solution 7.1</strong></p>
-<div id="14979567" class="cell" data-execution_count="29">
+<div id="f28e27a4" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.array([<span class="fl">2.</span>, <span class="fl">3.</span>])   <span class="co"># shape (2,)</span></span>
@@ -2318,7 +2318,7 @@ Max error: 2.84e-14</code></pre>
 </div>
 <hr>
 <p><strong>Solution 7.2</strong></p>
-<div id="e1839888" class="cell" data-execution_count="30">
+<div id="2fee254d" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (a)–(b): g(f(x)) = A2(A1 x + t1) + t2 = (A2 A1) x + (A2 t1 + t2)</span></span>
@@ -2358,7 +2358,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.3</strong></p>
-<div id="0cd7c297" class="cell" data-execution_count="31">
+<div id="e91ff83e" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T2d(tx, ty):</span>
@@ -2393,7 +2393,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.4</strong></p>
-<div id="4609b471" class="cell" data-execution_count="32">
+<div id="78dc642a" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T2d(tx, ty):</span>
@@ -2432,7 +2432,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.5</strong></p>
-<div id="5b26c7d2" class="cell" data-execution_count="33">
+<div id="c4f6f09b" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (a) Verify by block multiplication</span></span>
@@ -2478,7 +2478,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.6</strong></p>
-<div id="83d560c8" class="cell" data-execution_count="34">
+<div id="f2d0ed2d" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Source points</span></span>
@@ -2526,7 +2526,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.7</strong></p>
-<div id="71a516c1" class="cell" data-execution_count="35">
+<div id="cc4637e2" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T3d(tx, ty, tz):</span>
@@ -2576,7 +2576,7 @@ M2 @ M1 =
 </div>
 <hr>
 <p><strong>Solution 7.8</strong></p>
-<div id="bb9752fa" class="cell" data-execution_count="36">
+<div id="fe224fc9" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>

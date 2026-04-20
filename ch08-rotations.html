@@ -589,7 +589,7 @@ window.Quarto = {
 <p>A general <span class="math inline">\(3 \times 3\)</span> matrix has 9 free parameters. The constraint <span class="math inline">\(R^TR = I\)</span> provides 6 independent equations (one per entry of the symmetric matrix <span class="math inline">\(R^TR\)</span> on and above the diagonal). So:</p>
 <p><span class="math display">\[9 \text{ parameters} - 6 \text{ constraints} = 3 \text{ degrees of freedom}\]</span></p>
 <p>Those 3 DoF correspond to the 3 angles that describe any rigid rotation in space (e.g., roll, pitch, yaw). The matrix representation uses 9 numbers to encode what is fundamentally a 3-dimensional object — this <strong>over-parameterisation</strong> is the source of numerical drift in long simulation chains.</p>
-<div id="a19bf3d4" class="cell" data-execution_count="1">
+<div id="0d10ab7a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -631,7 +631,7 @@ det(R) = 1.00000000  (should be exactly +1)</code></pre>
 <li><strong>Identity</strong>: <span class="math inline">\(I \in \text{SO}(3)\)</span>.</li>
 <li><strong>Inverse</strong>: <span class="math inline">\(R^{-1} = R^T \in \text{SO}(3)\)</span>.</li>
 </ul>
-<div id="42519994" class="cell" data-execution_count="2">
+<div id="4c3f7e18" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Ry(b):</span>
@@ -671,7 +671,7 @@ np.linalg.inv matches R1^T?  True</code></pre>
 <p>After many multiplications (e.g., integrating angular velocity in a simulation), floating-point errors accumulate and <span class="math inline">\(R\)</span> drifts off SO(3): <span class="math inline">\(R^T R \neq I\)</span> exactly.</p>
 <p>The fix is to project back onto SO(3) via SVD:</p>
 <p><span class="math display">\[R_\text{fixed} = UV^T \quad \text{where} \quad R_\text{drifted} = U\Sigma V^T\]</span></p>
-<div id="bda663e5" class="cell" data-execution_count="3">
+<div id="7209e505" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>)</span>
@@ -716,7 +716,7 @@ After  re-orthogonalisation: ||R^T R - I|| = 1.26e-15,  det = 1.00000000</code><
 <section id="what-rotation-matrices-do-geometrically" class="level3" data-number="8.1.4">
 <h3 data-number="8.1.4" class="anchored" data-anchor-id="what-rotation-matrices-do-geometrically"><span class="header-section-number">8.1.4</span> What Rotation Matrices Do Geometrically</h3>
 <p>The three columns of <span class="math inline">\(R\)</span> are the images of the three standard basis vectors: column <span class="math inline">\(j\)</span> of <span class="math inline">\(R\)</span> is where <span class="math inline">\(\mathbf{e}_j\)</span> goes after the rotation. They form a new orthonormal frame — the <strong>body frame</strong> expressed in the <strong>world frame</strong>.</p>
-<div id="a6e66a46" class="cell" data-execution_count="4">
+<div id="5fa446f8" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D   <span class="co"># noqa: F401</span></span>
@@ -780,7 +780,7 @@ After  re-orthogonalisation: ||R^T R - I|| = 1.26e-15,  det = 1.00000000</code><
 <h3 data-number="8.2.1" class="anchored" data-anchor-id="why-euler-angles-are-tempting-and-dangerous"><span class="header-section-number">8.2.1</span> Why Euler Angles Are Tempting — and Dangerous</h3>
 <p><strong>Appeal</strong>: three numbers, directly interpretable by a pilot or operator. <strong>Problem</strong>: the three-angle parameterisation has a <strong>singularity</strong> called <strong>gimbal lock</strong>, where two of the three rotation axes become aligned and the system loses a degree of freedom.</p>
 <p>For ZYX convention this happens when pitch <span class="math inline">\(\phi = \pm 90°\)</span>: at that point yaw and roll both rotate about the same axis, making the combined rotation non-unique.</p>
-<div id="2d6a08d2" class="cell" data-execution_count="5">
+<div id="851c7f78" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -839,7 +839,7 @@ Are these two locked poses the same rotation? True</code></pre>
 </section>
 <section id="visualising-gimbal-lock" class="level3" data-number="8.2.2">
 <h3 data-number="8.2.2" class="anchored" data-anchor-id="visualising-gimbal-lock"><span class="header-section-number">8.2.2</span> Visualising Gimbal Lock</h3>
-<div id="06cf0038" class="cell" data-execution_count="6">
+<div id="d7b90608" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -904,7 +904,7 @@ Are these two locked poses the same rotation? True</code></pre>
 \theta = \text{atan2}(r_{32}, r_{33}), \quad
 \psi   = \text{atan2}(r_{21}, r_{11})\]</span></p>
 <p>These formulas break down (return NaN or a non-unique result) when <span class="math inline">\(r_{31} = \pm 1\)</span>, i.e., at gimbal lock.</p>
-<div id="5c349ca7" class="cell" data-execution_count="7">
+<div id="6d7e8700" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -1002,7 +1002,7 @@ Max error: 0.00e+00</code></pre>
 <li><span class="math inline">\(\cos\theta\,(\mathbf{v} - (\mathbf{v} \cdot \hat{\mathbf{k}})\hat{\mathbf{k}})\)</span>: the perpendicular component scaled down</li>
 <li><span class="math inline">\(\sin\theta\,(\hat{\mathbf{k}} \times \mathbf{v})\)</span>: the perpendicular component rotated 90°</li>
 </ol>
-<div id="4189b2f3" class="cell" data-execution_count="8">
+<div id="af403fe0" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skew(k):</span>
@@ -1058,7 +1058,7 @@ det(R) = 1.00000000</code></pre>
 <p><span class="math display">\[\theta = \arccos\!\left(\frac{\text{tr}(R) - 1}{2}\right)\]</span></p>
 <p><span class="math display">\[\hat{\mathbf{k}} = \frac{1}{2\sin\theta}\begin{bmatrix}R_{32}-R_{23}\\R_{13}-R_{31}\\R_{21}-R_{12}\end{bmatrix}\]</span></p>
 <p>This formula is valid for <span class="math inline">\(\theta \in (0°, 180°)\)</span>. At <span class="math inline">\(\theta = 0\)</span> the axis is undefined (no rotation). At <span class="math inline">\(\theta = 180°\)</span>, <span class="math inline">\(\sin\theta = 0\)</span> and the formula is numerically unstable — a special case is needed.</p>
-<div id="690f73cd" class="cell" data-execution_count="9">
+<div id="bfdaac4d" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skew(k):</span>
@@ -1115,7 +1115,7 @@ Axis match: True</code></pre>
 </section>
 <section id="visualising-a-rotation-sweeping-the-angle" class="level3" data-number="8.3.3">
 <h3 data-number="8.3.3" class="anchored" data-anchor-id="visualising-a-rotation-sweeping-the-angle"><span class="header-section-number">8.3.3</span> Visualising a Rotation: Sweeping the Angle</h3>
-<div id="db1c1779" class="cell" data-execution_count="10">
+<div id="53cb45ea" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D   <span class="co"># noqa: F401</span></span>
@@ -1175,7 +1175,7 @@ Axis match: True</code></pre>
 <li><span class="math inline">\(\mathbf{r} = [0, 0, \pi/4]^T\)</span>: rotate 45° about <span class="math inline">\(z\)</span></li>
 </ul>
 <p>This compact form is the basis of the <strong>Lie algebra</strong> <span class="math inline">\(\mathfrak{so}(3)\)</span> (Chapter 24) and is what ROS2 stores as <code>angular_velocity</code> messages.</p>
-<div id="6dc90bd9" class="cell" data-execution_count="11">
+<div id="b00e5c6d" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> skew(k):</span>
@@ -1219,7 +1219,7 @@ R =
 <p>A rotation by angle <span class="math inline">\(\theta\)</span> about unit axis <span class="math inline">\(\hat{\mathbf{k}}\)</span> is encoded as:</p>
 <p><span class="math display">\[q = \cos\!\frac{\theta}{2} + \sin\!\frac{\theta}{2}\,(k_x i + k_y j + k_z k)\]</span></p>
 <p>In vector notation: <span class="math inline">\(q = [w, \mathbf{v}]\)</span> where <span class="math inline">\(w = \cos(\theta/2)\)</span> and <span class="math inline">\(\mathbf{v} = \sin(\theta/2)\hat{\mathbf{k}}\)</span>.</p>
-<div id="a0dc7bdc" class="cell" data-execution_count="12">
+<div id="5d308973" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> axis_angle_to_quat(k_hat, theta):</span>
@@ -1251,7 +1251,7 @@ Identity quaternion = [1. 0. 0. 0.]  (w=1, xyz=0)</code></pre>
 <p>Composing two rotations corresponds to the <strong>Hamilton product</strong> of their quaternions. For <span class="math inline">\(p = [p_w, \mathbf{p}_v]\)</span> and <span class="math inline">\(q = [q_w, \mathbf{q}_v]\)</span>:</p>
 <p><span class="math display">\[p \otimes q = \begin{bmatrix}p_w q_w - \mathbf{p}_v \cdot \mathbf{q}_v \\
 p_w \mathbf{q}_v + q_w \mathbf{p}_v + \mathbf{p}_v \times \mathbf{q}_v\end{bmatrix}\]</span></p>
-<div id="536c4a2a" class="cell" data-execution_count="13">
+<div id="42d3d185" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -1306,7 +1306,7 @@ Equal? False</code></pre>
 <li>Conjugate: <span class="math inline">\(\mathbf{v}' = q \otimes \tilde{v} \otimes q^*\)</span> where <span class="math inline">\(q^* = [w, -\mathbf{v}]\)</span></li>
 </ol>
 <p>For a unit quaternion, <span class="math inline">\(q^{-1} = q^*\)</span>.</p>
-<div id="711d97e5" class="cell" data-execution_count="14">
+<div id="bb17df38" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -1365,7 +1365,7 @@ Match: True</code></pre>
 <p><span class="math display">\[R = \begin{bmatrix}1-2(y^2+z^2) &amp; 2(xy-wz) &amp; 2(xz+wy)\\
 2(xy+wz) &amp; 1-2(x^2+z^2) &amp; 2(yz-wx)\\
 2(xz-wy) &amp; 2(yz+wx) &amp; 1-2(x^2+y^2)\end{bmatrix}\]</span></p>
-<div id="aeb04511" class="cell" data-execution_count="15">
+<div id="246d7d3b" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_to_mat(q):</span>
@@ -1409,7 +1409,7 @@ det(R) = 1.00000000</code></pre>
 <p><span class="math display">\[R(q) = R(-q)\]</span></p>
 <p>This is because flipping all four components of a unit quaternion negates the pure-quaternion part in <span class="math inline">\(q\tilde{v}q^*\)</span> twice, leaving the result unchanged. The sphere <span class="math inline">\(S^3\)</span> of unit quaternions is a <strong>double cover</strong> of SO(3): every rotation corresponds to exactly two antipodal quaternions.</p>
 <p>This matters for interpolation (§8.5): to take the short path on <span class="math inline">\(S^3\)</span>, always check that <span class="math inline">\(p \cdot q &gt; 0\)</span> and negate <span class="math inline">\(q\)</span> if not.</p>
-<div id="3e61ef5f" class="cell" data-execution_count="16">
+<div id="f52d17cd" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_to_mat(q):</span>
@@ -1454,7 +1454,7 @@ R(-q) =
 <section id="why-linear-matrix-interpolation-fails" class="level3" data-number="8.5.1">
 <h3 data-number="8.5.1" class="anchored" data-anchor-id="why-linear-matrix-interpolation-fails"><span class="header-section-number">8.5.1</span> Why Linear Matrix Interpolation Fails</h3>
 <p>A matrix <span class="math inline">\((1-t)R_0 + tR_1\)</span> does not stay in SO(3) for <span class="math inline">\(t \in (0,1)\)</span>: the interpolated matrix is not orthogonal and can even have determinant <span class="math inline">\(&lt; 1\)</span>.</p>
-<div id="7f13df4e" class="cell" data-execution_count="17">
+<div id="18fcd6b7" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -1493,7 +1493,7 @@ R(-q) =
 <p><span class="math display">\[\text{slerp}(q_0, q_1, t) = q_0 \left(q_0^{-1} q_1\right)^t =
 \frac{\sin((1-t)\Omega)}{\sin\Omega} q_0 + \frac{\sin(t\Omega)}{\sin\Omega} q_1\]</span></p>
 <p>where <span class="math inline">\(\Omega = \arccos(q_0 \cdot q_1)\)</span> is the half-angle between the quaternions on <span class="math inline">\(S^3\)</span>. When <span class="math inline">\(\Omega \approx 0\)</span> (nearly identical rotations), fall back to linear interpolation (LERP) to avoid division by zero.</p>
-<div id="47c6da3c" class="cell" data-execution_count="18">
+<div id="2c564d9f" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> slerp(q0, q1, t):</span>
@@ -1547,7 +1547,7 @@ R(-q) =
 <section id="euler-angle-interpolation-the-artefact" class="level3" data-number="8.5.3">
 <h3 data-number="8.5.3" class="anchored" data-anchor-id="euler-angle-interpolation-the-artefact"><span class="header-section-number">8.5.3</span> Euler-Angle Interpolation: The Artefact</h3>
 <p>Linear interpolation of Euler angles near a singularity produces a jarring “jump” or unexpected trajectory. Here we compare SLERP to naive Euler lerp:</p>
-<div id="ced25cfd" class="cell" data-execution_count="19">
+<div id="55d95a77" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1660,7 +1660,7 @@ R(-q) =
 <h3 data-number="8.5.4" class="anchored" data-anchor-id="constant-angular-velocity"><span class="header-section-number">8.5.4</span> Constant Angular Velocity</h3>
 <p>SLERP has a key property: the angular velocity between consecutive steps is <strong>constant</strong>. The rotation sweeps at a uniform rate, unlike Euler interpolation which accelerates and decelerates unpredictably near singularities.</p>
 <p>This constant-speed property makes SLERP the standard for: - <strong>Animation blending</strong> (game engines, motion capture) - <strong>Robot trajectory planning</strong> (smooth joint interpolation) - <strong>Sensor fusion</strong> (averaging multiple orientation estimates)</p>
-<div id="3b2fe7da" class="cell" data-execution_count="20">
+<div id="21a150d0" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> axis_angle_to_quat(k_hat, theta):</span>
@@ -1755,7 +1755,7 @@ All equal? True</code></pre>
 <hr>
 <section id="matrix-quaternion" class="level3" data-number="8.6.1">
 <h3 data-number="8.6.1" class="anchored" data-anchor-id="matrix-quaternion"><span class="header-section-number">8.6.1</span> Matrix ↔︎ Quaternion</h3>
-<div id="f9e00334" class="cell" data-execution_count="21">
+<div id="325ac581" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mat_to_quat(R):</span>
@@ -1817,7 +1817,7 @@ R == quat_to_mat(q)?  True</code></pre>
 </section>
 <section id="matrix-axis-angle" class="level3" data-number="8.6.2">
 <h3 data-number="8.6.2" class="anchored" data-anchor-id="matrix-axis-angle"><span class="header-section-number">8.6.2</span> Matrix ↔︎ Axis-Angle</h3>
-<div id="c850b56c" class="cell" data-execution_count="22">
+<div id="620d9153" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mat_to_axis_angle(R):</span>
@@ -1863,7 +1863,7 @@ Round-trip R == R2?  True</code></pre>
 </section>
 <section id="matrix-euler-angles-zyx" class="level3" data-number="8.6.3">
 <h3 data-number="8.6.3" class="anchored" data-anchor-id="matrix-euler-angles-zyx"><span class="header-section-number">8.6.3</span> Matrix ↔︎ Euler Angles (ZYX)</h3>
-<div id="fefe970f" class="cell" data-execution_count="23">
+<div id="a060b11e" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mat_to_euler_zyx(R):</span>
@@ -1905,7 +1905,7 @@ Recovered:yaw=45.84°, pitch=11.46°, roll=-28.65°</code></pre>
 </section>
 <section id="quaternion-axis-angle" class="level3" data-number="8.6.4">
 <h3 data-number="8.6.4" class="anchored" data-anchor-id="quaternion-axis-angle"><span class="header-section-number">8.6.4</span> Quaternion ↔︎ Axis-Angle</h3>
-<div id="7bc70e20" class="cell" data-execution_count="24">
+<div id="897653d6" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_to_axis_angle(q):</span>
@@ -1945,7 +1945,7 @@ Angle recovered: 110.0000°</code></pre>
 </section>
 <section id="quaternion-euler-angles-zyx" class="level3" data-number="8.6.5">
 <h3 data-number="8.6.5" class="anchored" data-anchor-id="quaternion-euler-angles-zyx"><span class="header-section-number">8.6.5</span> Quaternion ↔︎ Euler Angles (ZYX)</h3>
-<div id="d08d9dcd" class="cell" data-execution_count="25">
+<div id="8becd2ba" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_to_euler_zyx(q):</span>
@@ -1990,7 +1990,7 @@ Match: True</code></pre>
 <section id="full-conversion-chain-verification" class="level3" data-number="8.6.6">
 <h3 data-number="8.6.6" class="anchored" data-anchor-id="full-conversion-chain-verification"><span class="header-section-number">8.6.6</span> Full Conversion Chain Verification</h3>
 <p>Every path around the conversion graph should give the same rotation.</p>
-<div id="440eff90" class="cell" data-execution_count="26">
+<div id="3190df40" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ---- helpers (all from above) ----</span></span>
@@ -2116,7 +2116,7 @@ Match: True</code></pre>
 <section id="simulating-a-camera-trajectory" class="level3" data-number="8.7.1">
 <h3 data-number="8.7.1" class="anchored" data-anchor-id="simulating-a-camera-trajectory"><span class="header-section-number">8.7.1</span> Simulating a Camera Trajectory</h3>
 <p>We generate a synthetic trajectory: the camera pitches up 60°, yaws left 45°, then rolls 30° — a plausible “looking-around” motion.</p>
-<div id="3728d0ac" class="cell" data-execution_count="27">
+<div id="047d52b0" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -2170,7 +2170,7 @@ Match: True</code></pre>
 <section id="building-the-trajectory-euler-lerp-vs-slerp" class="level3" data-number="8.7.2">
 <h3 data-number="8.7.2" class="anchored" data-anchor-id="building-the-trajectory-euler-lerp-vs-slerp"><span class="header-section-number">8.7.2</span> Building the Trajectory: Euler LERP vs SLERP</h3>
 <p>We interpolate between consecutive key frames using both methods and record where the camera’s forward vector (<span class="math inline">\(+z\)</span> axis) points.</p>
-<div id="cd2a9c6c" class="cell" data-execution_count="28">
+<div id="4a43100d" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -2253,7 +2253,7 @@ Max ||forward|| deviation from 1 (SLERP): 2.22e-16</code></pre>
 </section>
 <section id="plotting-the-camera-orientation-trajectory" class="level3" data-number="8.7.3">
 <h3 data-number="8.7.3" class="anchored" data-anchor-id="plotting-the-camera-orientation-trajectory"><span class="header-section-number">8.7.3</span> Plotting the Camera Orientation Trajectory</h3>
-<div id="6f6ca745" class="cell" data-execution_count="29">
+<div id="818ae3fc" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D   <span class="co"># noqa: F401</span></span>
@@ -2341,7 +2341,7 @@ Max ||forward|| deviation from 1 (SLERP): 2.22e-16</code></pre>
 <section id="artefact-detection-angular-speed-profile" class="level3" data-number="8.7.4">
 <h3 data-number="8.7.4" class="anchored" data-anchor-id="artefact-detection-angular-speed-profile"><span class="header-section-number">8.7.4</span> Artefact Detection: Angular Speed Profile</h3>
 <p>SLERP sweeps at constant angular speed between key frames. Euler LERP produces speed spikes, visible as clusters of tightly packed points on the sphere.</p>
-<div id="db29a933" class="cell" data-execution_count="30">
+<div id="171a5db3" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2423,7 +2423,7 @@ Max ||forward|| deviation from 1 (SLERP): 2.22e-16</code></pre>
 <section id="kaggle-exploration" class="level3" data-number="8.7.5">
 <h3 data-number="8.7.5" class="anchored" data-anchor-id="kaggle-exploration"><span class="header-section-number">8.7.5</span> Kaggle Exploration</h3>
 <p><strong>Dataset</strong>: <a href="https://www.kaggle.com/datasets/leziya/intel-realsense-d435i-imu-orientation">Intel RealSense Camera IMU dataset</a> — raw IMU readings with ground-truth quaternion pose logged at 200 Hz.</p>
-<div id="97128519" class="cell" data-execution_count="31">
+<div id="5e219142" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumes: df loaded from CSV with columns 'qw','qx','qy','qz' (unit quaternions)</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -2489,7 +2489,7 @@ Max ||forward|| deviation from 1 (SLERP): 2.22e-16</code></pre>
 <section id="solutions" class="level3" data-number="8.8.2">
 <h3 data-number="8.8.2" class="anchored" data-anchor-id="solutions"><span class="header-section-number">8.8.2</span> Solutions</h3>
 <p><strong>Solution 8.1</strong></p>
-<div id="30eb164c" class="cell" data-execution_count="32">
+<div id="c9dbea78" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(g):</span>
@@ -2538,7 +2538,7 @@ Max ||forward|| deviation from 1 (SLERP): 2.22e-16</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.2</strong></p>
-<div id="351561b7" class="cell" data-execution_count="33">
+<div id="007de75f" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -2585,7 +2585,7 @@ Rb =
 </div>
 <hr>
 <p><strong>Solution 8.3</strong></p>
-<div id="5a3e6340" class="cell" data-execution_count="34">
+<div id="03ee3496" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.pi <span class="op">/</span> <span class="fl">2.</span></span>
@@ -2616,7 +2616,7 @@ Correct? True</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.4</strong></p>
-<div id="43e88d1d" class="cell" data-execution_count="35">
+<div id="09e5b719" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_mul(p, q):</span>
@@ -2665,7 +2665,7 @@ Match: True</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.5</strong></p>
-<div id="96a0015a" class="cell" data-execution_count="36">
+<div id="5c493ad5" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quat_to_mat(q):</span>
@@ -2707,7 +2707,7 @@ Match: True</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.6</strong></p>
-<div id="c60a09a0" class="cell" data-execution_count="37">
+<div id="9caa451c" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> axis_angle_to_quat(k_hat, theta):</span>
@@ -2762,7 +2762,7 @@ Match: True</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.7</strong></p>
-<div id="55e3731b" class="cell" data-execution_count="38">
+<div id="8faf580d" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rx(a):</span>
@@ -2815,7 +2815,7 @@ Match: True</code></pre>
 </div>
 <hr>
 <p><strong>Solution 8.8</strong></p>
-<div id="6d58c529" class="cell" data-execution_count="39">
+<div id="8c38b5e3" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>

@@ -82,6 +82,35 @@ gtag('js', new Date());
 gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -423,8 +452,31 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In This Chapter</h2>
+   
+  <ul>
+  <li><a href="#sec-app-notation-overview" id="toc-sec-app-notation-overview" class="nav-link active" data-scroll-target="#sec-app-notation-overview"><span class="header-section-number">30.1</span> Overview</a>
+  <ul class="collapse">
+  <li><a href="#typographic-conventions" id="toc-typographic-conventions" class="nav-link" data-scroll-target="#typographic-conventions"><span class="header-section-number">30.1.1</span> Typographic Conventions</a></li>
+  </ul></li>
+  <li><a href="#sec-app-notation-symbols" id="toc-sec-app-notation-symbols" class="nav-link" data-scroll-target="#sec-app-notation-symbols"><span class="header-section-number">30.2</span> Symbol Tables</a>
+  <ul class="collapse">
+  <li><a href="#scalars-and-fields" id="toc-scalars-and-fields" class="nav-link" data-scroll-target="#scalars-and-fields"><span class="header-section-number">30.2.1</span> Scalars and Fields</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">30.2.2</span> Vectors</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">30.2.3</span> Matrices</a></li>
+  <li><a href="#decompositions" id="toc-decompositions" class="nav-link" data-scroll-target="#decompositions"><span class="header-section-number">30.2.4</span> Decompositions</a></li>
+  <li><a href="#operations-and-functions" id="toc-operations-and-functions" class="nav-link" data-scroll-target="#operations-and-functions"><span class="header-section-number">30.2.5</span> Operations and Functions</a></li>
+  <li><a href="#norms" id="toc-norms" class="nav-link" data-scroll-target="#norms"><span class="header-section-number">30.2.6</span> Norms</a></li>
+  <li><a href="#calculus-and-optimization" id="toc-calculus-and-optimization" class="nav-link" data-scroll-target="#calculus-and-optimization"><span class="header-section-number">30.2.7</span> Calculus and Optimization</a></li>
+  <li><a href="#probability-and-statistics" id="toc-probability-and-statistics" class="nav-link" data-scroll-target="#probability-and-statistics"><span class="header-section-number">30.2.8</span> Probability and Statistics</a></li>
+  <li><a href="#d-geometry" id="toc-d-geometry" class="nav-link" data-scroll-target="#d-geometry"><span class="header-section-number">30.2.9</span> 3D Geometry</a></li>
+  <li><a href="#sets-and-logic" id="toc-sets-and-logic" class="nav-link" data-scroll-target="#sets-and-logic"><span class="header-section-number">30.2.10</span> Sets and Logic</a></li>
+  <li><a href="#summation-and-index-notation" id="toc-summation-and-index-notation" class="nav-link" data-scroll-target="#summation-and-index-notation"><span class="header-section-number">30.2.11</span> Summation and Index Notation</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -448,18 +500,994 @@ gtag('config', 'G-4CHRE8S66M', { 'anonymize_ip': true});
 </header>
 
 
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><em>Coming soon.</em></p>
-</div>
-</div>
-</div>
+<section id="sec-app-notation-overview" class="level2" data-number="30.1">
+<h2 data-number="30.1" class="anchored" data-anchor-id="sec-app-notation-overview"><span class="header-section-number">30.1</span> Overview</h2>
+<p>This glossary collects every symbol used in the book: what it denotes, its typical shape, and the chapter where it first appears. Symbols are grouped by category; within each group they appear in roughly first-use order.</p>
+<hr>
+<section id="typographic-conventions" class="level3" data-number="30.1.1">
+<h3 data-number="30.1.1" class="anchored" data-anchor-id="typographic-conventions"><span class="header-section-number">30.1.1</span> Typographic Conventions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Style</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lowercase italic <span class="math inline">\(a, b, \lambda\)</span></td>
+<td>Scalar</td>
+</tr>
+<tr class="even">
+<td>Lowercase bold <span class="math inline">\(\mathbf{x}, \mathbf{v}\)</span></td>
+<td>Column vector</td>
+</tr>
+<tr class="odd">
+<td>Uppercase italic <span class="math inline">\(A, B, R\)</span></td>
+<td>Matrix</td>
+</tr>
+<tr class="even">
+<td>Uppercase calligraphic <span class="math inline">\(\mathcal{C}, \mathcal{N}\)</span></td>
+<td>Set or subspace</td>
+</tr>
+<tr class="odd">
+<td>Uppercase sans-serif <span class="math inline">\(\mathsf{T}\)</span></td>
+<td>Transformation (rare)</td>
+</tr>
+<tr class="even">
+<td>Hat <span class="math inline">\(\hat{\mathbf{x}}, \hat{\omega}\)</span></td>
+<td>Unit vector or skew-symmetric lift</td>
+</tr>
+<tr class="odd">
+<td>Bar <span class="math inline">\(\bar{x}\)</span></td>
+<td>Sample mean</td>
+</tr>
+<tr class="even">
+<td>Tilde <span class="math inline">\(\tilde{\mathbf{x}}\)</span></td>
+<td>Homogeneous coordinate</td>
+</tr>
+<tr class="odd">
+<td>Superscript <span class="math inline">\(\top\)</span></td>
+<td>Transpose (same as <span class="math inline">\(T\)</span> in the book)</td>
+</tr>
+<tr class="even">
+<td>Superscript <span class="math inline">\(*\)</span></td>
+<td>Complex conjugate or optimal value</td>
+</tr>
+<tr class="odd">
+<td>Superscript <span class="math inline">\(\dagger\)</span></td>
+<td>Moore-Penrose pseudoinverse</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sec-app-notation-symbols" class="level2" data-number="30.2">
+<h2 data-number="30.2" class="anchored" data-anchor-id="sec-app-notation-symbols"><span class="header-section-number">30.2</span> Symbol Tables</h2>
+<hr>
+<section id="scalars-and-fields" class="level3" data-number="30.2.1">
+<h3 data-number="30.2.1" class="anchored" data-anchor-id="scalars-and-fields"><span class="header-section-number">30.2.1</span> Scalars and Fields</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{R}\)</span></td>
+<td>Set of real numbers</td>
+<td>Ch. 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{R}^n\)</span></td>
+<td>Real <span class="math inline">\(n\)</span>-dimensional vector space</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{R}^{m \times n}\)</span></td>
+<td>Set of real <span class="math inline">\(m \times n\)</span> matrices</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbb{C}\)</span></td>
+<td>Set of complex numbers</td>
+<td>Ch. 13</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{Z}\)</span></td>
+<td>Set of integers</td>
+<td>Ch. 3</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a, b, c\)</span></td>
+<td>Generic scalars</td>
+<td>Ch. 1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\alpha, \beta, \gamma\)</span></td>
+<td>Scalar coefficients or angles</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\lambda, \mu\)</span></td>
+<td>Eigenvalue or Lagrange multiplier</td>
+<td>Ch. 13</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>Singular value or standard deviation</td>
+<td>Ch. 18</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td>Small positive number; tolerance</td>
+<td>Ch. 3</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(i, j, k, \ell\)</span></td>
+<td>Index variables</td>
+<td>Ch. 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m, n, p, r\)</span></td>
+<td>Dimension parameters; rank</td>
+<td>Ch. 2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="vectors" class="level3" data-number="30.2.2">
+<h3 data-number="30.2.2" class="anchored" data-anchor-id="vectors"><span class="header-section-number">30.2.2</span> Vectors</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Shape</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{x}, \mathbf{v}, \mathbf{w}\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Generic column vectors</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{a}, \mathbf{b}\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Fixed vectors (problem data)</td>
+<td>Ch. 2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{e}_i\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td><span class="math inline">\(i\)</span>-th standard basis vector</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{0}\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Zero vector</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\hat{\mathbf{x}}\)</span></td>
+<td><span class="math inline">\((3,1)\)</span></td>
+<td>Unit vector: <span class="math inline">\(\hat{\mathbf{x}} = \mathbf{x}/\|\mathbf{x}\|\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\tilde{\mathbf{x}}\)</span></td>
+<td><span class="math inline">\((n+1,1)\)</span></td>
+<td>Homogeneous form of <span class="math inline">\(\mathbf{x}\)</span></td>
+<td>Ch. 7</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{\mu}\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Mean vector</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{r}\)</span></td>
+<td><span class="math inline">\((m,1)\)</span></td>
+<td>Residual vector <span class="math inline">\(A\mathbf{x}-\mathbf{b}\)</span></td>
+<td>Ch. 17</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{\omega}\)</span></td>
+<td><span class="math inline">\((3,1)\)</span></td>
+<td>Angular velocity or rotation axis</td>
+<td>Ch. 8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathbf{t}\)</span></td>
+<td><span class="math inline">\((3,1)\)</span></td>
+<td>Translation vector</td>
+<td>Ch. 9</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{\delta}\)</span></td>
+<td>varies</td>
+<td>Upstream gradient in backprop</td>
+<td>Ch. 21</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nabla_\mathbf{x} f\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Gradient of scalar <span class="math inline">\(f\)</span> w.r.t. <span class="math inline">\(\mathbf{x}\)</span></td>
+<td>Ch. 21</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="matrices" class="level3" data-number="30.2.3">
+<h3 data-number="30.2.3" class="anchored" data-anchor-id="matrices"><span class="header-section-number">30.2.3</span> Matrices</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Shape</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A, B, C\)</span></td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Generic matrices</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I\)</span> or <span class="math inline">\(I_n\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Identity matrix</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(O\)</span></td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Zero matrix</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A^T\)</span></td>
+<td><span class="math inline">\((n,m)\)</span></td>
+<td>Transpose of <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^{-1}\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Inverse of square <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A^\dagger\)</span></td>
+<td><span class="math inline">\((n,m)\)</span></td>
+<td>Moore-Penrose pseudoinverse</td>
+<td>Ch. 17</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^{-T}\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td><span class="math inline">\((A^{-1})^T = (A^T)^{-1}\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{A}\)</span></td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Complex conjugate of <span class="math inline">\(A\)</span></td>
+<td>Ch. 13</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^H\)</span> or <span class="math inline">\(A^*\)</span></td>
+<td><span class="math inline">\((n,m)\)</span></td>
+<td>Conjugate transpose (Hermitian)</td>
+<td>Ch. 13</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\hat\omega\)</span> or <span class="math inline">\([\omega]_\times\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Skew-symmetric lift of <span class="math inline">\(\omega \in \mathbb{R}^3\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Rotation matrix in <span class="math inline">\(SO(3)\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T\)</span> or <span class="math inline">\([R|\mathbf{t}]\)</span></td>
+<td><span class="math inline">\((4,4)\)</span> or <span class="math inline">\((3,4)\)</span></td>
+<td>Rigid-body transform in <span class="math inline">\(SE(3)\)</span></td>
+<td>Ch. 9</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Camera intrinsic matrix</td>
+<td>Ch. 10</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Pi\)</span></td>
+<td><span class="math inline">\((3,4)\)</span></td>
+<td>Camera projection matrix</td>
+<td>Ch. 10</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Fundamental matrix</td>
+<td>Ch. 25</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(E\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Essential matrix</td>
+<td>Ch. 25</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Sigma\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Covariance matrix (PD, symmetric)</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(W\)</span></td>
+<td>varies</td>
+<td>Weight matrix (neural network)</td>
+<td>Ch. 21</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Hessian matrix</td>
+<td>Ch. 21</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(J_f\)</span></td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Jacobian of <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}^m\)</span></td>
+<td>Ch. 22</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\Lambda\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Diagonal eigenvalue matrix</td>
+<td>Ch. 14</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Sigma\)</span> (SVD)</td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Diagonal singular-value matrix</td>
+<td>Ch. 18</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="decompositions" class="level3" data-number="30.2.4">
+<h3 data-number="30.2.4" class="anchored" data-anchor-id="decompositions"><span class="header-section-number">30.2.4</span> Decompositions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A = LU\)</span></td>
+<td>LU factorization (<span class="math inline">\(L\)</span> lower, <span class="math inline">\(U\)</span> upper triangular)</td>
+<td>App. B</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A = LDL^T\)</span></td>
+<td>Symmetric indefinite factorization</td>
+<td>App. B</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A = LL^T\)</span></td>
+<td>Cholesky factorization (<span class="math inline">\(L\)</span> lower triangular)</td>
+<td>App. B</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A = QR\)</span></td>
+<td>QR factorization (<span class="math inline">\(Q\)</span> orthogonal, <span class="math inline">\(R\)</span> upper triangular)</td>
+<td>App. B</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A = Q\Lambda Q^T\)</span></td>
+<td>Eigendecomposition (symmetric <span class="math inline">\(A\)</span>)</td>
+<td>Ch. 14</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A = U\Sigma V^T\)</span></td>
+<td>Singular value decomposition</td>
+<td>Ch. 18</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A = V\Lambda V^{-1}\)</span></td>
+<td>Eigendecomposition (general <span class="math inline">\(A\)</span>)</td>
+<td>Ch. 14</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="operations-and-functions" class="level3" data-number="30.2.5">
+<h3 data-number="30.2.5" class="anchored" data-anchor-id="operations-and-functions"><span class="header-section-number">30.2.5</span> Operations and Functions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{u} \cdot \mathbf{v}\)</span> or <span class="math inline">\(\langle \mathbf{u},\mathbf{v} \rangle\)</span></td>
+<td>Dot (inner) product</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\mathbf{x}\)</span></td>
+<td>Matrix-vector product</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(AB\)</span></td>
+<td>Matrix-matrix product</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A \odot B\)</span></td>
+<td>Hadamard (element-wise) product</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A \otimes B\)</span></td>
+<td>Kronecker product</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\det(A)\)</span></td>
+<td>Determinant</td>
+<td>Ch. 12</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{tr}(A)\)</span></td>
+<td>Trace: <span class="math inline">\(\sum_i A_{ii}\)</span></td>
+<td>Ch. 12</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{rank}(A)\)</span></td>
+<td>Column (or row) rank of <span class="math inline">\(A\)</span></td>
+<td>Ch. 6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{null}(A)\)</span></td>
+<td>Null space: <span class="math inline">\(\{\mathbf{x}: A\mathbf{x}=\mathbf{0}\}\)</span></td>
+<td>Ch. 6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{col}(A)\)</span></td>
+<td>Column space of <span class="math inline">\(A\)</span></td>
+<td>Ch. 6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{row}(A)\)</span></td>
+<td>Row space of <span class="math inline">\(A\)</span></td>
+<td>Ch. 6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\ker(A)\)</span></td>
+<td>Kernel (same as null space)</td>
+<td>Ch. 6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{im}(A)\)</span></td>
+<td>Image (same as column space)</td>
+<td>Ch. 6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{span}\{v_1,\ldots,v_k\}\)</span></td>
+<td>Linear span of a set of vectors</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{diag}(\mathbf{x})\)</span></td>
+<td>Diagonal matrix with <span class="math inline">\(\mathbf{x}\)</span> on diagonal</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{vec}(A)\)</span></td>
+<td>Vectorization: stack columns of <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\exp(A)\)</span></td>
+<td>Matrix exponential</td>
+<td>Ch. 24</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\log(A)\)</span></td>
+<td>Matrix logarithm</td>
+<td>Ch. 24</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^\wedge\)</span></td>
+<td>Lie algebra element lifted from vector</td>
+<td>Ch. 24</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A^\vee\)</span></td>
+<td>Lie algebra element lowered to vector</td>
+<td>Ch. 24</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="norms" class="level3" data-number="30.2.6">
+<h3 data-number="30.2.6" class="anchored" data-anchor-id="norms"><span class="header-section-number">30.2.6</span> Norms</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\|\mathbf{x}\|\)</span> or <span class="math inline">\(\|\mathbf{x}\|_2\)</span></td>
+<td>Euclidean (L2) norm</td>
+<td>Ch. 15</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\|\mathbf{x}\|_1\)</span></td>
+<td>L1 norm: <span class="math inline">\(\sum_i |x_i|\)</span></td>
+<td>Ch. 15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\|\mathbf{x}\|_p\)</span></td>
+<td>Lp norm: <span class="math inline">\((\sum_i |x_i|^p)^{1/p}\)</span></td>
+<td>Ch. 15</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\|\mathbf{x}\|_\infty\)</span></td>
+<td>L-infinity norm: <span class="math inline">\(\max_i |x_i|\)</span></td>
+<td>Ch. 15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\|A\|_F\)</span></td>
+<td>Frobenius norm: <span class="math inline">\(\sqrt{\operatorname{tr}(A^T A)}\)</span></td>
+<td>Ch. 15</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\|A\|_2\)</span></td>
+<td>Spectral (operator) norm: <span class="math inline">\(\sigma_{\max}(A)\)</span></td>
+<td>Ch. 15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\|A\|_*\)</span></td>
+<td>Nuclear norm: <span class="math inline">\(\sum_i \sigma_i(A)\)</span></td>
+<td>Ch. 18</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(d(\mathbf{u},\mathbf{v})\)</span></td>
+<td>Euclidean distance <span class="math inline">\(\|\mathbf{u}-\mathbf{v}\|\)</span></td>
+<td>Ch. 15</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="calculus-and-optimization" class="level3" data-number="30.2.7">
+<h3 data-number="30.2.7" class="anchored" data-anchor-id="calculus-and-optimization"><span class="header-section-number">30.2.7</span> Calculus and Optimization</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Shape</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\nabla_\mathbf{x} f\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Gradient of scalar <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\partial f / \partial W\)</span></td>
+<td>same as <span class="math inline">\(W\)</span></td>
+<td>Matrix gradient of scalar <span class="math inline">\(f\)</span> w.r.t. <span class="math inline">\(W\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(J_f\)</span></td>
+<td><span class="math inline">\((m,n)\)</span></td>
+<td>Jacobian: <span class="math inline">\([J_f]_{ij} = \partial f_i / \partial x_j\)</span></td>
+<td>Ch. 22</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_f\)</span></td>
+<td><span class="math inline">\((n,n)\)</span></td>
+<td>Hessian: <span class="math inline">\([H_f]_{ij} = \partial^2 f / \partial x_i \partial x_j\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta = \nabla_\mathbf{y} L\)</span></td>
+<td><span class="math inline">\((m,1)\)</span></td>
+<td>Upstream gradient in backprop</td>
+<td>Ch. 21</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(df\)</span></td>
+<td>scalar</td>
+<td>Total differential of <span class="math inline">\(f\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(dA\)</span></td>
+<td>same as <span class="math inline">\(A\)</span></td>
+<td>Total differential of matrix <span class="math inline">\(A\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{argmin}_\mathbf{x} f(\mathbf{x})\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Minimizer of <span class="math inline">\(f\)</span></td>
+<td>Ch. 21</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{x}^*\)</span></td>
+<td><span class="math inline">\((n,1)\)</span></td>
+<td>Optimal solution</td>
+<td>Ch. 21</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="probability-and-statistics" class="level3" data-number="30.2.8">
+<h3 data-number="30.2.8" class="anchored" data-anchor-id="probability-and-statistics"><span class="header-section-number">30.2.8</span> Probability and Statistics</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{\mu}\)</span></td>
+<td>Mean vector</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{x}\)</span></td>
+<td>Sample mean (scalar)</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td>Variance (scalar)</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Sigma\)</span></td>
+<td>Covariance matrix (positive semi-definite)</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{N}(\boldsymbol{\mu}, \Sigma)\)</span></td>
+<td>Multivariate Gaussian distribution</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p(\mathbf{x})\)</span></td>
+<td>Probability density function</td>
+<td>Ch. 19</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbb{E}[\mathbf{x}]\)</span></td>
+<td>Expectation of <span class="math inline">\(\mathbf{x}\)</span></td>
+<td>Ch. 19</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="d-geometry" class="level3" data-number="30.2.9">
+<h3 data-number="30.2.9" class="anchored" data-anchor-id="d-geometry"><span class="header-section-number">30.2.9</span> 3D Geometry</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 25%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Shape</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(SO(3)\)</span></td>
+<td>–</td>
+<td>Special orthogonal group: <span class="math inline">\(\{R \in \mathbb{R}^{3\times3}: RR^T = I, \det R = 1\}\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(SE(3)\)</span></td>
+<td>–</td>
+<td>Special Euclidean group: rigid-body transforms</td>
+<td>Ch. 9</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathfrak{so}(3)\)</span></td>
+<td>–</td>
+<td>Lie algebra of <span class="math inline">\(SO(3)\)</span>: skew-symmetric <span class="math inline">\(3\times3\)</span> matrices</td>
+<td>Ch. 24</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathfrak{se}(3)\)</span></td>
+<td>–</td>
+<td>Lie algebra of <span class="math inline">\(SE(3)\)</span></td>
+<td>Ch. 24</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\operatorname{Exp}(\boldsymbol{\omega})\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Rodrigues exponential: rotation by <span class="math inline">\(\|\omega\|\)</span> about <span class="math inline">\(\hat\omega\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\operatorname{Log}(R)\)</span></td>
+<td><span class="math inline">\((3,1)\)</span></td>
+<td>Rotation vector corresponding to <span class="math inline">\(R\)</span></td>
+<td>Ch. 8</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{p}^C\)</span></td>
+<td><span class="math inline">\((3,1)\)</span></td>
+<td>Point <span class="math inline">\(\mathbf{p}\)</span> in camera frame <span class="math inline">\(C\)</span></td>
+<td>Ch. 10</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\({}^C T_W\)</span></td>
+<td><span class="math inline">\((4,4)\)</span></td>
+<td>Transform from world <span class="math inline">\(W\)</span> to camera <span class="math inline">\(C\)</span></td>
+<td>Ch. 9</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Camera intrinsic matrix (focal lengths, principal point)</td>
+<td>Ch. 10</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi(\cdot)\)</span></td>
+<td><span class="math inline">\(\mathbb{R}^3 \to \mathbb{R}^2\)</span></td>
+<td>Perspective projection function</td>
+<td>Ch. 10</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\([\mathbf{x}]_\times\)</span></td>
+<td><span class="math inline">\((3,3)\)</span></td>
+<td>Skew-symmetric matrix for cross product: <span class="math inline">\([\mathbf{x}]_\times \mathbf{y} = \mathbf{x}\times\mathbf{y}\)</span></td>
+<td>Ch. 8</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="sets-and-logic" class="level3" data-number="30.2.10">
+<h3 data-number="30.2.10" class="anchored" data-anchor-id="sets-and-logic"><span class="header-section-number">30.2.10</span> Sets and Logic</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\in\)</span></td>
+<td>Element of</td>
+<td>Ch. 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\subset\)</span> or <span class="math inline">\(\subseteq\)</span></td>
+<td>Subset</td>
+<td>Ch. 6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\cup, \cap\)</span></td>
+<td>Union, intersection</td>
+<td>Ch. 6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\emptyset\)</span></td>
+<td>Empty set</td>
+<td>Ch. 6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\{x : P(x)\}\)</span></td>
+<td>Set of elements satisfying predicate <span class="math inline">\(P\)</span></td>
+<td>Ch. 6</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\forall\)</span></td>
+<td>For all</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\exists\)</span></td>
+<td>There exists</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\iff\)</span></td>
+<td>If and only if</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\implies\)</span></td>
+<td>Implies</td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(:=\)</span></td>
+<td>Defined as</td>
+<td>Ch. 1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\approx\)</span></td>
+<td>Approximately equal</td>
+<td>Ch. 3</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\propto\)</span></td>
+<td>Proportional to</td>
+<td>Ch. 19</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="summation-and-index-notation" class="level3" data-number="30.2.11">
+<h3 data-number="30.2.11" class="anchored" data-anchor-id="summation-and-index-notation"><span class="header-section-number">30.2.11</span> Summation and Index Notation</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>First use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\sum_{i=1}^n a_i\)</span></td>
+<td>Sum of <span class="math inline">\(a_1,\ldots,a_n\)</span></td>
+<td>Ch. 4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\prod_{i=1}^n a_i\)</span></td>
+<td>Product of <span class="math inline">\(a_1,\ldots,a_n\)</span></td>
+<td>Ch. 12</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_{ij}\)</span> or <span class="math inline">\([A]_{ij}\)</span></td>
+<td><span class="math inline">\((i,j)\)</span> entry of matrix <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A_{i:}\)</span></td>
+<td><span class="math inline">\(i\)</span>-th row of <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_{:j}\)</span></td>
+<td><span class="math inline">\(j\)</span>-th column of <span class="math inline">\(A\)</span></td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sum_k A_{ik} B_{kj}\)</span></td>
+<td>Matrix product entry <span class="math inline">\((i,j)\)</span>; also written <span class="math inline">\(A_{ik}B_{kj}\)</span> (Einstein)</td>
+<td>App. F</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta_{ij}\)</span></td>
+<td>Kronecker delta: 1 if <span class="math inline">\(i=j\)</span>, else 0</td>
+<td>Ch. 5</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\epsilon_{ijk}\)</span></td>
+<td>Levi-Civita symbol</td>
+<td>Ch. 8</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

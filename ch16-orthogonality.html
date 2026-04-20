@@ -599,7 +599,7 @@ window.Quarto = {
 <p>The <strong>Kronecker delta</strong> <span class="math inline">\(\delta_{ij}\)</span> equals 1 when <span class="math inline">\(i = j\)</span> and 0 otherwise. In matrix form, if <span class="math inline">\(U\)</span> has the vectors <span class="math inline">\(\mathbf{u}_1, \ldots, \mathbf{u}_k\)</span> as columns:</p>
 <p><span class="math display">\[\boxed{U^T U = I_k.}\]</span></p>
 <p>When <span class="math inline">\(k = n\)</span> (square), this says <span class="math inline">\(U\)</span> is an <strong>orthogonal matrix</strong> (§16.2).</p>
-<div id="02c4478e" class="cell" data-execution_count="1">
+<div id="3d3703bc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Build an orthonormal set in R^3 using QR</span></span>
@@ -645,7 +645,7 @@ Off-diagonal inner products: [-0.0, 0.0, 0.0]</code></pre>
 <p><span class="math display">\[\mathbf{x} = \sum_{i=1}^k c_i\,\mathbf{u}_i, \qquad c_i = \mathbf{u}_i \cdot \mathbf{x}.\]</span></p>
 <p><em>Proof.</em> Write <span class="math inline">\(\mathbf{x} = \sum_i c_i \mathbf{u}_i\)</span> and dot both sides with <span class="math inline">\(\mathbf{u}_j\)</span>: <span class="math inline">\(\mathbf{u}_j \cdot \mathbf{x} = \sum_i c_i (\mathbf{u}_j \cdot \mathbf{u}_i) = c_j\)</span>. <span class="math inline">\(\square\)</span></p>
 <p>In matrix form: <span class="math inline">\(\mathbf{c} = U^T \mathbf{x}\)</span>. For a general (non-orthogonal) basis <span class="math inline">\(V\)</span>, finding coordinates requires solving <span class="math inline">\(V\mathbf{c} = \mathbf{x}\)</span> – a full linear system. Orthonormality replaces that solve with a matrix-vector product that never requires inversion.</p>
-<div id="9df4b0ac" class="cell" data-execution_count="2">
+<div id="80b18be8" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2</span>)</span>
@@ -689,7 +689,7 @@ ONB: no solve needed. General basis: requires np.linalg.solve.</code></pre>
 = \sum_{i,j} c_i c_j \delta_{ij} = \sum_i c_i^2\)</span>. <span class="math inline">\(\square\)</span></p>
 <p>In matrix form this says <span class="math inline">\(\|\mathbf{x}\|_2 = \|U^T \mathbf{x}\|_2\)</span>: an orthonormal change of basis preserves length. This is the isometry property of §16.2.</p>
 <p>In statistics, if <span class="math inline">\(U\)</span> collects the eigenvectors of a covariance matrix, the <span class="math inline">\(c_i^2\)</span> values are the variance contributions of each principal component and their sum equals <span class="math inline">\(\text{tr}(\Sigma)\)</span>.</p>
-<div id="3ca005b2" class="cell" data-execution_count="3">
+<div id="df367b00" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">3</span>)</span>
@@ -720,7 +720,7 @@ Parseval holds: True</code></pre>
 <section id="coordinate-geometry-onb-vs.-skewed-basis" class="level3" data-number="16.1.5">
 <h3 data-number="16.1.5" class="anchored" data-anchor-id="coordinate-geometry-onb-vs.-skewed-basis"><span class="header-section-number">16.1.5</span> Coordinate Geometry: ONB vs.&nbsp;Skewed Basis</h3>
 <p>In an orthonormal frame, the coordinate grid has right angles and unit spacing – the same as the natural axes. In a skewed frame, reading off coordinates requires projecting onto non-perpendicular directions.</p>
-<div id="a5844798" class="cell" data-execution_count="4">
+<div id="cfc3043a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -836,7 +836,7 @@ Parseval holds: True</code></pre>
 </tbody>
 </table>
 <p>The determinant constraint follows from <span class="math inline">\(\det(Q^T Q) = \det(I)\)</span>, so <span class="math inline">\(\det(Q)^2 = 1\)</span>.</p>
-<div id="ce7f5889" class="cell" data-execution_count="5">
+<div id="971c00f8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2x2 rotation matrix by angle theta</span></span>
@@ -878,7 +878,7 @@ Q^(-1) == Q^T: True</code></pre>
 = \mathbf{x}^T I \mathbf{x} = \|\mathbf{x}\|_2^2\)</span>. <span class="math inline">\(\square\)</span></p>
 <p>The same calculation with two vectors shows <span class="math inline">\(\langle Q\mathbf{x}, Q\mathbf{y}\rangle
 = \langle \mathbf{x}, \mathbf{y}\rangle\)</span>. Since angles are determined by inner products, orthogonal maps preserve the angle between any two vectors.</p>
-<div id="e78d24d4" class="cell" data-execution_count="6">
+<div id="11a982ed" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">10</span>)</span>
@@ -921,7 +921,7 @@ Angles equal: True</code></pre>
 <p>Rotations in <span class="math inline">\(\mathbb{R}^3\)</span> about coordinate axes generalize this; any 3D rotation can be expressed as a product of at most three coordinate rotations.</p>
 <p><strong>Reflections</strong> (<span class="math inline">\(\det Q = -1\)</span>): reverse orientation. The reflection across the hyperplane orthogonal to a unit vector <span class="math inline">\(\mathbf{n}\)</span> is:</p>
 <p><span class="math display">\[H = I - 2\mathbf{n}\mathbf{n}^T.\]</span></p>
-<div id="0adb0d15" class="cell" data-execution_count="7">
+<div id="af9a6371" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -983,7 +983,7 @@ Angles equal: True</code></pre>
 <h3 data-number="16.2.4" class="anchored" data-anchor-id="products-of-orthogonal-matrices"><span class="header-section-number">16.2.4</span> Products of Orthogonal Matrices</h3>
 <p>The product of two orthogonal matrices is orthogonal: <span class="math inline">\((Q_1 Q_2)^T(Q_1 Q_2) = Q_2^T Q_1^T Q_1 Q_2 = Q_2^T I Q_2 = I\)</span>.</p>
 <p>Orthogonal matrices therefore form a <strong>group</strong> under multiplication, called the orthogonal group <span class="math inline">\(O(n)\)</span>. Rotations alone (det = +1) form the <strong>special orthogonal group</strong> <span class="math inline">\(SO(n)\)</span>. The inverse of any orthogonal matrix is its transpose – and is again orthogonal.</p>
-<div id="7fbefb46" class="cell" data-execution_count="8">
+<div id="957e3887" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">11</span>)</span>
@@ -1062,7 +1062,7 @@ det(Q1 Q2) = 1.0000</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="001211b3" class="cell" data-execution_count="9">
+<div id="a2eca4a7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># W = span{w1, w2} in R^4</span></span>
@@ -1103,7 +1103,7 @@ Q_W^T @ Q_perp (should be ~0):
 <p><span class="math display">\[\mathbf{x} = \mathbf{x}_W + \mathbf{x}_{W^\perp}, \qquad \mathbf{x}_W \in W, \quad \mathbf{x}_{W^\perp} \in W^\perp.\]</span></p>
 <p>The components are <span class="math inline">\(\mathbf{x}_W = Q_W Q_W^T \mathbf{x}\)</span> (the <strong>orthogonal projection</strong> onto <span class="math inline">\(W\)</span>, studied in depth in Chapter 17) and <span class="math inline">\(\mathbf{x}_{W^\perp} = \mathbf{x} - \mathbf{x}_W\)</span>.</p>
 <p><em>Uniqueness:</em> if <span class="math inline">\(\mathbf{x} = \mathbf{x}_W + \mathbf{x}_{W^\perp} = \mathbf{y}_W + \mathbf{y}_{W^\perp}\)</span>, then <span class="math inline">\(\mathbf{x}_W - \mathbf{y}_W = \mathbf{y}_{W^\perp} - \mathbf{x}_{W^\perp}\)</span>. The left side is in <span class="math inline">\(W\)</span>, the right side in <span class="math inline">\(W^\perp\)</span>, so both are in <span class="math inline">\(W \cap W^\perp = \{\mathbf{0}\}\)</span>.</p>
-<div id="99307003" class="cell" data-execution_count="10">
+<div id="1b75ac12" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">20</span>)</span>
@@ -1170,7 +1170,7 @@ x_W . x_perp = 7.77e-16  (should be ~0)</code></pre>
 </table>
 <p><em>Proof of <span class="math inline">\(\text{Col}(A)^\perp = \text{Null}(A^T)\)</span>:</em> <span class="math inline">\(\mathbf{v} \perp \text{Col}(A) \iff \mathbf{v}^T(A\mathbf{x}) = 0\)</span> for all <span class="math inline">\(\mathbf{x}\)</span> <span class="math inline">\(\iff (A^T\mathbf{v})^T\mathbf{x} = 0\)</span> for all <span class="math inline">\(\mathbf{x} \iff A^T\mathbf{v} = \mathbf{0}\)</span>.</p>
 <p>The rank-nullity theorem (<span class="math inline">\(\text{rank}(A) + \text{nullity}(A) = n\)</span>) is the dimension count version: <span class="math inline">\(\dim(\text{Row}(A)) + \dim(\text{Null}(A)) = n\)</span>.</p>
-<div id="87e7bbc4" class="cell" data-execution_count="11">
+<div id="d87a85c4" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">21</span>)</span>
@@ -1222,7 +1222,7 @@ Row(A)^T @ Null(A) (should be ~0):
 <p><span class="math display">\[\mathbf{v}_j = \mathbf{a}_j - \sum_{i=1}^{j-1} (\mathbf{q}_i \cdot \mathbf{a}_j)\,\mathbf{q}_i,
 \qquad \mathbf{q}_j = \frac{\mathbf{v}_j}{\|\mathbf{v}_j\|_2}.\]</span></p>
 <p>The coefficient <span class="math inline">\(r_{ij} = \mathbf{q}_i \cdot \mathbf{a}_j\)</span> measures how much of <span class="math inline">\(\mathbf{a}_j\)</span> lies along <span class="math inline">\(\mathbf{q}_i\)</span>. The residual <span class="math inline">\(\mathbf{v}_j\)</span> is guaranteed nonzero because <span class="math inline">\(\mathbf{a}_j \notin \text{span}\{\mathbf{a}_1, \ldots, \mathbf{a}_{j-1}\}\)</span> (linear independence).</p>
-<div id="c8d4d389" class="cell" data-execution_count="12">
+<div id="13435eae" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gram_schmidt(A):</span>
@@ -1270,7 +1270,7 @@ a_3 in span{q_1,...,q_3}: residual = 7.24e-16</code></pre>
 <section id="step-by-step-2d-visualization" class="level3" data-number="16.4.2">
 <h3 data-number="16.4.2" class="anchored" data-anchor-id="step-by-step-2d-visualization"><span class="header-section-number">16.4.2</span> Step-by-Step: 2D Visualization</h3>
 <p>The geometry is clearest starting from two vectors in the plane. Step 1 normalizes <span class="math inline">\(\mathbf{a}_1\)</span>. Step 2 subtracts the shadow of <span class="math inline">\(\mathbf{a}_2\)</span> onto <span class="math inline">\(\mathbf{q}_1\)</span>, then normalizes – producing a second vector perpendicular to the first.</p>
-<div id="c4d1b442" class="cell" data-execution_count="13">
+<div id="d68c853c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1348,7 +1348,7 @@ a_3 in span{q_1,...,q_3}: residual = 7.24e-16</code></pre>
 \mathbf{v}_j^{(i)} = \mathbf{v}_j^{(i-1)} - \bigl(\mathbf{q}_i \cdot \mathbf{v}_j^{(i-1)}\bigr)\mathbf{q}_i,
 \qquad \mathbf{q}_j = \frac{\mathbf{v}_j^{(j-1)}}{\|\mathbf{v}_j^{(j-1)}\|}.\]</span></p>
 <p>Algebraically identical to CGS, but each subtraction removes the component in the <span class="math inline">\(\mathbf{q}_i\)</span> direction from the <em>already-reduced</em> vector, so errors do not compound. For production code, Householder QR (§16.5) achieves even higher stability.</p>
-<div id="4b71046d" class="cell" data-execution_count="14">
+<div id="5189abfa" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gram_schmidt_classical(A):</span>
@@ -1437,7 +1437,7 @@ r_{ij} = \mathbf{q}_i \cdot \mathbf{a}_j \; (i &lt; j), \qquad r_{jj} = \|\mathb
 <li><p><strong>Full QR</strong>: <span class="math inline">\(Q \in \mathbb{R}^{m \times m}\)</span> (square orthogonal), <span class="math inline">\(R \in \mathbb{R}^{m \times n}\)</span> (padded with zero rows). <span class="math inline">\(QQ^T = Q^TQ = I_m\)</span>.</p></li>
 </ul>
 <p><code>np.linalg.qr(A, mode='reduced')</code> gives the thin form; <code>mode='complete'</code> gives the full form.</p>
-<div id="e1d4a7ec" class="cell" data-execution_count="15">
+<div id="3638bb35" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">40</span>)</span>
@@ -1482,7 +1482,7 @@ Full QR:
 \qquad \mathbf{v} = \mathbf{x} + \text{sign}(x_1)\|\mathbf{x}\|\,\mathbf{e}_1.\]</span></p>
 <p><span class="math inline">\(H\)</span> is symmetric (<span class="math inline">\(H = H^T\)</span>) and orthogonal (<span class="math inline">\(H^2 = I\)</span>), and <span class="math inline">\(H\mathbf{x}\)</span> is a scalar multiple of <span class="math inline">\(\mathbf{e}_1\)</span> – all entries below the first are annihilated. Applying a sequence <span class="math inline">\(H_n \cdots H_1 A\)</span> progressively zeros out subdiagonal entries column by column until the result is upper triangular: <span class="math inline">\(H_n \cdots H_1 A = R\)</span>, so <span class="math inline">\(A = H_1 \cdots H_n R = QR\)</span>.</p>
 <p>Householder QR is backward stable and is the algorithm used in LAPACK’s <code>dgeqrf</code>.</p>
-<div id="758cd4d6" class="cell" data-execution_count="16">
+<div id="476197ba" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> householder_reflector(x):</span>
@@ -1524,7 +1524,7 @@ H^2 == I:     True</code></pre>
 <p>The main application of QR in numerical practice is solving least-squares problems (Chapter 17). For an overdetermined system <span class="math inline">\(A\mathbf{x} \approx \mathbf{b}\)</span> (<span class="math inline">\(A\)</span> tall), the normal equations are <span class="math inline">\(A^T A \hat{\mathbf{x}} = A^T \mathbf{b}\)</span>. Using <span class="math inline">\(A = QR\)</span>:</p>
 <p><span class="math display">\[A^T A = R^T Q^T Q R = R^T R, \qquad A^T \mathbf{b} = R^T Q^T \mathbf{b}.\]</span></p>
 <p>The normal equations simplify to <span class="math inline">\(R\hat{\mathbf{x}} = Q^T\mathbf{b}\)</span> (upper triangular back-substitution). This avoids forming <span class="math inline">\(A^T A\)</span> explicitly, which squares the condition number and loses accuracy when <span class="math inline">\(A\)</span> is nearly rank-deficient.</p>
-<div id="f0173aff" class="cell" data-execution_count="17">
+<div id="a86395c4" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)</span>
@@ -1576,7 +1576,7 @@ QR vs lstsq diff: 1.21e-15</code></pre>
 <section id="exercise-16.1.2-coordinates-in-an-orthonormal-basis" class="level3" data-number="16.6.1">
 <h3 data-number="16.6.1" class="anchored" data-anchor-id="exercise-16.1.2-coordinates-in-an-orthonormal-basis"><span class="header-section-number">16.6.1</span> Exercise 16.1.2 – Coordinates in an orthonormal basis</h3>
 <p>Express <span class="math inline">\(\mathbf{x} = (3, 2, -1)^T\)</span> as a linear combination of <span class="math inline">\(\mathbf{u}_1 = (1,0,0)^T\)</span>, <span class="math inline">\(\mathbf{u}_2 = (0, 1/\sqrt{2}, 1/\sqrt{2})^T\)</span>, <span class="math inline">\(\mathbf{u}_3 = (0, 1/\sqrt{2}, -1/\sqrt{2})^T\)</span>.</p>
-<div id="61014d41" class="cell" data-execution_count="18">
+<div id="1f11acea" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>u1 <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>])                       <span class="co"># shape (3,)</span></span>
@@ -1611,7 +1611,7 @@ Matches x: True</code></pre>
 <section id="exercise-16.2.1-composing-rotation-matrices" class="level3" data-number="16.6.2">
 <h3 data-number="16.6.2" class="anchored" data-anchor-id="exercise-16.2.1-composing-rotation-matrices"><span class="header-section-number">16.6.2</span> Exercise 16.2.1 – Composing rotation matrices</h3>
 <p>Compute <span class="math inline">\(R_\pi R_{-\pi/2}\)</span> and identify the resulting rotation angle.</p>
-<div id="2010a318" class="cell" data-execution_count="19">
+<div id="cfa4b7f7" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> R(theta):</span>
@@ -1648,7 +1648,7 @@ Expected: pi + (-pi/2) = pi/2 = 1.5708 rad</code></pre>
 <section id="exercise-16.2.3-eigenvalue-modulus-of-an-orthogonal-matrix" class="level3" data-number="16.6.3">
 <h3 data-number="16.6.3" class="anchored" data-anchor-id="exercise-16.2.3-eigenvalue-modulus-of-an-orthogonal-matrix"><span class="header-section-number">16.6.3</span> Exercise 16.2.3 – Eigenvalue modulus of an orthogonal matrix</h3>
 <p>Show that if <span class="math inline">\(Q\)</span> is orthogonal and <span class="math inline">\(Q\mathbf{v} = \lambda\mathbf{v}\)</span>, then <span class="math inline">\(|\lambda| = 1\)</span>.</p>
-<div id="81d52b33" class="cell" data-execution_count="20">
+<div id="eade2724" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">50</span>)</span>
@@ -1684,7 +1684,7 @@ All |lambda| == 1: True</code></pre>
 <section id="exercise-16.3.1-orthogonal-complement-in-r3" class="level3" data-number="16.6.4">
 <h3 data-number="16.6.4" class="anchored" data-anchor-id="exercise-16.3.1-orthogonal-complement-in-r3"><span class="header-section-number">16.6.4</span> Exercise 16.3.1 – Orthogonal complement in R^3</h3>
 <p>Let <span class="math inline">\(W = \text{span}\{(1,1,0)^T\}\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>. Find a basis for <span class="math inline">\(W^\perp\)</span>.</p>
-<div id="bc6fa139" class="cell" data-execution_count="21">
+<div id="fa505fa6" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>])     <span class="co"># shape (3,) -- generator of W</span></span>
@@ -1720,7 +1720,7 @@ dim(W) + dim(W^perp) = 3 = n  (dimension theorem)</code></pre>
 <section id="exercise-16.4.1-gram-schmidt-by-hand" class="level3" data-number="16.6.5">
 <h3 data-number="16.6.5" class="anchored" data-anchor-id="exercise-16.4.1-gram-schmidt-by-hand"><span class="header-section-number">16.6.5</span> Exercise 16.4.1 – Gram-Schmidt by hand</h3>
 <p>Apply Gram-Schmidt to <span class="math inline">\(\mathbf{a}_1 = (1,1,0)^T\)</span>, <span class="math inline">\(\mathbf{a}_2 = (1,0,1)^T\)</span>.</p>
-<div id="c24e0cd4" class="cell" data-execution_count="22">
+<div id="eaf64467" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>])    <span class="co"># shape (3,)</span></span>
@@ -1764,7 +1764,7 @@ q1 . q2 = 1.11e-16  (orthogonal)
 <section id="exercise-16.5.1-qr-factorization-by-hand" class="level3" data-number="16.6.7">
 <h3 data-number="16.6.7" class="anchored" data-anchor-id="exercise-16.5.1-qr-factorization-by-hand"><span class="header-section-number">16.6.7</span> Exercise 16.5.1 – QR factorization by hand</h3>
 <p>Factor <span class="math inline">\(A = \begin{bmatrix}1&amp;1\\1&amp;0\\0&amp;1\end{bmatrix}\)</span> by Gram-Schmidt.</p>
-<div id="f8cc88d3" class="cell" data-execution_count="23">
+<div id="ac0d041a" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.0</span>, <span class="fl">1.0</span>],</span>
@@ -1817,7 +1817,7 @@ R upper triangular, positive diagonal: r11=1.4142, r22=1.2247</code></pre>
 </section>
 <section id="exercise-16.5.3-qr-of-an-upper-triangular-matrix" class="level3" data-number="16.6.8">
 <h3 data-number="16.6.8" class="anchored" data-anchor-id="exercise-16.5.3-qr-of-an-upper-triangular-matrix"><span class="header-section-number">16.6.8</span> Exercise 16.5.3 – QR of an upper triangular matrix</h3>
-<div id="e3de0c12" class="cell" data-execution_count="24">
+<div id="a9ccd535" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="fl">0.0</span>],</span>

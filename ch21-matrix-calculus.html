@@ -672,7 +672,7 @@ window.Quarto = {
 <section id="numerical-verification" class="level3" data-number="21.1.4">
 <h3 data-number="21.1.4" class="anchored" data-anchor-id="numerical-verification"><span class="header-section-number">21.1.4</span> Numerical Verification</h3>
 <p>Concretely, <span class="math inline">\(\nabla_\mathbf{x}\|\mathbf{x}\|^2 = 2\mathbf{x}\)</span> in denominator layout:</p>
-<div id="7942257b" class="cell" data-execution_count="1">
+<div id="87114873" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
@@ -752,7 +752,7 @@ gradient shape: (5,)   &lt;- column vector (n,)</code></pre>
 </section>
 <section id="numerical-verification-1" class="level3" data-number="21.2.2">
 <h3 data-number="21.2.2" class="anchored" data-anchor-id="numerical-verification-1"><span class="header-section-number">21.2.2</span> Numerical Verification</h3>
-<div id="4f6f5b3c" class="cell" data-execution_count="2">
+<div id="b84a54aa" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2121</span>)</span>
@@ -798,7 +798,7 @@ Identity 3  max|error| = 2.00e-11</code></pre>
 <section id="the-gradient-as-a-landscape" class="level3" data-number="21.2.3">
 <h3 data-number="21.2.3" class="anchored" data-anchor-id="the-gradient-as-a-landscape"><span class="header-section-number">21.2.3</span> The Gradient as a Landscape</h3>
 <p>The gradient <span class="math inline">\(\nabla_\mathbf{x}f\)</span> points uphill in <span class="math inline">\(\mathbb{R}^n\)</span>. For a 2D function the gradient field is a quiver plot: each arrow at <span class="math inline">\((x_1,x_2)\)</span> points in the direction of steepest ascent, with length proportional to <span class="math inline">\(\|\nabla f\|\)</span>. Gradient <strong>descent</strong> follows the negative gradient.</p>
-<div id="7617364c" class="cell" data-execution_count="3">
+<div id="61145bbf" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -943,7 +943,7 @@ Identity 3  max|error| = 2.00e-11</code></pre>
 <section id="geometric-picture-unit-disk-mapped-to-an-ellipse" class="level3" data-number="21.3.4">
 <h3 data-number="21.3.4" class="anchored" data-anchor-id="geometric-picture-unit-disk-mapped-to-an-ellipse"><span class="header-section-number">21.3.4</span> Geometric Picture: Unit Disk Mapped to an Ellipse</h3>
 <p>A linear map <span class="math inline">\(\mathbf{f}(\mathbf{x})=A\mathbf{x}\)</span> sends the unit disk <span class="math inline">\(\{\mathbf{x}:\|\mathbf{x}\|\le 1\}\subset\mathbb{R}^2\)</span> to an ellipse in <span class="math inline">\(\mathbb{R}^2\)</span> (for square <span class="math inline">\(A\)</span>). The Jacobian equals <span class="math inline">\(A\)</span>, and the singular values of <span class="math inline">\(A\)</span> determine the semi-axis lengths of the ellipse.</p>
-<div id="f65a0698" class="cell" data-execution_count="4">
+<div id="c0ecccc5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1014,7 +1014,7 @@ det(A) = 2.6800  (= sigma_1 * sigma_2 = area scale factor)</code></pre>
 </section>
 <section id="numerical-verification-2" class="level3" data-number="21.3.5">
 <h3 data-number="21.3.5" class="anchored" data-anchor-id="numerical-verification-2"><span class="header-section-number">21.3.5</span> Numerical Verification</h3>
-<div id="ee8f1d3b" class="cell" data-execution_count="5">
+<div id="349a093e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2131</span>)</span>
@@ -1141,7 +1141,7 @@ Linearization error (||dx||=0.0178): 0.000182810299599696</code></pre>
 </section>
 <section id="numerical-verification-3" class="level3" data-number="21.4.5">
 <h3 data-number="21.4.5" class="anchored" data-anchor-id="numerical-verification-3"><span class="header-section-number">21.4.5</span> Numerical Verification</h3>
-<div id="7f8cec24" class="cell" data-execution_count="6">
+<div id="c6164743" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2141</span>)</span>
@@ -1245,7 +1245,7 @@ L = \frac{1}{2}\|\mathbf{y}-\mathbf{t}\|^2,\]</span></p>
 </section>
 <section id="code-forward-and-backward-with-finite-difference-verification" class="level3" data-number="21.5.3">
 <h3 data-number="21.5.3" class="anchored" data-anchor-id="code-forward-and-backward-with-finite-difference-verification"><span class="header-section-number">21.5.3</span> Code: Forward and Backward with Finite-Difference Verification</h3>
-<div id="6f0cad54" class="cell" data-execution_count="7">
+<div id="1692db54" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">2151</span>)</span>
@@ -1427,7 +1427,7 @@ H = J_r^T J_r + \sum_i r_i H_i \approx J_r^T J_r,\]</span></p>
 </section>
 <section id="visualization-bowl-vs.-saddle" class="level3" data-number="21.6.6">
 <h3 data-number="21.6.6" class="anchored" data-anchor-id="visualization-bowl-vs.-saddle"><span class="header-section-number">21.6.6</span> Visualization: Bowl vs.&nbsp;Saddle</h3>
-<div id="15154a11" class="cell" data-execution_count="8">
+<div id="d4876443" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1479,7 +1479,7 @@ H = J_r^T J_r + \sum_i r_i H_i \approx J_r^T J_r,\]</span></p>
 </section>
 <section id="numerical-hessian-via-finite-differences" class="level3" data-number="21.6.7">
 <h3 data-number="21.6.7" class="anchored" data-anchor-id="numerical-hessian-via-finite-differences"><span class="header-section-number">21.6.7</span> Numerical Hessian via Finite Differences</h3>
-<div id="56bca26b" class="cell" data-execution_count="9">
+<div id="263de8da" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hessian_fd(f, x, h<span class="op">=</span><span class="fl">1e-4</span>):</span>

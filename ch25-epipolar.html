@@ -736,9 +736,9 @@ window.Quarto = {
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Epipole e1 (camera 2 center in image 1): (</span><span class="sc">{</span>e1[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>e1[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">)"</span>)</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Epipole e2 (camera 1 center in image 2): (</span><span class="sc">{</span>e2[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>e2[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_34240\2086319340.py:65: RuntimeWarning: divide by zero encountered in divide
+<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_11136\2086319340.py:65: RuntimeWarning: divide by zero encountered in divide
   e1 = lam_e1[:2] / lam_e1[2]        # shape (2,)
-C:\Users\james.choi\AppData\Local\Temp\ipykernel_34240\2086319340.py:68: RuntimeWarning: divide by zero encountered in divide
+C:\Users\james.choi\AppData\Local\Temp\ipykernel_11136\2086319340.py:68: RuntimeWarning: divide by zero encountered in divide
   e2 = lam_e2[:2] / lam_e2[2]                  # shape (2,)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1139,7 +1139,7 @@ Note
 <span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"rank(F) via singular values: </span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>matrix_rank(F)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Max constraint residual |x2^T F x1|: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">abs</span>(residuals)<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_34240\2625025920.py:99: RuntimeWarning: divide by zero encountered in divide
+<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_11136\2625025920.py:99: RuntimeWarning: divide by zero encountered in divide
   e2 = lam_e2[:2] / lam_e2[2]     # shape (2,)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1786,7 +1786,7 @@ Figure&nbsp;25.6: Stereo depth precision as a function of range for three baseli
 <li><strong><code>reprojectImageTo3D</code></strong> converts disparity to depth using equation (25.18).</li>
 </ol>
 <p>The Python snippet below shows the interface pattern (requires OpenCV, marked <code>eval: false</code> as it needs physical calibration data):</p>
-<div id="f3793707" class="cell" data-execution_count="7">
+<div id="8decfffe" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>

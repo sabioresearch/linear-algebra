@@ -598,7 +598,7 @@ window.Quarto = {
 <section id="the-geometric-picture" class="level3" data-number="13.1.1">
 <h3 data-number="13.1.1" class="anchored" data-anchor-id="the-geometric-picture"><span class="header-section-number">13.1.1</span> The Geometric Picture</h3>
 <p>Apply a <span class="math inline">\(2\times 2\)</span> matrix to every vector on the unit circle. The result is an ellipse. The <strong>semi-axes of that ellipse</strong> point along the eigenvector directions; their lengths equal <span class="math inline">\(|\lambda|\)</span>.</p>
-<div id="5b54313c" class="cell" data-execution_count="1">
+<div id="4057bed9" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -657,7 +657,7 @@ window.Quarto = {
 <p><span class="math display">\[(A - \lambda I)\,\mathbf{v} = \mathbf{0}, \qquad \mathbf{v} \neq \mathbf{0}.\]</span></p>
 <p>For a nonzero <span class="math inline">\(\mathbf{v}\)</span> to satisfy this, the matrix <span class="math inline">\((A-\lambda I)\)</span> must be <strong>singular</strong> — it must have a nontrivial null space.</p>
 <p>This is the key observation that drives all eigenvalue computation: <strong>find the scalars <span class="math inline">\(\lambda\)</span> that make <span class="math inline">\(A-\lambda I\)</span> singular.</strong></p>
-<div id="610bac87" class="cell" data-execution_count="2">
+<div id="b9c20bfd" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">3.</span>, <span class="fl">1.</span>],</span>
@@ -697,7 +697,7 @@ A @ w      = [ 1.4142 -1.4142]
 </section>
 <section id="a-33-illustration" class="level3" data-number="13.1.4">
 <h3 data-number="13.1.4" class="anchored" data-anchor-id="a-33-illustration"><span class="header-section-number">13.1.4</span> A 3×3 Illustration</h3>
-<div id="46a73c56" class="cell" data-execution_count="3">
+<div id="32abc3cc" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">17</span>)</span>
@@ -766,7 +766,7 @@ p(\lambda) = \lambda^2 - (a+d)\,\lambda + (ad - bc)
 \lambda_1 \cdot \lambda_2 = \det(A).
 \]</span></p>
 <p>These identities generalise to any size: <strong>trace = sum of eigenvalues, determinant = product of eigenvalues.</strong></p>
-<div id="fc0dce56" class="cell" data-execution_count="4">
+<div id="b69abde8" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">5.</span>, <span class="fl">2.</span>],</span>
@@ -806,7 +806,7 @@ p(\lambda)
 = (-1)^n \lambda^n + (-1)^{n-1}\operatorname{tr}(A)\,\lambda^{n-1}
   + \cdots + \det(A).
 \]</span></p>
-<div id="6acfd998" class="cell" data-execution_count="5">
+<div id="efc7f959" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">3</span>)</span>
@@ -867,7 +867,7 @@ prod(λ_i)      = 9.0000</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="574e46b8" class="cell" data-execution_count="6">
+<div id="31ef639d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)</span>
@@ -898,7 +898,7 @@ sum(λ_i²)  = 3.856121</code></pre>
 <section id="visualising-the-characteristic-polynomial" class="level3" data-number="13.2.4">
 <h3 data-number="13.2.4" class="anchored" data-anchor-id="visualising-the-characteristic-polynomial"><span class="header-section-number">13.2.4</span> Visualising the Characteristic Polynomial</h3>
 <p>For a 2×2 matrix we can plot <span class="math inline">\(p(\lambda) = \det(A - \lambda I)\)</span> directly and read off the eigenvalues as zero-crossings.</p>
-<div id="59fd9953" class="cell" data-execution_count="7">
+<div id="c61bbc8c" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -937,7 +937,7 @@ sum(λ_i²)  = 3.856121</code></pre>
 <section id="why-not-solve-the-characteristic-polynomial-numerically" class="level3" data-number="13.2.5">
 <h3 data-number="13.2.5" class="anchored" data-anchor-id="why-not-solve-the-characteristic-polynomial-numerically"><span class="header-section-number">13.2.5</span> Why Not Solve the Characteristic Polynomial Numerically?</h3>
 <p>For <span class="math inline">\(n \ge 5\)</span> there is no closed-form formula for the roots (Abel’s impossibility theorem). But there is a deeper practical problem: <strong>polynomial root-finding is numerically ill-conditioned.</strong> A tiny perturbation to a coefficient can shift roots dramatically. This is the Wilkinson polynomial phenomenon.</p>
-<div id="af8c0be0" class="cell" data-execution_count="8">
+<div id="ff23edf6" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Polynomial with known roots 1, 2, 3, 4, 5, 6, 7, 8</span></span>
@@ -989,7 +989,7 @@ A - 3I = \begin{bmatrix}0 &amp; 1 \\ 0 &amp; -1\end{bmatrix}.
 A - 2I = \begin{bmatrix}1 &amp; 1 \\ 0 &amp; 0\end{bmatrix}.
 \]</span></p>
 <p>Only constraint: <span class="math inline">\(v_1 + v_2 = 0\)</span>, so <span class="math inline">\(v_1 = -v_2\)</span>. Choose <span class="math inline">\(\mathbf{v}_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}-1\\1\end{bmatrix}\)</span>.</p>
-<div id="90153cbe" class="cell" data-execution_count="9">
+<div id="b3355dad" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">3.</span>, <span class="fl">1.</span>],</span>
@@ -1019,7 +1019,7 @@ Verify λ=2.0: ||Av - λv|| = 0.00e+00</code></pre>
 <section id="computing-the-null-space-numerically" class="level3" data-number="13.3.2">
 <h3 data-number="13.3.2" class="anchored" data-anchor-id="computing-the-null-space-numerically"><span class="header-section-number">13.3.2</span> Computing the Null Space Numerically</h3>
 <p>In practice, for larger matrices we never do row-reduction by hand. The null space of <span class="math inline">\((A - \lambda I)\)</span> is computed via SVD: the singular vectors corresponding to (near-)zero singular values span the null space.</p>
-<div id="f35a433c" class="cell" data-execution_count="10">
+<div id="2b987f88" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -1064,7 +1064,7 @@ Estimated eigenvector: [ 5.000e-04 -4.392e-01  2.169e-01  3.079e-01 -8.156e-01]
 <p><strong>Case 2: defective matrix (geometric <span class="math inline">\(&lt;\)</span> algebraic).</strong> <span class="math display">\[
 J = \begin{bmatrix}2 &amp; 1 \\ 0 &amp; 2\end{bmatrix}.
 \]</span> Algebraic multiplicity of <span class="math inline">\(\lambda=2\)</span>: 2 (it is a double root of <span class="math inline">\(p(\lambda) = (\lambda-2)^2\)</span>). Geometric multiplicity: 1 (the eigenspace is spanned by <span class="math inline">\((1,0)^T\)</span> only).</p>
-<div id="cc0bdc7d" class="cell" data-execution_count="11">
+<div id="68b7590c" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Case 1: scalar matrix — full eigenspace</span></span>
@@ -1106,7 +1106,7 @@ Case 2 — Jordan block:
 <h3 data-number="13.3.5" class="anchored" data-anchor-id="independent-eigenvectors-for-distinct-eigenvalues"><span class="header-section-number">13.3.5</span> Independent Eigenvectors for Distinct Eigenvalues</h3>
 <p>When all <span class="math inline">\(n\)</span> eigenvalues are <strong>distinct</strong>, eigenvectors from different eigenvalues are automatically linearly independent — they can never be parallel. The proof uses an inductive argument on the number of distinct eigenvalues, showing any linear dependency leads to a contradiction.</p>
 <p><strong>Practical implication:</strong> a matrix with all distinct eigenvalues is always diagonalisable (§14.1). Repeated eigenvalues require extra checks.</p>
-<div id="171fd38c" class="cell" data-execution_count="12">
+<div id="4effc82a" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">99</span>)</span>
@@ -1149,7 +1149,7 @@ det(V) = -1.0   (nonzero ↔ independent)</code></pre>
 <li>There is always a full set of <span class="math inline">\(n\)</span> orthonormal eigenvectors.</li>
 </ol>
 <p>In other words, <span class="math inline">\(A = Q\Lambda Q^T\)</span> with <span class="math inline">\(Q\)</span> orthogonal and <span class="math inline">\(\Lambda\)</span> diagonal — even if eigenvalues are repeated. This is the most important special case in applied linear algebra.</p>
-<div id="f75cd7e7" class="cell" data-execution_count="13">
+<div id="bbe56f26" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">11</span>)</span>
@@ -1186,7 +1186,7 @@ All real? True
 </section>
 <section id="visualising-the-spectral-theorem" class="level3" data-number="13.4.2">
 <h3 data-number="13.4.2" class="anchored" data-anchor-id="visualising-the-spectral-theorem"><span class="header-section-number">13.4.2</span> Visualising the Spectral Theorem</h3>
-<div id="82a5b0d8" class="cell" data-execution_count="14">
+<div id="6d6f6318" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1242,7 +1242,7 @@ All real? True
 \]</span></p>
 <p>So <span class="math inline">\(|\lambda|^2 = 1\)</span>, i.e.&nbsp;<strong><span class="math inline">\(|\lambda| = 1\)</span></strong>.</p>
 <p>For a real rotation matrix <span class="math inline">\(R \in \text{SO}(3)\)</span>, one eigenvalue is always <span class="math inline">\(\lambda=1\)</span> (the rotation axis is fixed), and the other two are complex conjugates <span class="math inline">\(e^{\pm i\theta}\)</span> where <span class="math inline">\(\theta\)</span> is the rotation angle.</p>
-<div id="60da64b5" class="cell" data-execution_count="15">
+<div id="08b0aa5b" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rz(theta):</span>
@@ -1281,7 +1281,7 @@ Rotation angle: 36.00°  (expected 36°)</code></pre>
 \det(A - \lambda I) = \prod_{i=1}^n (a_{ii} - \lambda),
 \]</span></p>
 <p>because the determinant of a triangular matrix is the product of its diagonal entries.</p>
-<div id="c7dfaef7" class="cell" data-execution_count="16">
+<div id="01250638" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">5</span>)</span>
@@ -1311,7 +1311,7 @@ Match? True</code></pre>
 <li>The Hessian of a smooth function at a local minimum must be PD.</li>
 <li>Cholesky factorisation (§12.2) succeeds if and only if <span class="math inline">\(A\)</span> is PD.</li>
 </ul>
-<div id="d2915f5c" class="cell" data-execution_count="17">
+<div id="423687fd" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">21</span>)</span>
@@ -1412,7 +1412,7 @@ Cholesky on PSD: FAILED (singular)</code></pre>
 <p>Start with <span class="math inline">\(A_0 = A\)</span>. At each step, factorize <span class="math inline">\(A_k = Q_k R_k\)</span> (QR factorization), then <em>reverse</em> the factors:</p>
 <p><span class="math display">\[A_{k+1} = R_k Q_k = Q_k^T A_k Q_k.\]</span></p>
 <p>Each step is an orthogonal similarity transformation, so eigenvalues are unchanged. As <span class="math inline">\(k \to \infty\)</span>, <span class="math inline">\(A_k\)</span> converges to <strong>Schur form</strong> — upper triangular (or block upper-triangular for complex eigenvalues), with eigenvalues on the diagonal. Reading off the diagonal gives all eigenvalues, with no characteristic polynomial ever formed.</p>
-<div id="b0a672f3" class="cell" data-execution_count="18">
+<div id="1bb94d37" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">31</span>)</span>
@@ -1478,7 +1478,7 @@ True eigenvalues (numpy):
 </table>
 <p>Use <code>eigh</code> whenever you know <span class="math inline">\(A\)</span> is symmetric. It is faster, returns real eigenvalues sorted in ascending order, and is numerically more accurate — it exploits the structure to avoid complex arithmetic entirely.</p>
 <p><strong>Gotcha:</strong> <code>eig</code> applied to a symmetric matrix may still return tiny imaginary parts due to floating-point rounding. <code>eigh</code> guarantees real output.</p>
-<div id="e9864094" class="cell" data-execution_count="19">
+<div id="f20e6cdf" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1503,10 +1503,10 @@ True eigenvalues (numpy):
 <span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Max difference in sorted real parts:"</span>,</span>
 <span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>      np.<span class="bu">abs</span>(np.sort(vals_eig.real) <span class="op">-</span> np.sort(vals_eigh)).<span class="bu">max</span>().<span class="bu">round</span>(<span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>eig  time: 419.2 ms  — imaginary leakage: 0.00e+00
-eigh time: 160.2 ms  — all real by construction
+<pre><code>eig  time: 345.3 ms  — imaginary leakage: 0.00e+00
+eigh time: 157.9 ms  — all real by construction
 
-Speedup: 2.6×
+Speedup: 2.2×
 
 Max difference in sorted real parts: 0.0</code></pre>
 </div>
@@ -1516,7 +1516,7 @@ Max difference in sorted real parts: 0.0</code></pre>
 <section id="numpy.linalg.eigvals-vs.-eig" class="level3" data-number="13.5.3">
 <h3 data-number="13.5.3" class="anchored" data-anchor-id="numpy.linalg.eigvals-vs.-eig"><span class="header-section-number">13.5.3</span> <code>numpy.linalg.eigvals</code> vs.&nbsp;<code>eig</code></h3>
 <p>When you only need eigenvalues and not eigenvectors, use <code>eigvals</code> (or <code>eigvalsh</code> for symmetric matrices). It is slightly faster because it skips the eigenvector back-transformation step.</p>
-<div id="b5a97492" class="cell" data-execution_count="20">
+<div id="f578c11e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1537,9 +1537,9 @@ Max difference in sorted real parts: 0.0</code></pre>
 <span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"eigvalsh (values only) : </span><span class="sc">{</span>t_vals<span class="op">*</span><span class="dv">1000</span><span class="sc">:.1f}</span><span class="ss"> ms"</span>)</span>
 <span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Speedup (values only)  : </span><span class="sc">{</span>t_full<span class="op">/</span>t_vals<span class="sc">:.2f}</span><span class="ss">×"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>eigh (values + vectors): 116.1 ms
-eigvalsh (values only) : 50.1 ms
-Speedup (values only)  : 2.32×</code></pre>
+<pre><code>eigh (values + vectors): 106.0 ms
+eigvalsh (values only) : 52.0 ms
+Speedup (values only)  : 2.04×</code></pre>
 </div>
 </div>
 <hr>
@@ -1548,7 +1548,7 @@ Speedup (values only)  : 2.32×</code></pre>
 <h3 data-number="13.5.4" class="anchored" data-anchor-id="conditioning-of-the-eigenproblem"><span class="header-section-number">13.5.4</span> Conditioning of the Eigenproblem</h3>
 <p>Not every eigenproblem is equally well-posed. The <strong>condition number of the eigenproblem</strong> measures how much a small perturbation <span class="math inline">\(\delta A\)</span> shifts the eigenvalues. For a <strong>symmetric</strong> matrix the condition of each eigenvalue is 1 — a perturbation of size <span class="math inline">\(\varepsilon\)</span> in <span class="math inline">\(A\)</span> shifts each eigenvalue by at most <span class="math inline">\(\varepsilon\)</span> (Weyl’s inequality).</p>
 <p>For a <strong>non-symmetric</strong> matrix the condition can be much larger. The condition number of eigenvalue <span class="math inline">\(\lambda_k\)</span> is <span class="math inline">\(1/|\mathbf{u}_k^T\mathbf{v}_k|\)</span>, where <span class="math inline">\(\mathbf{u}_k\)</span> and <span class="math inline">\(\mathbf{v}_k\)</span> are the left and right eigenvectors. When left and right eigenvectors are nearly orthogonal (nearly defective matrix), the condition number is huge.</p>
-<div id="4351863c" class="cell" data-execution_count="21">
+<div id="5945c92b" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">77</span>)</span>
@@ -1666,7 +1666,7 @@ A^k \mathbf{b}_0 = c_1\lambda_1^k\mathbf{v}_1 + c_2\lambda_2^k\mathbf{v}_2 + \cd
 = \lambda_1^k\!\left[c_1\mathbf{v}_1 + c_2\!\left(\frac{\lambda_2}{\lambda_1}\right)^k\mathbf{v}_2 + \cdots\right].
 \]</span></p>
 <p>If <span class="math inline">\(|\lambda_1| &gt; |\lambda_2|\)</span>, the ratio <span class="math inline">\((\lambda_2/\lambda_1)^k \to 0\)</span>, so the direction converges to <span class="math inline">\(\mathbf{v}_1\)</span> at rate <span class="math inline">\(\left|\frac{\lambda_2}{\lambda_1}\right|^k\)</span> per step.</p>
-<div id="e48b4b26" class="cell" data-execution_count="22">
+<div id="d2ab3dd3" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1735,7 +1735,7 @@ Error in eigenvector angle: -4.44e-16</code></pre>
 <section id="the-role-of-the-eigenvalue-gap" class="level3" data-number="13.6.2">
 <h3 data-number="13.6.2" class="anchored" data-anchor-id="the-role-of-the-eigenvalue-gap"><span class="header-section-number">13.6.2</span> The Role of the Eigenvalue Gap</h3>
 <p>The convergence rate is <span class="math inline">\(|\lambda_2/\lambda_1|\)</span> per iteration. When this ratio is close to 1 (small gap), convergence is slow.</p>
-<div id="6552bf6e" class="cell" data-execution_count="23">
+<div id="5c927d68" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1789,7 +1789,7 @@ Error in eigenvector angle: -4.44e-16</code></pre>
 A' = A - \lambda_1\,\mathbf{v}_1\mathbf{v}_1^T.
 \]</span></p>
 <p><span class="math inline">\(A'\)</span> has the same eigenvectors as <span class="math inline">\(A\)</span> but eigenvalue 0 in place of <span class="math inline">\(\lambda_1\)</span>, so power iteration on <span class="math inline">\(A'\)</span> converges to <span class="math inline">\(\mathbf{v}_2\)</span>.</p>
-<div id="e3766499" class="cell" data-execution_count="24">
+<div id="147c0e54" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">21</span>)</span>
@@ -1833,7 +1833,7 @@ Power iter + deflation    : 8.0000, 5.0000
 <section id="connection-to-pagerank" class="level3" data-number="13.6.4">
 <h3 data-number="13.6.4" class="anchored" data-anchor-id="connection-to-pagerank"><span class="header-section-number">13.6.4</span> Connection to PageRank</h3>
 <p>Google’s PageRank is the dominant left eigenvector of a column-stochastic web link matrix <span class="math inline">\(M\)</span>. The corresponding eigenvalue is always 1 (for stochastic matrices), so power iteration converges at rate <span class="math inline">\(|\lambda_2(M)|\)</span>. With billions of web pages, a full eigensolver is impossible — power iteration is the only practical option.</p>
-<div id="79fa1ad7" class="cell" data-execution_count="25">
+<div id="b3aa3164" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tiny web graph: 5 pages, adjacency defines links</span></span>
@@ -1892,7 +1892,7 @@ Match: True</code></pre>
 <h3 data-number="13.6.6" class="anchored" data-anchor-id="exploration-spectral-analysis-of-real-world-networks"><span class="header-section-number">13.6.6</span> Exploration: Spectral Analysis of Real-World Networks</h3>
 <p><strong>Dataset.</strong> Download the Stanford SNAP <code>ca-GrQc.txt</code> (General Relativity collaboration network, ~5000 nodes, ~28000 edges) from <a href="https://snap.stanford.edu/data">https://snap.stanford.edu/data</a>.</p>
 <p><strong>Task.</strong> Build the symmetric adjacency matrix <span class="math inline">\(A\)</span> (or its degree-normalised version). Use <code>scipy.sparse.linalg.eigsh</code> to find the top 10 eigenvalues and eigenvectors. Plot the spectral gap and visualise the distribution of eigenvalues (the spectral density). Compare the ratio <span class="math inline">\(|\lambda_2/\lambda_1|\)</span> to the convergence speed you observe in power iteration.</p>
-<div id="882bf958" class="cell" data-execution_count="26">
+<div id="b817a5e2" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.sparse <span class="im">as</span> sp</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.sparse.linalg <span class="im">as</span> spla</span>
@@ -1920,7 +1920,7 @@ Match: True</code></pre>
 <section id="exercise-13.1.1-diagonal-eigenvectors-by-inspection" class="level3" data-number="13.7.1">
 <h3 data-number="13.7.1" class="anchored" data-anchor-id="exercise-13.1.1-diagonal-eigenvectors-by-inspection"><span class="header-section-number">13.7.1</span> Exercise 13.1.1 — Diagonal eigenvectors by inspection</h3>
 <p>For <span class="math inline">\(A = \begin{bmatrix}4 &amp; 0 \\ 0 &amp; -2\end{bmatrix}\)</span>, identify the eigenvectors and eigenvalues. Why is every axis-aligned vector an eigenvector of any diagonal matrix?</p>
-<div id="4dc50833" class="cell" data-execution_count="27">
+<div id="8ebfa179" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.diag([<span class="fl">4.</span>, <span class="op">-</span><span class="fl">2.</span>])   <span class="co"># shape (2, 2)</span></span>
@@ -1942,7 +1942,7 @@ Eigenvectors (columns):
 <p>If <span class="math inline">\(A\mathbf{v}=\lambda\mathbf{v}\)</span>, show <span class="math inline">\(\mathbf{v}\)</span> is an eigenvector of <span class="math inline">\(A^2\)</span> and find the eigenvalue.</p>
 <p><strong>Solution.</strong> <span class="math inline">\(A^2\mathbf{v} = A(A\mathbf{v}) = A(\lambda\mathbf{v}) =
 \lambda A\mathbf{v} = \lambda^2\mathbf{v}\)</span>. So the eigenvalue of <span class="math inline">\(A^2\)</span> is <span class="math inline">\(\lambda^2\)</span>.</p>
-<div id="b7823caa" class="cell" data-execution_count="28">
+<div id="381db5af" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">0</span>)</span>
@@ -1965,7 +1965,7 @@ eigh(A²) values : [ 0.0531  0.817   5.9187 12.2199]</code></pre>
 <section id="exercise-13.2.1-characteristic-polynomial-by-hand" class="level3" data-number="13.7.3">
 <h3 data-number="13.7.3" class="anchored" data-anchor-id="exercise-13.2.1-characteristic-polynomial-by-hand"><span class="header-section-number">13.7.3</span> Exercise 13.2.1 — Characteristic polynomial by hand</h3>
 <p>For <span class="math inline">\(A = \begin{bmatrix}6 &amp; 2 \\ 1 &amp; 3\end{bmatrix}\)</span>, find eigenvalues by hand.</p>
-<div id="f5759128" class="cell" data-execution_count="29">
+<div id="5ead33b0" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">6.</span>, <span class="fl">2.</span>],</span>
@@ -2003,7 +2003,7 @@ numpy check: [6.5616 2.4384]</code></pre>
 <section id="exercise-13.3.1-eigenvectors-by-hand-for-a-22-matrix" class="level3" data-number="13.7.5">
 <h3 data-number="13.7.5" class="anchored" data-anchor-id="exercise-13.3.1-eigenvectors-by-hand-for-a-22-matrix"><span class="header-section-number">13.7.5</span> Exercise 13.3.1 — Eigenvectors by hand for a 2×2 matrix</h3>
 <p>For <span class="math inline">\(A = \begin{bmatrix}5 &amp; 2 \\ -3 &amp; -2\end{bmatrix}\)</span>.</p>
-<div id="fcb5f36f" class="cell" data-execution_count="30">
+<div id="b0716565" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">5.</span>, <span class="fl">2.</span>],</span>
@@ -2035,7 +2035,7 @@ Eigenvectors (columns):
 <section id="exercise-13.4.3-when-is-xtx-positive-definite" class="level3" data-number="13.7.6">
 <h3 data-number="13.7.6" class="anchored" data-anchor-id="exercise-13.4.3-when-is-xtx-positive-definite"><span class="header-section-number">13.7.6</span> Exercise 13.4.3 — When is <span class="math inline">\(X^TX\)</span> positive definite?</h3>
 <p><strong>Solution.</strong> <span class="math inline">\(X^TX\)</span> is PSD always (since <span class="math inline">\(\mathbf{z}^TX^TX\mathbf{z}=\|X\mathbf{z}\|^2\ge0\)</span>). It is PD if and only if the only solution to <span class="math inline">\(X\mathbf{z}=\mathbf{0}\)</span> is <span class="math inline">\(\mathbf{z}=\mathbf{0}\)</span>, i.e.&nbsp;<span class="math inline">\(X\)</span> has <strong>trivial null space</strong>, which holds if and only if <span class="math inline">\(\operatorname{rank}(X)=n\)</span> (full column rank). This requires <span class="math inline">\(m\ge n\)</span>.</p>
-<div id="4c0940bc" class="cell" data-execution_count="31">
+<div id="40821bf3" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">33</span>)</span>
@@ -2063,7 +2063,7 @@ min eigenvalue of XᵀX: -0.0 (near zero)</code></pre>
 </section>
 <section id="exercise-13.5.4-weyls-inequality-verification" class="level3" data-number="13.7.7">
 <h3 data-number="13.7.7" class="anchored" data-anchor-id="exercise-13.5.4-weyls-inequality-verification"><span class="header-section-number">13.7.7</span> Exercise 13.5.4 — Weyl’s inequality verification</h3>
-<div id="1862b28d" class="cell" data-execution_count="32">
+<div id="19b1ca76" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">55</span>)</span>
@@ -2094,7 +2094,7 @@ min eigenvalue of XᵀX: -0.0 (near zero)</code></pre>
 </section>
 <section id="exercise-13.6.3-inverse-iteration" class="level3" data-number="13.7.8">
 <h3 data-number="13.7.8" class="anchored" data-anchor-id="exercise-13.6.3-inverse-iteration"><span class="header-section-number">13.7.8</span> Exercise 13.6.3 — Inverse iteration</h3>
-<div id="e7239856" class="cell" data-execution_count="33">
+<div id="3e62dd68" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">77</span>)</span>

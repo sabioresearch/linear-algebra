@@ -2219,7 +2219,7 @@ P^2 + q^2 P - q^2 r^2 = 0.
 P_\infty = \frac{-q^2 + \sqrt{q^4 + 4q^2 r^2}}{2}.
 \]</span></p>
 <p><strong>(c)</strong> With <span class="math inline">\(q^2 = 0.5\)</span>, <span class="math inline">\(r^2 = 4.0\)</span>: <span class="math inline">\(P_\infty = (-0.5 + \sqrt{0.25 + 8})/2 = (-0.5 + 2.872)/2 \approx 1.186\)</span>.</p>
-<div id="fa2577d6" class="cell" data-execution_count="8">
+<div id="e1da709f" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>q2, r2 <span class="op">=</span> <span class="fl">0.5</span>, <span class="fl">4.0</span></span>
@@ -2662,7 +2662,7 @@ P_{k|k} = P - PH^T S^{-1} H P = P - PH^T(HPH^T + R)^{-1}HP,
 \ell^+ = \frac{\ell^- \cdot r}{\sqrt{H^2 (\ell^-)^2 + r^2}}.
 \]</span></p>
 <p><strong>(c)</strong></p>
-<div id="ad600bbf" class="cell" data-execution_count="9">
+<div id="8a15432b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">99</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>q, r, H, n_steps <span class="op">=</span> <span class="fl">0.5</span>, <span class="fl">2.0</span>, <span class="fl">1.0</span>, <span class="dv">50</span></span>

@@ -570,7 +570,7 @@ window.Quarto = {
 <section id="one-equation-one-hyperplane" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="one-equation-one-hyperplane"><span class="header-section-number">2.1.1</span> One Equation, One Hyperplane</h3>
 <p>The equation <span class="math inline">\(\mathbf{a}^T \mathbf{x} = b\)</span> (row vector <span class="math inline">\(\mathbf{a}\)</span>, column vector <span class="math inline">\(\mathbf{x}\)</span>) defines a hyperplane <em>perpendicular to <span class="math inline">\(\mathbf{a}\)</span></em> at signed distance <span class="math inline">\(b / \|\mathbf{a}\|\)</span> from the origin.</p>
-<div id="2ac754d9" class="cell" data-execution_count="1">
+<div id="49ea012f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -619,7 +619,7 @@ window.Quarto = {
 <section id="extending-to-3d" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="extending-to-3d"><span class="header-section-number">2.1.2</span> Extending to 3D</h3>
 <p>With three unknowns, each equation cuts out a plane in <span class="math inline">\(\mathbb{R}^3\)</span>. Two planes generically intersect in a <em>line</em>. Add a third plane — if it crosses that line, you get a point.</p>
-<div id="9e2ca23a" class="cell" data-execution_count="2">
+<div id="db1254a3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -667,7 +667,7 @@ window.Quarto = {
 <section id="the-three-cases-unique-no-solution-infinitely-many" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="the-three-cases-unique-no-solution-infinitely-many"><span class="header-section-number">2.1.3</span> The Three Cases — Unique, No Solution, Infinitely Many</h3>
 <p>Two lines in <span class="math inline">\(\mathbb{R}^2\)</span> can intersect at a point, be parallel (never meet), or coincide (overlap entirely). The three panels below show each case with concrete slope/intercept values.</p>
-<div id="e67f6665" class="cell" data-execution_count="3">
+<div id="44800cae" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -780,7 +780,7 @@ window.Quarto = {
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="case-1-no-solution-inconsistent-system"><span class="header-section-number">2.2.1</span> Case 1 — No Solution (Inconsistent System)</h3>
 <p>The system is <em>inconsistent</em> when <span class="math inline">\(\mathbf{b}\)</span> is not in the column space of <span class="math inline">\(A\)</span>: no linear combination of <span class="math inline">\(A\)</span>’s columns reaches <span class="math inline">\(\mathbf{b}\)</span>.</p>
 <p><strong>Physical example — GPS with a faulty satellite.</strong> Three range measurements from satellites should meet at one point. If one satellite has a clock error, the three spheres no longer intersect — the system is inconsistent.</p>
-<div id="f1dca8a6" class="cell" data-execution_count="4">
+<div id="c49e30a3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Inconsistent 3×2 system: two lines that don't intersect in R^2</span></span>
@@ -808,7 +808,7 @@ lstsq x:     [1.8 0.8]   ← best-fit, not exact</code></pre>
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="case-2-unique-solution"><span class="header-section-number">2.2.2</span> Case 2 — Unique Solution</h3>
 <p>The system has a unique solution when <span class="math inline">\(A\)</span> has full column rank and <span class="math inline">\(m \geq n\)</span> (at least as many equations as unknowns, independent ones).</p>
 <p><strong>Physical example — trilateration from three WiFi access points.</strong> Three known-position routers each provide a range estimate. Three linear constraints, three unknowns — generically one solution.</p>
-<div id="3d611c25" class="cell" data-execution_count="5">
+<div id="c1929c52" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 3×3 system, full rank</span></span>
@@ -837,7 +837,7 @@ Condition:   3.47</code></pre>
 <p>where <span class="math inline">\(\mathbf{x}_p\)</span> is any <em>particular</em> solution satisfying <span class="math inline">\(A\mathbf{x}_p =
 \mathbf{b}\)</span>, and <span class="math inline">\(\mathbf{x}_h\)</span> is any vector in the <em>null space</em> of <span class="math inline">\(A\)</span> (satisfying <span class="math inline">\(A\mathbf{x}_h = \mathbf{0}\)</span>).</p>
 <p><strong>Physical example — redundant robot arm.</strong> A 7-DoF arm positioning its end-effector in 6-DoF space has one extra degree of freedom. For any target pose, there is a 1-parameter family of joint configurations that reaches it.</p>
-<div id="a44c9d82" class="cell" data-execution_count="6">
+<div id="c41e058d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Underdetermined system: 2 equations, 3 unknowns</span></span>
@@ -879,7 +879,7 @@ alpha=2.5: x = [ 2.0206 -1.0412  2.0206],  A @ x = [6. 3.]</code></pre>
 <section id="detecting-the-case-before-solving" class="level3" data-number="2.2.4">
 <h3 data-number="2.2.4" class="anchored" data-anchor-id="detecting-the-case-before-solving"><span class="header-section-number">2.2.4</span> Detecting the Case Before Solving</h3>
 <p>In practice you should diagnose the system <em>before</em> committing to a solver:</p>
-<div id="dbf3ec70" class="cell" data-execution_count="7">
+<div id="1f8a4763" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> diagnose_system(A, b):</span>
@@ -994,7 +994,7 @@ a_{31} &amp; a_{32} &amp; a_{33} &amp; b_3
 <p><span class="math display">\[\begin{pmatrix} 2 &amp; 1 &amp; -1 \\ -3 &amp; -1 &amp; 2 \\ -2 &amp; 1 &amp; 2 \end{pmatrix}
 \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}
 = \begin{pmatrix} 8 \\ -11 \\ -3 \end{pmatrix}\]</span></p>
-<div id="fe99d4bf" class="cell" data-execution_count="8">
+<div id="9dc8f4e7" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> forward_eliminate(aug):</span>
@@ -1044,7 +1044,7 @@ Row echelon form:
 </div>
 </div>
 <p>After forward elimination the matrix is upper triangular. The solution is recovered by <em>back substitution</em> — solve for the last variable, substitute upward.</p>
-<div id="c86da6c6" class="cell" data-execution_count="9">
+<div id="b63a32bf" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> back_substitute(ref):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Back substitution on row echelon form. Returns solution vector."""</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    m, n <span class="op">=</span> ref.shape</span>
@@ -1072,7 +1072,7 @@ Verify:   A @ x = [  8. -11.  -3.]  (should equal [  8. -11.  -3.])</code></pre>
 <section id="partial-pivoting-why-it-matters" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="partial-pivoting-why-it-matters"><span class="header-section-number">2.3.3</span> Partial Pivoting — Why It Matters</h3>
 <p>Naive elimination without pivoting can divide by near-zero entries, amplifying floating-point errors catastrophically.</p>
-<div id="4360b0d9" class="cell" data-execution_count="10">
+<div id="b6b13ba6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Without pivoting: tiny pivot causes large error</span></span>
@@ -1110,7 +1110,7 @@ Residual: 0.00e+00</code></pre>
 <li>A <span class="math inline">\(10000 \times 10000\)</span> system takes about a second.</li>
 <li>A <span class="math inline">\(10^6 \times 10^6\)</span> dense system is infeasible — sparse methods (Ch 12) are required.</li>
 </ul>
-<div id="dee62bf3" class="cell" data-execution_count="11">
+<div id="e1b0cc79" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1124,10 +1124,10 @@ Residual: 0.00e+00</code></pre>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"n=</span><span class="sc">{</span>n<span class="sc">:5d}</span><span class="ss">:  </span><span class="sc">{</span>dt<span class="op">*</span><span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> ms   "</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f"residual=</span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>norm(A<span class="op">@</span>x<span class="op">-</span>b)<span class="sc">:.1e}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>n=  100:  24.26 ms   residual=5.1e-13
-n=  500:  99.16 ms   residual=1.0e-11
-n= 1000:  38.17 ms   residual=9.7e-12
-n= 2000:  65.36 ms   residual=3.7e-10</code></pre>
+<pre><code>n=  100:  17.14 ms   residual=5.1e-13
+n=  500:  73.37 ms   residual=1.0e-11
+n= 1000:  29.25 ms   residual=9.7e-12
+n= 2000:  58.21 ms   residual=3.7e-10</code></pre>
 </div>
 </div>
 <p>The residual stays near machine epsilon (<span class="math inline">\(\approx 10^{-15}\)</span>) for all sizes as long as <span class="math inline">\(A\)</span> is well-conditioned — a testament to how well-implemented partial pivoting is.</p>
@@ -1181,7 +1181,7 @@ n= 2000:  65.36 ms   residual=3.7e-10</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="acebf7f1" class="cell" data-execution_count="12">
+<div id="e76db5e5" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1215,7 +1215,7 @@ All agree:  True</code></pre>
 <section id="what-lstsq-returns-and-what-to-check" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="what-lstsq-returns-and-what-to-check"><span class="header-section-number">2.4.2</span> What lstsq Returns — and What to Check</h3>
 <p><code>np.linalg.lstsq</code> returns a 4-tuple. Each element tells you something about the system:</p>
-<div id="7774f46b" class="cell" data-execution_count="13">
+<div id="81f049dd" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Overdetermined system: 5 equations, 2 unknowns</span></span>
@@ -1248,7 +1248,7 @@ Manual residual:     0.004371</code></pre>
 <section id="the-silent-wrong-answer" class="level3" data-number="2.4.3">
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="the-silent-wrong-answer"><span class="header-section-number">2.4.3</span> The Silent Wrong Answer</h3>
 <p><code>np.linalg.solve</code> does <em>not</em> warn you when <span class="math inline">\(A\)</span> is ill-conditioned. It will return a number — a plausible-looking one — that can be completely wrong.</p>
-<div id="6f8f87b0" class="cell" data-execution_count="14">
+<div id="109b9d57" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hilbert matrix: famously ill-conditioned</span></span>
@@ -1274,7 +1274,7 @@ n=12  κ(H)=1.76e+16  ||x_comp - x_true||=1.13e+00</code></pre>
 </div>
 <p>For <span class="math inline">\(n = 12\)</span>, the condition number exceeds <span class="math inline">\(10^{16}\)</span> — beyond machine precision. The computed solution has no significant digits. Yet <code>np.linalg.solve</code> returns without error.</p>
 <p><strong>Defensive pattern:</strong></p>
-<div id="bd78cf4b" class="cell" data-execution_count="15">
+<div id="12d6d9f6" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> safe_solve(A, b, cond_threshold<span class="op">=</span><span class="fl">1e12</span>):</span>
@@ -1294,7 +1294,7 @@ n=12  κ(H)=1.76e+16  ||x_comp - x_true||=1.13e+00</code></pre>
 <pre><code>κ = 1.60e+13,  residual = 2.44e-10</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_12016\1476246802.py:14: UserWarning: Ill-conditioned system: κ = 1.60e+13. Solution may be unreliable.
+<pre><code>C:\Users\james.choi\AppData\Local\Temp\ipykernel_15824\1476246802.py:14: UserWarning: Ill-conditioned system: κ = 1.60e+13. Solution may be unreliable.
   x, kappa, res = safe_solve(hilbert(10), np.ones(10))</code></pre>
 </div>
 </div>
@@ -1303,7 +1303,7 @@ n=12  κ(H)=1.76e+16  ||x_comp - x_true||=1.13e+00</code></pre>
 <section id="solving-multiple-right-hand-sides-efficiently" class="level3" data-number="2.4.4">
 <h3 data-number="2.4.4" class="anchored" data-anchor-id="solving-multiple-right-hand-sides-efficiently"><span class="header-section-number">2.4.4</span> Solving Multiple Right-Hand Sides Efficiently</h3>
 <p>When you need <span class="math inline">\(A\mathbf{x}_j = \mathbf{b}_j\)</span> for many vectors <span class="math inline">\(\mathbf{b}_j\)</span> with the same <span class="math inline">\(A\)</span>, factorising <span class="math inline">\(A\)</span> once and reusing is far faster than calling <code>solve</code> repeatedly.</p>
-<div id="1971df27" class="cell" data-execution_count="16">
+<div id="d02d1484" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -1330,9 +1330,9 @@ n=12  κ(H)=1.76e+16  ||x_comp - x_true||=1.13e+00</code></pre>
 <span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Speed-up:            </span><span class="sc">{</span>t_naive<span class="op">/</span>t_smart<span class="sc">:.1f}</span><span class="ss">×"</span>)</span>
 <span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Results match:       </span><span class="sc">{</span>np<span class="sc">.</span>allclose(X_naive, X_smart)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Naive (200× solve):  2979.6 ms
-LU once + solve:     14.6 ms
-Speed-up:            204.2×
+<pre><code>Naive (200× solve):  3117.0 ms
+LU once + solve:     16.7 ms
+Speed-up:            186.5×
 Results match:       True</code></pre>
 </div>
 </div>
@@ -1342,7 +1342,7 @@ Results match:       True</code></pre>
 <section id="solving-sparse-systems" class="level3" data-number="2.4.5">
 <h3 data-number="2.4.5" class="anchored" data-anchor-id="solving-sparse-systems"><span class="header-section-number">2.4.5</span> Solving Sparse Systems</h3>
 <p>When <span class="math inline">\(A\)</span> has mostly zeros (common in FEM, graph problems, and SLAM), dense solvers waste memory and time. Use <code>scipy.sparse</code>:</p>
-<div id="9b385845" class="cell" data-execution_count="17">
+<div id="2abd0c0f" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.sparse</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.sparse.linalg</span>
@@ -1405,7 +1405,7 @@ Do you have many right-hand sides with same A?
 <p><span class="math display">\[2(s_x^{(1)} - s_x^{(i)}) p_x + 2(s_y^{(1)} - s_y^{(i)}) p_y
 = r_i^2 - r_1^2 + \|\mathbf{s}_1\|^2 - \|\mathbf{s}_i\|^2\]</span></p>
 <p>This linearisation is the standard trick in time-of-arrival (ToA) positioning.</p>
-<div id="1f65307c" class="cell" data-execution_count="18">
+<div id="5eadbd33" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sensor positions (metres)</span></span>
@@ -1443,7 +1443,7 @@ Measured ranges:  [2.7731 1.9269 1.8627]</code></pre>
 </section>
 <section id="building-and-solving-the-linear-system" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="building-and-solving-the-linear-system"><span class="header-section-number">2.5.2</span> Building and Solving the Linear System</h3>
-<div id="f79a5572" class="cell" data-execution_count="19">
+<div id="750a4509" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_linear_system(sensors, ranges):</span>
@@ -1494,7 +1494,7 @@ Position error:      0.61 cm</code></pre>
 <section id="adding-a-fourth-sensor-the-overdetermined-case" class="level3" data-number="2.5.3">
 <h3 data-number="2.5.3" class="anchored" data-anchor-id="adding-a-fourth-sensor-the-overdetermined-case"><span class="header-section-number">2.5.3</span> Adding a Fourth Sensor — the Overdetermined Case</h3>
 <p>With four sensors we have three difference equations for two unknowns. The system is overdetermined — no exact solution exists because of measurement noise. We switch to least squares.</p>
-<div id="1fe5e157" class="cell" data-execution_count="20">
+<div id="9d9690d7" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a fourth sensor</span></span>
@@ -1529,7 +1529,7 @@ Rank of A4:             2</code></pre>
 </section>
 <section id="visualising-the-fusion" class="level3" data-number="2.5.4">
 <h3 data-number="2.5.4" class="anchored" data-anchor-id="visualising-the-fusion"><span class="header-section-number">2.5.4</span> Visualising the Fusion</h3>
-<div id="d6c0db44" class="cell" data-execution_count="21">
+<div id="cddb2ea1" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1572,7 +1572,7 @@ Rank of A4:             2</code></pre>
 <section id="noise-sensitivity-fewer-vs.-more-sensors" class="level3" data-number="2.5.5">
 <h3 data-number="2.5.5" class="anchored" data-anchor-id="noise-sensitivity-fewer-vs.-more-sensors"><span class="header-section-number">2.5.5</span> Noise Sensitivity — Fewer vs.&nbsp;More Sensors</h3>
 <p>The panels below show how the position estimate degrades as noise increases, and how adding more sensors mitigates that degradation.</p>
-<div id="9a1ab45e" class="cell" data-execution_count="22">
+<div id="d20f82e5" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1647,7 +1647,7 @@ Rank of A4:             2</code></pre>
 <p><strong>2.3</strong> Write down the augmented matrix for the following system, perform one step of forward elimination by hand (eliminate <span class="math inline">\(x_1\)</span> from rows 2 and 3), and identify the new pivot:</p>
 <p><span class="math display">\[\begin{aligned} x_1 + 2x_2 + x_3 &amp;= 5 \\ 2x_1 + 4x_2 + 3x_3 &amp;= 11 \\ x_1 + x_2 + 2x_3 &amp;= 6 \end{aligned}\]</span></p>
 <p><strong>2.4</strong> A robotics student writes this code to fuse four range sensors:</p>
-<div id="d71b7a50" class="cell" data-execution_count="23">
+<div id="c71923f9" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>A, b <span class="op">=</span> build_linear_system(sensors4, ranges4)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linalg.solve(A, b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1666,7 +1666,7 @@ Rank of A4:             2</code></pre>
 <li><p>Check whether one is a scalar multiple of the other: <span class="math inline">\([2, 6] = 2 \cdot [1, 3]\)</span> — yes, they are parallel (proportional normal vectors).</p></li>
 <li><p>Parallel hyperplanes either coincide (infinitely many solutions) or are distinct and non-intersecting (no solution). Checking: row 1 is <span class="math inline">\(2x_1 + 6x_2 = 8\)</span>, row 2 is <span class="math inline">\(x_1 + 3x_2 = 4\)</span>, which is exactly half of row 1 (<span class="math inline">\(8/2 = 4\)</span>). So both equations describe the <em>same line</em> — infinitely many solutions.</p></li>
 </ol>
-<div id="e99d649f" class="cell" data-execution_count="24">
+<div id="01bd97d8" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">2.</span>, <span class="fl">6.</span>], [<span class="fl">1.</span>, <span class="fl">3.</span>]])</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">8.</span>, <span class="fl">4.</span>])</span>
@@ -1689,7 +1689,7 @@ rank(Ab) = 1</code></pre>
 <li><strong>Use SVD.</strong> <code>np.linalg.lstsq</code> with <code>rcond</code> set to a threshold drops near-zero singular values and returns a truncated solution. Chapter 18 covers the SVD approach in depth.</li>
 <li><strong>At minimum,</strong> report the condition number to the caller so they know the result is unreliable.</li>
 </ol>
-<div id="57965632" class="cell" data-execution_count="25">
+<div id="63f081ff" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hilbert(n):</span>
@@ -1736,7 +1736,7 @@ Error:    2.74e-04  ← actually terrible</code></pre>
 0 &amp; 0 &amp; 1 &amp; 1
 \end{array}\right)\]</span></p>
 <p>New pivot: <span class="math inline">\(a_{22} = -1\)</span>. Note that column 2 of the original row 2 was zero — this is a <em>zero pivot</em>, triggering a row swap. Partial pivoting exists precisely to handle this.</p>
-<div id="653fd83c" class="cell" data-execution_count="26">
+<div id="6692a137" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>aug <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">1.</span>, <span class="fl">5.</span>],</span>
@@ -1767,7 +1767,7 @@ After pivot swap:
 <p><strong>Solution 2.4</strong></p>
 <p><code>build_linear_system</code> differences each sensor against sensor 0, producing <span class="math inline">\(n_\text{sensors} - 1\)</span> equations. With 4 sensors the output is a <span class="math inline">\(3 \times 2\)</span> matrix — <em>not square</em>. <code>np.linalg.solve</code> requires a square matrix.</p>
 <p>The correct call is:</p>
-<div id="bee79b90" class="cell" data-execution_count="27">
+<div id="1d9a0a9c" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>A4, b4 <span class="op">=</span> build_linear_system(sensors4, ranges4)</span>

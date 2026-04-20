@@ -696,7 +696,7 @@ window.Quarto = {
 </section>
 <section id="geometric-visualization" class="level3" data-number="17.1.5">
 <h3 data-number="17.1.5" class="anchored" data-anchor-id="geometric-visualization"><span class="header-section-number">17.1.5</span> Geometric Visualization</h3>
-<div id="d2476747" class="cell" data-execution_count="1">
+<div id="ed149109" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
@@ -798,7 +798,7 @@ e orthogonal to Col(A): max |A^T e| = 6.66e-15</code></pre>
 </section>
 <section id="projection-onto-a-2-column-subspace" class="level3" data-number="17.1.6">
 <h3 data-number="17.1.6" class="anchored" data-anchor-id="projection-onto-a-2-column-subspace"><span class="header-section-number">17.1.6</span> Projection onto a 2-Column Subspace</h3>
-<div id="c21258a2" class="cell" data-execution_count="2">
+<div id="81871c18" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">171</span>)</span>
@@ -921,7 +921,7 @@ e in Null(A^T): max |A^T e| = 1.25e-16  (orthogonality check)
 <p>In finite precision, “zero” singular values appear as very small numbers. A standard cutoff is:</p>
 <p><span class="math display">\[\sigma_i \text{ treated as zero if } \sigma_i &lt; \varepsilon_{\text{mach}} \cdot \sigma_1 \cdot \max(m, n).\]</span></p>
 <p>This is used internally by <code>np.linalg.lstsq</code> and <code>np.linalg.matrix_rank</code>. Naively inverting all singular values amplifies noise in directions corresponding to near-zero <span class="math inline">\(\sigma_i\)</span>.</p>
-<div id="d9a46b45" class="cell" data-execution_count="3">
+<div id="d505b273" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">22</span>)</span>
@@ -983,7 +983,7 @@ Residual (perturbed): 1.612278  (same)
 </section>
 <section id="svd-based-construction" class="level3" data-number="17.2.5">
 <h3 data-number="17.2.5" class="anchored" data-anchor-id="svd-based-construction"><span class="header-section-number">17.2.5</span> SVD-Based Construction</h3>
-<div id="6e5560a6" class="cell" data-execution_count="4">
+<div id="b52fa313" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">23</span>)</span>
@@ -1086,7 +1086,7 @@ rank(AA+):       3  (= rank(A))</code></pre>
 </section>
 <section id="overdetermined-example-linear-regression" class="level3" data-number="17.3.4">
 <h3 data-number="17.3.4" class="anchored" data-anchor-id="overdetermined-example-linear-regression"><span class="header-section-number">17.3.4</span> Overdetermined Example: Linear Regression</h3>
-<div id="07f37403" class="cell" data-execution_count="5">
+<div id="5a3e4689" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">31</span>)</span>
@@ -1125,7 +1125,7 @@ rank(AA+): 2  (= n = 2, not m = 20)</code></pre>
 <section id="underdetermined-example-redundant-arm-ik" class="level3" data-number="17.3.5">
 <h3 data-number="17.3.5" class="anchored" data-anchor-id="underdetermined-example-redundant-arm-ik"><span class="header-section-number">17.3.5</span> Underdetermined Example: Redundant Arm IK</h3>
 <p>A planar arm with 5 joints controlling a 2-DoF end-effector: 3 redundant degrees of freedom. The pseudoinverse picks the minimum joint-velocity solution.</p>
-<div id="798534b7" class="cell" data-execution_count="6">
+<div id="14b9150d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">32</span>)</span>
@@ -1220,7 +1220,7 @@ Perturbed task error: 7.30e-16
 <p>Even when <span class="math inline">\(A^TA\)</span> is technically invertible, forming it explicitly can cause numerical problems. If <span class="math inline">\(\text{cond}(A) = \sigma_{\max}/\sigma_{\min}\)</span>, then:</p>
 <p><span class="math display">\[\text{cond}(A^TA) = \text{cond}(A)^2.\]</span></p>
 <p>Squaring the condition number doubles the number of digits lost to floating-point error. For this reason, the normal equations are recommended only when <span class="math inline">\(\text{cond}(A)\)</span> is small and forming <span class="math inline">\(A^TA\)</span> explicitly is acceptable (§17.5).</p>
-<div id="e2211414" class="cell" data-execution_count="7">
+<div id="fcdd9537" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">41</span>)</span>
@@ -1275,7 +1275,7 @@ cond(A_ill^T A_ill): 5.50e+12  (squared!)
 </section>
 <section id="visualising-orthogonality-of-the-residual" class="level3" data-number="17.4.6">
 <h3 data-number="17.4.6" class="anchored" data-anchor-id="visualising-orthogonality-of-the-residual"><span class="header-section-number">17.4.6</span> Visualising Orthogonality of the Residual</h3>
-<div id="c5025836" class="cell" data-execution_count="8">
+<div id="77dde689" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1356,7 +1356,7 @@ Corr(b_hat, e): -3.00e-16  (should be ~0)</code></pre>
 </section>
 <section id="accuracy-on-an-ill-conditioned-problem" class="level3" data-number="17.5.2">
 <h3 data-number="17.5.2" class="anchored" data-anchor-id="accuracy-on-an-ill-conditioned-problem"><span class="header-section-number">17.5.2</span> Accuracy on an Ill-Conditioned Problem</h3>
-<div id="5bae32f7" class="cell" data-execution_count="9">
+<div id="1a55aeea" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">51</span>)</span>
@@ -1418,7 +1418,7 @@ cond(A^T A):   1.28e+16
 <section id="rank-deficient-case" class="level3" data-number="17.5.3">
 <h3 data-number="17.5.3" class="anchored" data-anchor-id="rank-deficient-case"><span class="header-section-number">17.5.3</span> Rank-Deficient Case</h3>
 <p>When <span class="math inline">\(A\)</span> loses rank, normal equations fail, QR produces an ill-conditioned <span class="math inline">\(R\)</span> (and may error), but SVD handles the situation cleanly by zeroing out near-zero singular values.</p>
-<div id="693899a9" class="cell" data-execution_count="10">
+<div id="cae7c7e5" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">52</span>)</span>
@@ -1498,7 +1498,7 @@ Residual (lstsq): 3.973594
 </section>
 <section id="visualising-the-effect-of-ill-conditioning" class="level3" data-number="17.5.5">
 <h3 data-number="17.5.5" class="anchored" data-anchor-id="visualising-the-effect-of-ill-conditioning"><span class="header-section-number">17.5.5</span> Visualising the Effect of Ill-Conditioning</h3>
-<div id="c3c8fafb" class="cell" data-execution_count="11">
+<div id="4d14d6cb" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1594,7 +1594,7 @@ Residual (lstsq): 3.973594
 </section>
 <section id="weighted-least-squares-example-depth-fitting-with-heteroscedastic-noise" class="level3" data-number="17.6.3">
 <h3 data-number="17.6.3" class="anchored" data-anchor-id="weighted-least-squares-example-depth-fitting-with-heteroscedastic-noise"><span class="header-section-number">17.6.3</span> Weighted Least Squares Example: Depth Fitting with Heteroscedastic Noise</h3>
-<div id="f2468bd7" class="cell" data-execution_count="12">
+<div id="4b0d0c53" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1661,7 +1661,7 @@ x_wls_v2:[0.1658 0.1542]  (equivalent via scaling)</code></pre>
 </section>
 <section id="constrained-least-squares-example-sum-to-zero-constraint" class="level3" data-number="17.6.4">
 <h3 data-number="17.6.4" class="anchored" data-anchor-id="constrained-least-squares-example-sum-to-zero-constraint"><span class="header-section-number">17.6.4</span> Constrained Least Squares Example: Sum-to-Zero Constraint</h3>
-<div id="b80c5803" class="cell" data-execution_count="13">
+<div id="2323c443" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">62</span>)</span>
@@ -1767,7 +1767,7 @@ Residuals -- constrained:   4.196709
 </section>
 <section id="numerical-demonstration" class="level3" data-number="17.7.4">
 <h3 data-number="17.7.4" class="anchored" data-anchor-id="numerical-demonstration"><span class="header-section-number">17.7.4</span> Numerical Demonstration</h3>
-<div id="cbb9201f" class="cell" data-execution_count="14">
+<div id="6b5c4ea1" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1846,7 +1846,7 @@ Min error:      0.2520</code></pre>
 </section>
 <section id="singular-value-shrinkage" class="level3" data-number="17.7.5">
 <h3 data-number="17.7.5" class="anchored" data-anchor-id="singular-value-shrinkage"><span class="header-section-number">17.7.5</span> Singular Value Shrinkage</h3>
-<div id="030fdb3e" class="cell" data-execution_count="15">
+<div id="1df447df" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1976,7 +1976,7 @@ Min error:      0.2520</code></pre>
 </section>
 <section id="gradient-descent-vs.-cg-convergence-comparison" class="level3" data-number="17.8.5">
 <h3 data-number="17.8.5" class="anchored" data-anchor-id="gradient-descent-vs.-cg-convergence-comparison"><span class="header-section-number">17.8.5</span> Gradient Descent vs.&nbsp;CG: Convergence Comparison</h3>
-<div id="b8770a3a" class="cell" data-execution_count="16">
+<div id="53943714" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2068,7 +2068,7 @@ GD iters to 1e-6:   ~726</code></pre>
 <section id="lsqr-cg-applied-to-least-squares" class="level3" data-number="17.8.6">
 <h3 data-number="17.8.6" class="anchored" data-anchor-id="lsqr-cg-applied-to-least-squares"><span class="header-section-number">17.8.6</span> LSQR: CG Applied to Least Squares</h3>
 <p>For least squares <span class="math inline">\(\min\|A\mathbf{x}-\mathbf{b}\|\)</span> with non-square <span class="math inline">\(A\)</span>, <strong>LSQR</strong> applies CG to the normal equations without ever forming <span class="math inline">\(A^TA\)</span> explicitly, which preserves sparsity. <code>scipy.sparse.linalg.lsqr</code> is the standard implementation.</p>
-<div id="f18016d8" class="cell" data-execution_count="17">
+<div id="fac80832" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.sparse <span class="im">import</span> random <span class="im">as</span> sparse_random</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.sparse.linalg <span class="im">import</span> lsqr</span>
@@ -2131,7 +2131,7 @@ A_{ij} = z_i^j, \quad i=1,\ldots,m,\; j=1,\ldots,p.\]</span></p>
 </section>
 <section id="synthesising-calibration-data" class="level3" data-number="17.9.2">
 <h3 data-number="17.9.2" class="anchored" data-anchor-id="synthesising-calibration-data"><span class="header-section-number">17.9.2</span> Synthesising Calibration Data</h3>
-<div id="52ad95de" class="cell" data-execution_count="18">
+<div id="ce962fe8" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2168,7 +2168,7 @@ c_true = [ 0.04   -0.008   0.0005]</code></pre>
 </section>
 <section id="building-the-design-matrix-and-fitting" class="level3" data-number="17.9.3">
 <h3 data-number="17.9.3" class="anchored" data-anchor-id="building-the-design-matrix-and-fitting"><span class="header-section-number">17.9.3</span> Building the Design Matrix and Fitting</h3>
-<div id="8eccc9fb" class="cell" data-execution_count="19">
+<div id="7aad00b1" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Degree-3 Vandermonde design matrix (columns z, z^2, z^3)</span></span>
@@ -2221,7 +2221,7 @@ c_svd:  [ 0.034718 -0.005781  0.00037 ]
 </section>
 <section id="overfitting-high-degree-polynomial-without-regularisation" class="level3" data-number="17.9.4">
 <h3 data-number="17.9.4" class="anchored" data-anchor-id="overfitting-high-degree-polynomial-without-regularisation"><span class="header-section-number">17.9.4</span> Overfitting: High-Degree Polynomial Without Regularisation</h3>
-<div id="7318266e" class="cell" data-execution_count="20">
+<div id="3b18c021" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a degree-8 polynomial with and without regularisation</span></span>
@@ -2261,7 +2261,7 @@ cond(A_h): 7.72e+07  (ill-conditioned)
 </section>
 <section id="visualisation" class="level3" data-number="17.9.5">
 <h3 data-number="17.9.5" class="anchored" data-anchor-id="visualisation"><span class="header-section-number">17.9.5</span> Visualisation</h3>
-<div id="11eff404" class="cell" data-execution_count="21">
+<div id="3f2affc8" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2329,7 +2329,7 @@ cond(A_h): 7.72e+07  (ill-conditioned)
 <section id="exercise-17.1.1-projection-matrix-onto-spana" class="level3" data-number="17.10.1">
 <h3 data-number="17.10.1" class="anchored" data-anchor-id="exercise-17.1.1-projection-matrix-onto-spana"><span class="header-section-number">17.10.1</span> Exercise 17.1.1 – Projection matrix onto span{a}</h3>
 <p>Let <span class="math inline">\(\mathbf{a} = (1, 2, 2)^T\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>. Write down the <span class="math inline">\(3 \times 3\)</span> projection matrix <span class="math inline">\(P\)</span> onto <span class="math inline">\(\text{span}\{\mathbf{a}\}\)</span>. Verify <span class="math inline">\(P^2 = P\)</span> and <span class="math inline">\(P^T = P\)</span>. What is <span class="math inline">\(\text{rank}(P)\)</span>?</p>
-<div id="35e03398" class="cell" data-execution_count="22">
+<div id="95847b8c" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">2.0</span>])     <span class="co"># shape (3,)</span></span>
@@ -2367,7 +2367,7 @@ rank(P):   1</code></pre>
 <section id="exercise-17.2.1-pseudoinverse-of-a-simple-matrix" class="level3" data-number="17.10.3">
 <h3 data-number="17.10.3" class="anchored" data-anchor-id="exercise-17.2.1-pseudoinverse-of-a-simple-matrix"><span class="header-section-number">17.10.3</span> Exercise 17.2.1 – Pseudoinverse of a simple matrix</h3>
 <p>Let <span class="math inline">\(A = \begin{bmatrix}1&amp;0\\0&amp;2\\0&amp;0\end{bmatrix}\)</span>. Compute <span class="math inline">\(A^+\)</span> and verify all four conditions.</p>
-<div id="d054a62a" class="cell" data-execution_count="23">
+<div id="69091951" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.0</span>, <span class="fl">0.0</span>],</span>
@@ -2418,7 +2418,7 @@ A+AA+ == A+:     True
 <section id="exercise-17.4.2-normal-equations-by-hand" class="level3" data-number="17.10.5">
 <h3 data-number="17.10.5" class="anchored" data-anchor-id="exercise-17.4.2-normal-equations-by-hand"><span class="header-section-number">17.10.5</span> Exercise 17.4.2 – Normal equations by hand</h3>
 <p>Let <span class="math inline">\(A = \begin{bmatrix}1&amp;0\\1&amp;1\\0&amp;1\end{bmatrix}\)</span> and <span class="math inline">\(\mathbf{b} = (1,2,3)^T\)</span>. Solve the normal equations and find <span class="math inline">\(\hat{\mathbf{b}} = A\hat{\mathbf{x}}\)</span>.</p>
-<div id="f713e365" class="cell" data-execution_count="24">
+<div id="56d4185b" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.0</span>, <span class="fl">0.0</span>],</span>
@@ -2463,7 +2463,7 @@ A^T\mathbf{b} = \begin{bmatrix}3\\5\end{bmatrix}.\]</span></p>
 <section id="exercise-17.6.2-gps-position-estimate-via-wls" class="level3" data-number="17.10.6">
 <h3 data-number="17.10.6" class="anchored" data-anchor-id="exercise-17.6.2-gps-position-estimate-via-wls"><span class="header-section-number">17.10.6</span> Exercise 17.6.2 – GPS position estimate via WLS</h3>
 <p>Three GPS measurements with standard deviations <span class="math inline">\(\sigma_1 = 1\)</span>, <span class="math inline">\(\sigma_2 = 2\)</span>, <span class="math inline">\(\sigma_3 = 0.5\)</span> m. Find the weighted least-squares estimate of position <span class="math inline">\(x\)</span>.</p>
-<div id="c7644592" class="cell" data-execution_count="25">
+<div id="241b8e54" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Three measurements of the same scalar x</span></span>
@@ -2519,7 +2519,7 @@ Simple mean:    10.0333
 </section>
 <section id="exercise-17.8.2-cg-vs.-gd-iteration-count" class="level3" data-number="17.10.9">
 <h3 data-number="17.10.9" class="anchored" data-anchor-id="exercise-17.8.2-cg-vs.-gd-iteration-count"><span class="header-section-number">17.10.9</span> Exercise 17.8.2 – CG vs.&nbsp;GD iteration count</h3>
-<div id="98b17a06" class="cell" data-execution_count="26">
+<div id="7af3a70c" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>kappa <span class="op">=</span> <span class="fl">100.0</span>    <span class="co"># condition number</span></span>
